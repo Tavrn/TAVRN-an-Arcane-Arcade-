@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcane Arcade - Copy", "Arcane Arcade - Copy.csproj", "{17C109B3-4B2F-E887-495D-5C4E13CD2F4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcane Arcade - Copy.Editor", "Arcane Arcade - Copy.Editor.csproj", "{B632C474-815A-6725-A0EE-63FAEA2E2423}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17C109B3-4B2F-E887-495D-5C4E13CD2F4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C109B3-4B2F-E887-495D-5C4E13CD2F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C109B3-4B2F-E887-495D-5C4E13CD2F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17C109B3-4B2F-E887-495D-5C4E13CD2F4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B632C474-815A-6725-A0EE-63FAEA2E2423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B632C474-815A-6725-A0EE-63FAEA2E2423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B632C474-815A-6725-A0EE-63FAEA2E2423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B632C474-815A-6725-A0EE-63FAEA2E2423}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

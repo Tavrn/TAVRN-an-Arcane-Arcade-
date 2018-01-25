@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcane Arcade", "Arcane Arcade.csproj", "{ADE40E77-CFE2-871F-3DD0-9B4DD9443FCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arcane Arcade.Editor", "Arcane Arcade.Editor.csproj", "{E40CB409-4FFA-1D1F-7577-D99771B09C72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADE40E77-CFE2-871F-3DD0-9B4DD9443FCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE40E77-CFE2-871F-3DD0-9B4DD9443FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE40E77-CFE2-871F-3DD0-9B4DD9443FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE40E77-CFE2-871F-3DD0-9B4DD9443FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40CB409-4FFA-1D1F-7577-D99771B09C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40CB409-4FFA-1D1F-7577-D99771B09C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40CB409-4FFA-1D1F-7577-D99771B09C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40CB409-4FFA-1D1F-7577-D99771B09C72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
