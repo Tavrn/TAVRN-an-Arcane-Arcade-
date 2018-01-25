@@ -52,6 +52,7 @@ public class WandScript : MonoBehaviour {
 		if(isChanneling){
 			GameObject g = c.gameObject;
 			if(g.tag=="WandCollider"){
+				Debug.Log("true");
 				g.GetComponent<MeshRenderer>().enabled = true;
 				patternColliders.Add(g);
 				ColliderScript s = g.GetComponent<ColliderScript>();

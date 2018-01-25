@@ -1015,12 +1015,15 @@
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\ColliderScript.cs" />
     <Compile Include="Assets\Scripts\CollidersScript.cs" />
+    <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener_LH.cs" />
     <Compile Include="Assets\Scripts\Duel_HeadScript.cs" />
     <Compile Include="Assets\Scripts\Duel_PlayerScript.cs" />
     <Compile Include="Assets\Scripts\HeadReference.cs" />
     <Compile Include="Assets\Scripts\MinionScript.cs" />
+    <Compile Include="Assets\Scripts\SpellBookParentScript.cs" />
     <Compile Include="Assets\Scripts\SpellManagerScript.cs" />
     <Compile Include="Assets\Scripts\Town_ControllerEvents_Listener.cs" />
+    <Compile Include="Assets\Scripts\WandParentScript.cs" />
     <Compile Include="Assets\Scripts\WandScript.cs" />
   </ItemGroup>
   <ItemGroup>
