@@ -694,7 +694,6 @@
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\ColliderScript.cs" />
      <Compile Include="Assets\Scripts\CollidersScript.cs" />
-     <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener_Left.cs" />
      <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener_LH.cs" />
      <Compile Include="Assets\Scripts\Duel_HeadScript.cs" />
      <Compile Include="Assets\Scripts\Duel_PlayerScript.cs" />
