@@ -5,7 +5,7 @@ namespace VRTK.Examples
     public class Duel_ControllerEvents_Listener_LH : MonoBehaviour
     {
 				public SpellBookParentScript sbps;
-
+        private bool inRange = false;
         private void Start()
         {
 
@@ -75,8 +75,8 @@ namespace VRTK.Examples
 
         private void DebugLogger(uint index, string button, string action, ControllerInteractionEventArgs e)
         {
-          //  VRTK_Logger.Info("Controller on index '" + index + "' " + button + " has been " + action
-          //          + " with a pressure of " + e.buttonPressure + " / trackpad axis at: " + e.touchpadAxis + " (" + e.touchpadAngle + " degrees)");
+           // VRTK_Logger.Info("Controller on index '" + index + "' " + button + " has been " + action
+           //         + " with a pressure of " + e.buttonPressure + " / trackpad axis at: " + e.touchpadAxis + " (" + e.touchpadAngle + " degrees)");
         }
 
         private void DoTriggerPressed(object sender, ControllerInteractionEventArgs e)
@@ -129,7 +129,6 @@ namespace VRTK.Examples
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "GRIP", "pressed", e);
             sbps.ToggleOpen();
-
         }
 
         private void DoGripReleased(object sender, ControllerInteractionEventArgs e)
@@ -195,6 +194,18 @@ namespace VRTK.Examples
         private void DoTouchpadAxisChanged(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "TOUCHPAD", "axis changed", e);
+            if(e.touchpadAxis.magnitude>0.7){
+              if(!inRange){
+                if(e.touchpadAngle>70  && e.touchpadAngle<110){
+                  sbps.FlipRight();
+                }else if(e.touchpadAngle>250 && e.touchpadAngle<290){
+                  sbps.FlipLeft();
+                }
+              }
+              inRange = true;
+            }else{
+              inRange = false;
+            }
         }
 
         private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)

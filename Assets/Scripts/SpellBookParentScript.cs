@@ -7,6 +7,8 @@ public class SpellBookParentScript : MonoBehaviour {
 	public GameObject openBook;
 	public GameObject closedBook;
 	private bool open = false;
+	private int deckSize = 10;
+	private int spellPage = 0;
 	// Use this for initialization
 	void Start () {
 
@@ -26,5 +28,17 @@ public class SpellBookParentScript : MonoBehaviour {
 			openBook.SetActive(false);
 			closedBook.SetActive(true);
 		}
+	}
+	public void FlipRight(){
+		spellPage++;
+		if(spellPage==deckSize)
+			spellPage = 0;
+		Debug.Log(spellPage);
+	}
+	public void FlipLeft(){
+		spellPage--;
+		if(spellPage==-1)
+			spellPage = deckSize-1;
+		Debug.Log(spellPage);
 	}
 }
