@@ -1,0 +1,349 @@
+fileFormatVersion: 2
+guid: 006c52cce3eaf474fb39cd6eca7e34f4
+timeCreated: 1517278580
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cube
+    100004: Cube.001
+    100006: Cube.002
+    100008: Cube.003
+    100010: Cube.004
+    100012: Cube.005
+    100014: Cube.006
+    100016: Cube.007
+    100018: Cube.008
+    100020: Cube.009
+    100022: Cylinder
+    100024: Cylinder.001
+    100026: Cylinder.002
+    100028: Cylinder.003
+    100030: Cylinder.004
+    100032: DrawBridge
+    100034: InnerCastle
+    100036: MidWall
+    100038: OuterWall
+    100040: OuterWall 1
+    100042: OuterWall.001
+    100044: place3dTexture1
+    100046: polySurface1
+    100048: polySurface10
+    100050: polySurface11
+    100052: polySurface13
+    100054: polySurface14
+    100056: polySurface15
+    100058: polySurface16
+    100060: polySurface17
+    100062: polySurface18
+    100064: polySurface19
+    100066: polySurface20
+    100068: polySurface21
+    100070: polySurface22
+    100072: polySurface3
+    100074: polySurface4
+    100076: polySurface5
+    100078: polySurface7
+    100080: polySurface8
+    100082: polySurface9
+    100084: Torus.002
+    100086: Tower.003
+    100088: Tower.008
+    100090: transform1
+    100092: transform2
+    100094: transform3
+    100096: transform4
+    400000: //RootNode
+    400002: Cube
+    400004: Cube.001
+    400006: Cube.002
+    400008: Cube.003
+    400010: Cube.004
+    400012: Cube.005
+    400014: Cube.006
+    400016: Cube.007
+    400018: Cube.008
+    400020: Cube.009
+    400022: Cylinder
+    400024: Cylinder.001
+    400026: Cylinder.002
+    400028: Cylinder.003
+    400030: Cylinder.004
+    400032: DrawBridge
+    400034: InnerCastle
+    400036: MidWall
+    400038: OuterWall
+    400040: OuterWall 1
+    400042: OuterWall.001
+    400044: place3dTexture1
+    400046: polySurface1
+    400048: polySurface10
+    400050: polySurface11
+    400052: polySurface13
+    400054: polySurface14
+    400056: polySurface15
+    400058: polySurface16
+    400060: polySurface17
+    400062: polySurface18
+    400064: polySurface19
+    400066: polySurface20
+    400068: polySurface21
+    400070: polySurface22
+    400072: polySurface3
+    400074: polySurface4
+    400076: polySurface5
+    400078: polySurface7
+    400080: polySurface8
+    400082: polySurface9
+    400084: Torus.002
+    400086: Tower.003
+    400088: Tower.008
+    400090: transform1
+    400092: transform2
+    400094: transform3
+    400096: transform4
+    2300000: Cube.001
+    2300002: Cube.002
+    2300004: Cube.003
+    2300006: Cube.004
+    2300008: Cube.005
+    2300010: Cube.006
+    2300012: Cube.007
+    2300014: Cube.008
+    2300016: Cube.009
+    2300018: Cylinder
+    2300020: Cylinder.001
+    2300022: Cylinder.002
+    2300024: Cylinder.003
+    2300026: OuterWall 1
+    2300028: OuterWall.001
+    2300030: polySurface1
+    2300032: polySurface10
+    2300034: polySurface11
+    2300036: polySurface13
+    2300038: polySurface14
+    2300040: polySurface15
+    2300042: polySurface16
+    2300044: polySurface17
+    2300046: polySurface18
+    2300048: polySurface19
+    2300050: polySurface20
+    2300052: polySurface21
+    2300054: polySurface22
+    2300056: polySurface3
+    2300058: polySurface4
+    2300060: polySurface5
+    2300062: polySurface7
+    2300064: polySurface8
+    2300066: polySurface9
+    2300068: Tower.003
+    3300000: Cube.001
+    3300002: Cube.002
+    3300004: Cube.003
+    3300006: Cube.004
+    3300008: Cube.005
+    3300010: Cube.006
+    3300012: Cube.007
+    3300014: Cube.008
+    3300016: Cube.009
+    3300018: Cylinder
+    3300020: Cylinder.001
+    3300022: Cylinder.002
+    3300024: Cylinder.003
+    3300026: OuterWall 1
+    3300028: OuterWall.001
+    3300030: polySurface1
+    3300032: polySurface10
+    3300034: polySurface11
+    3300036: polySurface13
+    3300038: polySurface14
+    3300040: polySurface15
+    3300042: polySurface16
+    3300044: polySurface17
+    3300046: polySurface18
+    3300048: polySurface19
+    3300050: polySurface20
+    3300052: polySurface21
+    3300054: polySurface22
+    3300056: polySurface3
+    3300058: polySurface4
+    3300060: polySurface5
+    3300062: polySurface7
+    3300064: polySurface8
+    3300066: polySurface9
+    3300068: Tower.003
+    4300000: Cylinder.003
+    4300002: Cube.009
+    4300004: polySurface1
+    4300006: polySurface3
+    4300008: OuterWall
+    4300010: Tower.003
+    4300012: polySurface19
+    4300014: polySurface20
+    4300016: polySurface21
+    4300018: polySurface22
+    4300020: OuterWall.001
+    4300022: polySurface14
+    4300024: polySurface15
+    4300026: polySurface16
+    4300028: polySurface17
+    4300030: polySurface18
+    4300032: Cube.001
+    4300034: Cylinder
+    4300036: Cube.003
+    4300038: Cube.004
+    4300040: Cube.002
+    4300042: Cylinder.001
+    4300044: Cube.005
+    4300046: Cube.006
+    4300048: Cylinder.002
+    4300050: polySurface4
+    4300052: polySurface5
+    4300054: polySurface7
+    4300056: polySurface8
+    4300058: polySurface9
+    4300060: polySurface10
+    4300062: polySurface11
+    4300064: polySurface13
+    4300066: Cube.007
+    4300068: Cube.008
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: a52c7a6949c787e489ab1a737557d35c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn10
+    second: {fileID: 2100000, guid: e0cca8e2f0256f14a8c10d90e9eeb5bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn11
+    second: {fileID: 2100000, guid: f934047713490e24a8c186bcad15eb17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn12
+    second: {fileID: 2100000, guid: 178d3c50c130f9c44970ee14d41c12c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn13
+    second: {fileID: 2100000, guid: e373e0c6ecf6280489474328fe9a7175, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn14
+    second: {fileID: 2100000, guid: 3e918ae236a54784da3fbef40fca0d63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn2
+    second: {fileID: 2100000, guid: 0a71ea2eae7949b478a2edc68ef500b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn3
+    second: {fileID: 2100000, guid: 7c9aeee93b814b1409d07a5f5f9dbe10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn4
+    second: {fileID: 2100000, guid: cd3a519aeef45294abc9c2774870b606, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn6
+    second: {fileID: 2100000, guid: 978af0408c66ff5459c844d6e08fd4da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn7
+    second: {fileID: 2100000, guid: b9cc9e6e6b96c944e9d751bfcc4b40cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 2fbfdbd0cbad8bc4e804efa656d1c487, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
