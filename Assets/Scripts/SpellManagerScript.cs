@@ -19,6 +19,7 @@ public class SpellManagerScript : MonoBehaviour {
 	public GameObject confettiPrefab;
 	public GameObject arcanePrefab;
 	private int cuedSpellNum = -1;
+	private bool aiming = false;
 	List<List<Coordinate>> spellCompendium = new List<List<Coordinate>>();
 	List<string> spellNameCompendium = new List<string>();
 
@@ -123,6 +124,7 @@ public class SpellManagerScript : MonoBehaviour {
 	}
 	public void FireSpell(){
 		if(cuedSpellNum!=-1){
+			aiming = false;
 			Invoke(spellNameCompendium[cuedSpellNum], 0f);
 			cuedSpellNum = -1;
 		}
@@ -279,5 +281,13 @@ public class SpellManagerScript : MonoBehaviour {
 		Debug.Log("confetti");
 		GameObject c = Instantiate(confettiPrefab) as GameObject;
 		c.transform.position = wandTip.position+new Vector3(0,1,0);
+	}
+	public void TryBeginAiming(){
+		if(cuedSpellNum!=-1){
+			aiming = true;
+		}
+	}
+	public bool isAiming(){
+		return aiming;
 	}
 }

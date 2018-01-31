@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1CF3920E-BC5D-3F07-28C8-6F91DEC4AF8B}</ProjectGuid>
+    <ProjectGuid>{552ED843-4ED8-EC25-9E64-4DA528640CE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -994,7 +994,7 @@
  <HintPath>C:/Program Files/Unity 2018.1.0b2/Editor/Data/Managed/Unity.Locator.dll</HintPath>
  </Reference>
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>C:/Users/TAVRN/Documents/GitHub/TAVRN-an-Arcane-Arcade-/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>C:/Users/TAVRN/Desktop/Arcane Arcade - Copy/Arcane Arcade - Copy/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
@@ -1065,17 +1065,20 @@
  <Reference Include="UnityEditor.WSA.Extensions">
  <HintPath>C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.WSA.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.WebGL.Extensions">
+ <HintPath>C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.OSXStandalone.Extensions">
- <HintPath>C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ <Reference Include="UnityEditor.Facebook.Extensions">
+ <HintPath>C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
  <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
  </Reference>
  <Reference Include="SourceUnityLib">
- <HintPath>C:/Users/TAVRN/Documents/GitHub/TAVRN-an-Arcane-Arcade-/Assets/Substance/Source/Editor/SourceUnityLib.dll</HintPath>
+ <HintPath>C:/Users/TAVRN/Desktop/Arcane Arcade - Copy/Arcane Arcade - Copy/Assets/Substance/Source/Editor/SourceUnityLib.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@0.0.18/UnityEngine.Advertisements.dll</HintPath>
