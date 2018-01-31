@@ -1040,6 +1040,7 @@ ModelImporter:
     4300408: GroundFloorEnd
     4300410: FirstFloor
     2186277476908879412: ImportLogs
+    2186277476908879414: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
