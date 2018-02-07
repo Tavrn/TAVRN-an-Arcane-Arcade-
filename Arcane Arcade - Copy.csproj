@@ -1019,8 +1019,11 @@
     <Compile Include="Assets\Scripts\Duel_HeadScript.cs" />
     <Compile Include="Assets\Scripts\Duel_PlayerScript.cs" />
     <Compile Include="Assets\Scripts\HeadReference.cs" />
+    <Compile Include="Assets\Scripts\HPIndicatorScript.cs" />
     <Compile Include="Assets\Scripts\MinionScript.cs" />
+    <Compile Include="Assets\Scripts\Spell_Fireball.cs" />
     <Compile Include="Assets\Scripts\SpellBookParentScript.cs" />
+    <Compile Include="Assets\Scripts\SpellGeneric.cs" />
     <Compile Include="Assets\Scripts\SpellManagerScript.cs" />
     <Compile Include="Assets\Scripts\TargetColliderScript.cs" />
     <Compile Include="Assets\Scripts\Town_ControllerEvents_Listener.cs" />

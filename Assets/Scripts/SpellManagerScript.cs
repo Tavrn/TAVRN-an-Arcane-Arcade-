@@ -7,8 +7,9 @@ public class SpellManagerScript : MonoBehaviour {
 	public Transform wandHandle;
 	public WandScript wandScript;
 	[Space(10)]
-	public Transform minionSpawn1;
-	public Transform minionSpawn2;
+	public int weather = 0; //0 = clear, 1 = fire, 2 = rain, 3 = sandstorm, 4 = wind
+	[Space(10)]
+	public Transform myMinionSpawn;
 	public GameObject minionPrefab;
 	[Space(10)]
 	public Skybox playerSkybox;
@@ -18,10 +19,14 @@ public class SpellManagerScript : MonoBehaviour {
 	public GameObject fireballPrefab;
 	public GameObject confettiPrefab;
 	public GameObject arcanePrefab;
+
 	private int cuedSpellNum = -1;
 	private bool aiming = false;
 	List<List<Coordinate>> spellCompendium = new List<List<Coordinate>>();
 	List<string> spellNameCompendium = new List<string>();
+
+	List<float> effectEndTimes = new List<float>();
+	List<string> effectEndNames = new List<string>();
 
 	void Start () {
 		SetUpSpells();
@@ -129,7 +134,14 @@ public class SpellManagerScript : MonoBehaviour {
 			cuedSpellNum = -1;
 		}
 	}
-
+	private int findIndex(string name){
+		for(int i=0; i<effectEndNames.Count; i++){
+			if(name==effectEndNames[i]){
+				return i;
+			}
+		}
+		return -1;
+	}
 
 	void MagicMissile(){
 		Debug.Log("called magic missile");
@@ -215,6 +227,18 @@ public class SpellManagerScript : MonoBehaviour {
 	}
 	void Heal(){
 		Debug.Log("Heal called");
+		int dur = 5;
+		effectEndTimes.Add(Time.time+dur);
+		effectEndNames.Add("HealHelper");
+	}
+	void HealHelper(){
+		int i = findIndex("HealHelper");
+		float end = effectEndTimes[i];
+		if(end>Time.time){
+			// player
+		}else{
+
+		}
 	}
 	void Conversion(){
 		Debug.Log("Conversion called");
@@ -269,13 +293,15 @@ public class SpellManagerScript : MonoBehaviour {
 	void I_SpawnMinion(){
 		Debug.Log("spawn minion called");
 		GameObject minion = Instantiate(minionPrefab) as GameObject;
-		minion.transform.position = minionSpawn1.position;
+		minion.transform.position = myMinionSpawn.position;
 	}
 	void I_WeatherClear(){
 		playerSkybox.material = clearSkiesSkybox;
+		weather = 0;
 	}
 	void I_WeatherFire(){
 		playerSkybox.material = fireSkybox;
+		weather = 1;
 	}
 	void I_Confetti(){
 		Debug.Log("confetti");

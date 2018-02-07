@@ -18,7 +18,19 @@ public class Duel_PlayerScript : MonoBehaviour {
 			myTargetCollider.layer = 8;
 		//}
 	}
-
+	public void tryHit(float zhit, int damage){
+		float headZ = head.position.z;
+		if(headZ>pZ && zhit > 2/3f){
+			hit(damage);
+		}else if(headZ<zZ && headZ>-zZ && zhit<2/3f && zhit>-2/3f){
+			hit(damage);
+		}else if(headZ<-pZ && zhit<-2/3f){
+			hit(damage);
+		}
+	}
+	public void hit(int damage){
+		HP -= damage;
+	}
 	// Update is called once per frame
 	void Update () {
 		float headZ = head.position.z;
