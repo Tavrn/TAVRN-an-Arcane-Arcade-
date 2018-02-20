@@ -78,7 +78,6 @@
      <Compile Include="Assets\Imports\VRTK\Editor\VRTK_SDKSetupEditor.cs" />
      <Compile Include="Assets\Imports\VRTK\Editor\VRTK_SupportInfoWindow.cs" />
      <Compile Include="Assets\Imports\VRTK\Editor\VRTK_UpdatePrompt.cs" />
-     <Compile Include="Assets\Kino\Fog\Editor\FogEditor.cs" />
      <Compile Include="Assets\OculusPlatform\Editor\GUIHelper.cs" />
      <Compile Include="Assets\OculusPlatform\Editor\OculusPlatformSettingsEditor.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\AntialiasingEditor.cs" />
@@ -95,6 +94,7 @@
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\SunShaftsEditor.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\TonemappingEditor.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
+     <Compile Include="Assets\Town\Shaders\Editor\TerrainSurfaceGUI.cs" />
      <None Include="Assets\Imports\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/Users/TAVRN/Desktop/Arcane Arcade - Copy/Arcane Arcade - Copy/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>

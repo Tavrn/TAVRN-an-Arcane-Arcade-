@@ -8,7 +8,8 @@ public class CollidersScript : MonoBehaviour {
 	public GameObject colliderPrefab;
 	public GameObject colliderReferenceObject;
 	public WandScript wandScript;
-
+	[HideInInspector]
+	public GameObject originCollider;
 	private int height = 5;
 	private int width = 5;
 	private int depth = 5;
@@ -26,16 +27,19 @@ public class CollidersScript : MonoBehaviour {
 					s.z = d;
 					c.name = ""+w+""+h+""+d;
 					if(h==0 && d==0 && w==0){
-							wandScript.originCollider = c;
+							originCollider = c;
 					}
+					// if(h==0 && d==0 && w==0){
+					// 		wandScript.originCollider = c;
+					// }
 				}
 			}
 		}
 	}
 	public void JumpToWand(){
 		transform.position = WandTip.transform.position;
-		colliderReferenceObject.transform.position = new Vector3(head.transform.position.x, transform.position.y, head.transform.position.z);
-		transform.LookAt(colliderReferenceObject.transform);
+		colliderReferenceObject.transform.position = new Vector3(-head.transform.position.x, transform.position.y, head.transform.position.z);
+		transform.LookAt(new Vector3(head.transform.position.x, transform.position.y, head.transform.position.z), Vector3.up);
 		transform.Rotate(0,180,0);
 	}
 	// Update is called once per frame

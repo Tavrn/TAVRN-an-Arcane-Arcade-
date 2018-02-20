@@ -28,9 +28,11 @@ public class WandScript : MonoBehaviour {
 	public GameObject originCollider;
 	public GameObject myTargetSlot;
 	private bool isChanneling = false;
-	private float pz = 2/3f;
+	private float pz = 1/3f;
+
 	void Start () {
 		pattern = new List<Coordinate>();
+		originCollider = GameObject.Find("Colliders").GetComponent<CollidersScript>().originCollider;
 	}
 	public void setChanneling(bool b){
 		isChanneling = b;
@@ -65,27 +67,27 @@ public class WandScript : MonoBehaviour {
 	}
 	void Update () {
 		if(spellManager.isAiming()){
-			RaycastHit hit;
-			Debug.DrawRay(transform.position, transform.forward*20, Color.green);
-   		if (Physics.Raycast(transform.position, transform.forward, out hit, 50, 1 << LayerMask.NameToLayer("TargetRaycast"))) {
-				//TODO: CHECK IF RIGHT PLAYER'S HITBOX!! (LOCALPLAYER)
-				// if(hit.collider.name == "TargetCollider"){
+			bool didhit = false;
+			RaycastHit[] hits;
+			hits = Physics.RaycastAll(transform.position, transform.forward, 50, 1 << LayerMask.NameToLayer("TargetRaycast"));
+			for(int i=0; i<hits.Length; i++){
+				RaycastHit hit = hits[i];
+				if(hit.transform.root!=transform.root){
 					if(hit.point.z>pz){
-						myTargetSlot.SetActive(true);
+						didhit = true;
 						myTargetSlot.transform.position = new Vector3(myTargetSlot.transform.position.x, myTargetSlot.transform.position.y, 2/3f);
 					}else if(hit.point.z<pz && hit.point.z>-pz){
-						myTargetSlot.SetActive(true);
+						didhit = true;
 						myTargetSlot.transform.position = new Vector3(myTargetSlot.transform.position.x, myTargetSlot.transform.position.y, 0f);
 					}else if(hit.point.z<-pz){
-						myTargetSlot.SetActive(true);
+						didhit = true;
 						myTargetSlot.transform.position = new Vector3(myTargetSlot.transform.position.x, myTargetSlot.transform.position.y, -2/3f);
 					}
-				// }
-     //Debug.Log("Raycast hitted to: " + objectHit.collider);
-     // targetEnemy = objectHit.collider.gameObject;
-   }else{
-		 myTargetSlot.SetActive(false);
-	 }
+				}
+			}
+			myTargetSlot.SetActive(didhit);
+		}else{
+			myTargetSlot.SetActive(false); //not aiming
 		}
 	}
 }

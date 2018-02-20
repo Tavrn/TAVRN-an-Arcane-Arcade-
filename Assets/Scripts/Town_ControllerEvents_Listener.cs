@@ -218,6 +218,7 @@ namespace VRTK.Examples
         private void DoButtonTwoPressed(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON TWO", "pressed down", e);
+            broomScript.ButtonTwoPressed();
         }
 
         private void DoButtonTwoReleased(object sender, ControllerInteractionEventArgs e)

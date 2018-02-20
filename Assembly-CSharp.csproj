@@ -548,7 +548,6 @@
      <Compile Include="Assets\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseDefines.cs" />
      <Compile Include="Assets\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseHeadset.cs" />
      <Compile Include="Assets\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseSystem.cs" />
-     <Compile Include="Assets\Kino\Fog\Fog.cs" />
      <Compile Include="Assets\OculusPlatform\Scripts\AchievementType.cs" />
      <Compile Include="Assets\OculusPlatform\Scripts\AndroidPlatform.cs" />
      <Compile Include="Assets\OculusPlatform\Scripts\BufferedAudioStream.cs" />
@@ -698,8 +697,9 @@
      <Compile Include="Assets\Scripts\Duel_HeadScript.cs" />
      <Compile Include="Assets\Scripts\Duel_PlayerScript.cs" />
      <Compile Include="Assets\Scripts\HeadReference.cs" />
+     <Compile Include="Assets\Scripts\HPIndicatorScript.cs" />
      <Compile Include="Assets\Scripts\MinionScript.cs" />
-     <Compile Include="Assets\Scripts\Spell_Fireball.cs" />
+     <Compile Include="Assets\Scripts\Spell_BasicProjectile.cs" />
      <Compile Include="Assets\Scripts\SpellBookParentScript.cs" />
      <Compile Include="Assets\Scripts\SpellGeneric.cs" />
      <Compile Include="Assets\Scripts\SpellManagerScript.cs" />
@@ -707,6 +707,14 @@
      <Compile Include="Assets\Scripts\Town_ControllerEvents_Listener.cs" />
      <Compile Include="Assets\Scripts\WandParentScript.cs" />
      <Compile Include="Assets\Scripts\WandScript.cs" />
+     <Compile Include="Assets\Town\Scripts\ControlSwitch.cs" />
+     <Compile Include="Assets\Town\Scripts\FlyingRigidbodyFirstPersonController.cs" />
+     <Compile Include="Assets\Town\Scripts\ForceToAcessibleVolume.cs" />
+     <Compile Include="Assets\Town\Scripts\FreeCamera.cs" />
+     <Compile Include="Assets\Town\Scripts\MouseLock.cs" />
+     <Compile Include="Assets\Town\Scripts\QualitySetup.cs" />
+     <Compile Include="Assets\Town\Scripts\SkyboxReplacer.cs" />
+     <Compile Include="Assets\Town\Scripts\twinkle.cs" />
      <None Include="Assets\Imports\Laterns and candles\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
@@ -728,8 +736,10 @@
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
      <None Include="Assets\LICENSE.txt" />
+     <None Include="Assets\Town\Shaders\WavingGrass.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Town\Shaders\DistanceFade.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
@@ -745,7 +755,6 @@
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
      <None Include="Assets\Imports\VRTK\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
      <None Include="Assets\Imports\VRTK\Scripts\Internal\Shaders\AdaptiveQualityDebugVisualization.shader" />
-     <None Include="Assets\Kino\Fog\Shader\Fog.shader" />
      <None Include="Assets\Imports\OVR\Resources\OVRMRUnlit.shader" />
      <None Include="Assets\Rocks and Boulders 2\readme.txt" />
      <None Include="Assets\Imports\OVR\Shaders\Unlit Crosshair.shader" />
@@ -809,6 +818,7 @@
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Imports\VRTK\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />
      <None Include="Assets\Imports\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Town\Shaders\TerrainSurface.shader" />
      <None Include="Assets\Imports\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\Imports\SteamVR\Resources\SteamVR_ColorOut.shader" />
      <None Include="Assets\Imports\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />

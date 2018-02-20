@@ -1,30 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Duel_PlayerScript : MonoBehaviour {
+using UnityEngine.Networking;
+public class Duel_PlayerScript : NetworkBehaviour {
+	public bool isLive;
 	public Transform head;
 	public GameObject posSlot;
 	public GameObject myTargetCollider;
+	public GameObject wandtip;
 	public int HP = 100;
 	private float pZ = 0.6f;
 	private float zZ = 0.3f;
-	// private static Vector3 leftPos = new Vector3(posSlot.transform.position.x, posSlot.transform.position.y, 2/3f);
-	// private static Vector3 midPos = new Vector3(posSlot.transform.position.x, posSlot.transform.position.y, 0);
-	// private static Vector3 rightPos = new Vector3(posSlot.transform.position.x, posSlot.transform.position.y, -2/3f);
 	void Start () {
-		//TODO HERE
-		//if(isLocalPlayer){
-			myTargetCollider.layer = 8;
-		//}
+		if(isLive){
+			if(gameObject.name.Contains("Multi")){
+				if(isLocalPlayer){
+					CollidersScript c = GameObject.Find("Colliders").GetComponent<CollidersScript>();
+					c.head = head.gameObject;
+					c.WandTip = wandtip;
+					c.wandScript = c.WandTip.GetComponent<WandScript>();
+				}
+			}else{
+				CollidersScript c = GameObject.Find("Colliders").GetComponent<CollidersScript>();
+				c.head = head.gameObject;
+				c.WandTip = wandtip;
+				c.wandScript = c.WandTip.GetComponent<WandScript>();
+			}
+		}
 	}
 	public void tryHit(float zhit, int damage){
 		float headZ = head.position.z;
-		if(headZ>pZ && zhit > 2/3f){
+		if(headZ>pZ && zhit > 1/3f){
 			hit(damage);
-		}else if(headZ<zZ && headZ>-zZ && zhit<2/3f && zhit>-2/3f){
+		}else if(headZ<zZ && headZ>-zZ && zhit<1/3f && zhit>-1/3f){
 			hit(damage);
-		}else if(headZ<-pZ && zhit<-2/3f){
+		}else if(headZ<-pZ && zhit<-1/3f){
 			hit(damage);
 		}
 	}

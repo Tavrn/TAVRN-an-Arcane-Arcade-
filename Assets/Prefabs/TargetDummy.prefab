@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 4577532055319840}
   - component: {fileID: 65518249575659898}
   - component: {fileID: 114185011263620844}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TargetCollider
   m_TagString: Duel_TargetCollider
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1027623088702704}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8, y: 4, z: 0}
+  m_LocalPosition: {x: -8, y: 4.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4026824789009478}
@@ -512,7 +512,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1478845603630830}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 1, z: 1}
+  m_LocalPosition: {x: -0, y: 1, z: -1}
   m_LocalScale: {x: 0.030000007, y: 1.8, z: 2}
   m_Children: []
   m_Father: {fileID: 4924680633475018}
@@ -592,7 +592,7 @@ Transform:
   m_GameObject: {fileID: 1066096781017320}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.09000015, z: 0}
-  m_LocalScale: {x: 2, y: 0.04, z: 0.6666668}
+  m_LocalScale: {x: 1.98, y: 0.04, z: 0.6666668}
   m_Children: []
   m_Father: {fileID: 4924680633475018}
   m_RootOrder: 1
@@ -1333,6 +1333,7 @@ MonoBehaviour:
   wandTip: {fileID: 0}
   wandHandle: {fileID: 0}
   wandScript: {fileID: 0}
+  spellsParent: {fileID: 0}
   weather: 0
   myMinionSpawn: {fileID: 4920268390655240}
   minionPrefab: {fileID: 1788771677084634, guid: 6836b2c0b5a320344b6e58e84b1c7a2a,
@@ -1368,9 +1369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8803edcbe3e7f940af010e091c51f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLive: 0
   head: {fileID: 4798265896865726}
   posSlot: {fileID: 1066096781017320}
   myTargetCollider: {fileID: 1478845603630830}
+  wandtip: {fileID: 0}
   HP: 100
 --- !u!114 &114764851587679652
 MonoBehaviour:

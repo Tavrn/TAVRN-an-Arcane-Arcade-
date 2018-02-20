@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using CNamespace;
-public class SpellManagerScript : MonoBehaviour {
+public class SpellManagerScript : NetworkBehaviour {
 	public Transform wandTip;
 	public Transform wandHandle;
 	public WandScript wandScript;
+	public Transform spellsParent;
 	[Space(10)]
 	public int weather = 0; //0 = clear, 1 = fire, 2 = rain, 3 = sandstorm, 4 = wind
 	[Space(10)]
@@ -26,10 +28,32 @@ public class SpellManagerScript : MonoBehaviour {
 	List<string> spellNameCompendium = new List<string>();
 
 	List<float> effectEndTimes = new List<float>();
-	List<string> effectEndNames = new List<string>();
+	List<string> effectNames = new List<string>();
+	List<float> effectPrevTimes = new List<float>();
+	List<float> effectTickL = new List<float>();
+
+	private Duel_PlayerScript myPlayer;
 
 	void Start () {
 		SetUpSpells();
+		myPlayer = GetComponent<Duel_PlayerScript>();
+	}
+	void FixedUpdate(){
+		if(effectEndTimes.Count>0){
+			for(int i=0; i<effectEndTimes.Count; i++){
+				if(effectPrevTimes[i]+effectTickL[i]<Time.time){
+					effectPrevTimes[i] = Time.time;
+					Invoke(effectNames[i], 0f);
+				}
+				float end = effectEndTimes[i];
+				if(end<Time.time){
+					effectNames.RemoveAt(i);
+					effectEndTimes.RemoveAt(i);
+					effectTickL.RemoveAt(i);
+					effectPrevTimes.RemoveAt(i);
+				}
+			}
+		}
 	}
 	void SetUpSpells(){
 		CreateSpell("MagicMissile", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(-1,1,1) });
@@ -56,7 +80,7 @@ public class SpellManagerScript : MonoBehaviour {
 		CreateSpell("Tailwind", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(1, 0, 0), new Coordinate(1, 1, 0), new Coordinate(0,1,0), new Coordinate(0, 1, 1) });
 		CreateSpell("Fissure", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(1, 1, 0), new Coordinate(1, 1, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("FlameCarpet", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0,1,0), new Coordinate(-1, 1, 0), new Coordinate(-1, 0, 0), new Coordinate(-1, 0, 1) });
-		CreateSpell("Heal", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1,2,1) });
+		CreateSpell("I_Heal", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1,2,1) });
 		CreateSpell("Conversion", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("Blind", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0) });
 		CreateSpell("Invisible", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 1, 1) });
@@ -134,22 +158,15 @@ public class SpellManagerScript : MonoBehaviour {
 			cuedSpellNum = -1;
 		}
 	}
-	private int findIndex(string name){
-		for(int i=0; i<effectEndNames.Count; i++){
-			if(name==effectEndNames[i]){
-				return i;
-			}
-		}
-		return -1;
-	}
 
 	void MagicMissile(){
 		Debug.Log("called magic missile");
+		float speed = 1f;
 		Vector3 dir = wandTip.position-wandHandle.position;
 		GameObject fb = Instantiate(arcanePrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
 		fb.transform.position = wandTip.position+dir;
-		fb.transform.LookAt(new Vector3(0,transform.position.y, 0));
-		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*5);
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
 	}
 
 	void ArcaneSphere(){
@@ -193,10 +210,13 @@ public class SpellManagerScript : MonoBehaviour {
 	}
 	void Fireball(){
 		Debug.Log("Fireball called");
+		float speed = 1;
 		Vector3 dir = wandTip.position-wandHandle.position;
 		GameObject fb = Instantiate(fireballPrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
 		fb.transform.position = wandTip.position+dir;
-		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*5);
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		NetworkServer.Spawn(fb);
 	}
 	void StalkingFlare(){
 		Debug.Log("StalkingFlare called");
@@ -225,20 +245,24 @@ public class SpellManagerScript : MonoBehaviour {
 	void FlameCarpet(){
 		Debug.Log("FlameCarpet called");
 	}
-	void Heal(){
+	void I_Heal(){
+		//20 hp healed over 5 seconds
 		Debug.Log("Heal called");
 		int dur = 5;
-		effectEndTimes.Add(Time.time+dur);
-		effectEndNames.Add("HealHelper");
+		float tick = 0.25f;
+		if(!effectNames.Contains("HealHelper")){
+			effectEndTimes.Add(Time.time+dur);
+			effectNames.Add("HealHelper");
+			effectTickL.Add(tick);
+			effectPrevTimes.Add(-tick);
+		}else{
+			effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
+		}
 	}
 	void HealHelper(){
-		int i = findIndex("HealHelper");
-		float end = effectEndTimes[i];
-		if(end>Time.time){
-			// player
-		}else{
-
-		}
+		int tickHeal = 1;
+		myPlayer.HP = Mathf.Clamp(myPlayer.HP+tickHeal, 0, 100);
+		Debug.Log("Heal helper called");
 	}
 	void Conversion(){
 		Debug.Log("Conversion called");
