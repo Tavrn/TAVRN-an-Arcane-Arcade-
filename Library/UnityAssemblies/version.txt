@@ -83,8 +83,9 @@ C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/AndroidPlayer/Unit
 C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.AppleTV.Extensions.dll
 C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.WSA.Extensions.dll
+C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
-C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+C:/Program Files/Unity 2018.1.0b2/Editor/Data/PlaybackEngines/Facebook/UnityEditor.Facebook.Extensions.dll
 C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
 C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@0.0.18/UnityEngine.Advertisements.dll
 C:/ProgramData/Unity/cache/packages/packages.unity.com/com.unity.ads@0.0.18/Editor/UnityEditor.Advertisements.dll
