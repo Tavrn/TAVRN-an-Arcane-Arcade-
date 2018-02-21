@@ -77,7 +77,11 @@ GameObject:
   - component: {fileID: 82819910038340154}
   - component: {fileID: 114179013636039916}
   - component: {fileID: 114958053219043928}
-  - component: {fileID: 114894150439433048}
+  - component: {fileID: 114632604244200656}
+  - component: {fileID: 114175005791932352}
+  - component: {fileID: 114048895770619418}
+  - component: {fileID: 114719957131770836}
+  - component: {fileID: 114166988905471076}
   m_Layer: 0
   m_Name: Multiplayer_Player
   m_TagString: Untagged
@@ -144,8 +148,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4881198956570526}
   - component: {fileID: 114901105452451998}
-  - component: {fileID: 114947755276982980}
-  - component: {fileID: 114433856579512774}
   m_Layer: 0
   m_Name: SpellBookParent
   m_TagString: Untagged
@@ -169,8 +171,6 @@ GameObject:
   - component: {fileID: 45152210360732318}
   - component: {fileID: 65702586298703666}
   - component: {fileID: 114290253602375128}
-  - component: {fileID: 114160463652165500}
-  - component: {fileID: 114588385837639236}
   m_Layer: 0
   m_Name: Head
   m_TagString: MainCamera
@@ -218,8 +218,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4832403681000564}
   - component: {fileID: 114071175099917244}
-  - component: {fileID: 114203967222808392}
-  - component: {fileID: 114263591609082130}
   m_Layer: 0
   m_Name: HPIndicator
   m_TagString: Untagged
@@ -462,8 +460,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4450890264844458}
   - component: {fileID: 114550315058166826}
-  - component: {fileID: 114351221116603618}
-  - component: {fileID: 114353372395074146}
   m_Layer: 0
   m_Name: WandParent
   m_TagString: Untagged
@@ -722,7 +718,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164635755521438}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8, y: 4.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4450890264844458}
@@ -1442,6 +1438,25 @@ MonoBehaviour:
   autoLoadSetup: 1
   setups:
   - {fileID: 114945204761071114}
+--- !u!114 &114048895770619418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164635755521438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4866645736061384}
+  m_ChildIndex: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114071175099917244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1490,38 +1505,44 @@ MonoBehaviour:
   LaserEndWidth: 0.001
   OnCanvas: 0
   CanvasUsed: 0
---- !u!114 &114160463652165500
+--- !u!114 &114166988905471076
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1370257431223384}
+  m_GameObject: {fileID: 1164635755521438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 3
-    i1: 165
-    i2: 252
-    i3: 160
-    i4: 170
-    i5: 22
-    i6: 50
-    i7: 132
-    i8: 217
-    i9: 73
-    i10: 168
-    i11: 222
-    i12: 0
-    i13: 100
-    i14: 125
-    i15: 2
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_Target: {fileID: 4450890264844458}
+  m_ChildIndex: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
+--- !u!114 &114175005791932352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164635755521438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4832403681000564}
+  m_ChildIndex: 0
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114179013636039916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1563,38 +1584,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   origin: {fileID: 0}
---- !u!114 &114203967222808392
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1539023881129160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 3
-    i1: 165
-    i2: 252
-    i3: 160
-    i4: 170
-    i5: 22
-    i6: 50
-    i7: 132
-    i8: 217
-    i9: 73
-    i10: 168
-    i11: 222
-    i12: 0
-    i13: 100
-    i14: 125
-    i15: 2
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114214234770080110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1630,25 +1619,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   origin: {fileID: 0}
---- !u!114 &114263591609082130
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1539023881129160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_ChildIndex: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
 --- !u!114 &114269245587060292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1743,57 +1713,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WandTip: {fileID: 1807915404516612}
   spellManager: {fileID: 114179013636039916}
---- !u!114 &114351221116603618
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1949399845973546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 3
-    i1: 165
-    i2: 252
-    i3: 160
-    i4: 170
-    i5: 22
-    i6: 50
-    i7: 132
-    i8: 217
-    i9: 73
-    i10: 168
-    i11: 222
-    i12: 0
-    i13: 100
-    i14: 125
-    i15: 2
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
---- !u!114 &114353372395074146
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1949399845973546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_ChildIndex: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
 --- !u!114 &114364674311009016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1817,25 +1736,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sbps: {fileID: 114901105452451998}
---- !u!114 &114433856579512774
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1326229427181462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_ChildIndex: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
 --- !u!114 &114458227196552378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2001,25 +1901,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 1573608513400534}
---- !u!114 &114588385837639236
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1370257431223384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 0}
-  m_ChildIndex: 0
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
 --- !u!114 &114608815207940420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2042,6 +1923,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26c559d33e04cf4ba89d5e8d32a0353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114632604244200656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164635755521438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114699536022388584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2090,6 +1992,25 @@ MonoBehaviour:
   uiClickPressed: 0
   menuPressed: 0
   controllerVisible: 1
+--- !u!114 &114719957131770836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1164635755521438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4881198956570526}
+  m_ChildIndex: 2
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114758982475892672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2112,27 +2033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26c559d33e04cf4ba89d5e8d32a0353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114894150439433048
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1164635755521438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114901105452451998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2196,38 +2096,6 @@ MonoBehaviour:
     fallbackTypeName: VRTK.SDK_FallbackController
     typeName: VRTK.SDK_OculusController
     descriptionIndex: 0
---- !u!114 &114947755276982980
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1326229427181462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 3
-    i1: 165
-    i2: 252
-    i3: 160
-    i4: 170
-    i5: 22
-    i6: 50
-    i7: 132
-    i8: 217
-    i9: 73
-    i10: 168
-    i11: 222
-    i12: 0
-    i13: 100
-    i14: 125
-    i15: 2
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114958053219043928
 MonoBehaviour:
   m_ObjectHideFlags: 1

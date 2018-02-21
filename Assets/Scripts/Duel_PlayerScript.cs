@@ -12,6 +12,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	private float pZ = 0.6f;
 	private float zZ = 0.3f;
 	void Start () {
+		NetworkServer.Spawn(gameObject);
 		if(isLive){
 			if(gameObject.name.Contains("Multi")){
 				if(isLocalPlayer){
