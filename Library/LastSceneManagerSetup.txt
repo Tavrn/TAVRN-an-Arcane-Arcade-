@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Duel Multi.unity
+- path: Assets/_Scenes/Town.unity
   isLoaded: 1
   isActive: 1

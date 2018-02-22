@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using VRTK;
 public class Duel_PlayerScript : NetworkBehaviour {
 	public bool isLive;
 	public Transform head;
@@ -15,6 +16,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		if(isLive){
 			if(gameObject.name.Contains("Multi")){
 				if(isLocalPlayer){
+					GetComponent<VRTK_SDKManager>().enabled = true;
 					CollidersScript c = GameObject.Find("Colliders").GetComponent<CollidersScript>();
 					c.head = head.gameObject;
 					c.WandTip = wandtip;
