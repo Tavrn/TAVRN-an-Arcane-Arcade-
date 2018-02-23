@@ -16,13 +16,21 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		if(isLive){
 			if(gameObject.name.Contains("Multi")){
 				if(isLocalPlayer){
-					GetComponent<VRTK_SDKManager>().enabled = true;
+					// GetComponent<VRTK_SDKManager>().enabled = true;
+					// GetComponent<VRTK_SDKManager>().TryLoadSDKSetupFromList();
+					VRTK_SDKManager m = gameObject.AddComponent(typeof(VRTK_SDKManager)) as VRTK_SDKManager;
+					m.scriptAliasLeftController = transform.Find("VRTK_Scripts").Find("LeftHand").gameObject;
+					m.scriptAliasRightController = transform.Find("VRTK_Scripts").Find("RightHand").gameObject;
+					VRTK_SDKSetup[] list = {transform.Find("NewtonSDK").GetComponent<VRTK_SDKSetup>()};
+					m.TryLoadSDKSetup(0, true, list);
 					CollidersScript c = GameObject.Find("Colliders").GetComponent<CollidersScript>();
 					c.head = head.gameObject;
 					c.WandTip = wandtip;
 					c.wandScript = c.WandTip.GetComponent<WandScript>();
 				}
-			}else{
+			}
+			else
+			{
 				CollidersScript c = GameObject.Find("Colliders").GetComponent<CollidersScript>();
 				c.head = head.gameObject;
 				c.WandTip = wandtip;
