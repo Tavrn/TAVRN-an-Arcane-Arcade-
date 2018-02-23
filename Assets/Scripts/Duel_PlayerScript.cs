@@ -16,8 +16,6 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		if(isLive){
 			if(gameObject.name.Contains("Multi")){
 				if(isLocalPlayer){
-					// GetComponent<VRTK_SDKManager>().enabled = true;
-					// GetComponent<VRTK_SDKManager>().TryLoadSDKSetupFromList();
 					VRTK_SDKManager m = gameObject.AddComponent(typeof(VRTK_SDKManager)) as VRTK_SDKManager;
 					m.scriptAliasLeftController = transform.Find("VRTK_Scripts").Find("LeftHand").gameObject;
 					m.scriptAliasRightController = transform.Find("VRTK_Scripts").Find("RightHand").gameObject;
