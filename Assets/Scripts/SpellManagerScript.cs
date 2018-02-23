@@ -209,6 +209,21 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("PocketSand called");
 	}
 	void Fireball(){
+		if(Network.isClient){
+			CmdFireball();
+		}else{
+			Debug.Log("Fireball called");
+			float speed = 1;
+			Vector3 dir = wandTip.position-wandHandle.position;
+			GameObject fb = Instantiate(fireballPrefab) as GameObject;
+			fb.transform.parent = spellsParent.transform;
+			fb.transform.position = wandTip.position+dir;
+			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+			NetworkServer.Spawn(fb);
+		}
+	}
+	[Command]
+	void CmdFireball(){
 		Debug.Log("Fireball called");
 		float speed = 1;
 		Vector3 dir = wandTip.position-wandHandle.position;

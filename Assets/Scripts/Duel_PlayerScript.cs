@@ -21,6 +21,8 @@ public class Duel_PlayerScript : NetworkBehaviour {
 					m.scriptAliasRightController = transform.Find("VRTK_Scripts").Find("RightHand").gameObject;
 					VRTK_SDKSetup[] list = {transform.Find("NewtonSDK").GetComponent<VRTK_SDKSetup>()};
 					m.TryLoadSDKSetup(0, true, list);
+					transform.Find("VRTK_Scripts").Find("LeftHand").GetComponent<VRTK_ControllerEvents>().enabled = true;
+					transform.Find("VRTK_Scripts").Find("RightHand").GetComponent<VRTK_ControllerEvents>().enabled = true;
 					CollidersScript c = GameObject.Find("Colliders").GetComponent<CollidersScript>();
 					c.head = head.gameObject;
 					c.WandTip = wandtip;
