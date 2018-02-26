@@ -43,7 +43,11 @@ public class SpellManagerScript : NetworkBehaviour {
 			for(int i=0; i<effectEndTimes.Count; i++){
 				if(effectPrevTimes[i]+effectTickL[i]<Time.time){
 					effectPrevTimes[i] = Time.time;
-					Invoke(effectNames[i], 0f);
+					if(!NetworkServer.active){
+						Invoke("Cmd"+effectNames[i], 0f);
+					}else{
+						Invoke(effectNames[i], 0f);
+					}
 				}
 				float end = effectEndTimes[i];
 				if(end<Time.time){
@@ -124,7 +128,12 @@ public class SpellManagerScript : NetworkBehaviour {
 				GetComponent<AudioSource>().Play();
 				string temp = spellNameCompendium[spellNum];
 				if(temp[0] == 'I' && temp[1] == '_'){ //check if spell is instantly cast or not
-					Invoke(spellNameCompendium[spellNum], 0f);
+					if(!NetworkServer.active){
+						Invoke("Cmd"+spellNameCompendium[spellNum], 0f);
+					}else{
+						Invoke(spellNameCompendium[spellNum], 0f);
+					}
+
 					cuedSpellNum = -1;
 				}else{
 					cuedSpellNum = spellNum;
@@ -154,7 +163,13 @@ public class SpellManagerScript : NetworkBehaviour {
 	public void FireSpell(){
 		if(cuedSpellNum!=-1){
 			aiming = false;
-			Invoke(spellNameCompendium[cuedSpellNum], 0f);
+			if(!NetworkServer.active){
+				Debug.Log("Cmd");
+				Invoke("Cmd"+spellNameCompendium[cuedSpellNum], 0f);
+			}else{
+				Debug.Log("not cmd");
+				Invoke(spellNameCompendium[cuedSpellNum], 0f);
+			}
 			cuedSpellNum = -1;
 		}
 	}
@@ -209,18 +224,14 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("PocketSand called");
 	}
 	void Fireball(){
-		if(Network.isClient){
-			CmdFireball();
-		}else{
-			Debug.Log("Fireball called");
-			float speed = 1;
-			Vector3 dir = wandTip.position-wandHandle.position;
-			GameObject fb = Instantiate(fireballPrefab) as GameObject;
-			fb.transform.parent = spellsParent.transform;
-			fb.transform.position = wandTip.position+dir;
-			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
-			NetworkServer.Spawn(fb);
-		}
+		Debug.Log("Fireball called");
+		float speed = 1;
+		Vector3 dir = wandTip.position-wandHandle.position;
+		GameObject fb = Instantiate(fireballPrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
+		fb.transform.position = wandTip.position+dir;
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		NetworkServer.Spawn(fb);
 	}
 	[Command]
 	void CmdFireball(){

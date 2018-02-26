@@ -344,12 +344,17 @@ public class BroomScript : MonoBehaviour
     }
     public void ButtonTwoPressed()
     {
-        Debug.Log("Leveling");
-        //match ups
-        //player.transform.up = startingUp;
-        //player.transform.rotation = Quaternion.FromToRotation(player.transform.up, Vector3.up);
-        //find rotation around forward
-        //rotate back around forward gradually 
+        if(isMounted)
+        {
+          Debug.Log("Leveling");
+          //match ups
+          //player.transform.up = startingUp;
+          //player.transform.rotation = Quaternion.FromToRotation(player.transform.up, Vector3.up);
+          //find rotation around forward
+          //rotate back around forward gradually
+
+          //rotate so you are parallel to the ground
+        }
     }
 
     void OnTriggerEnter(Collider c)
