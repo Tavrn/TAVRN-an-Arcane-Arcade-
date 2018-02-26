@@ -33,8 +33,10 @@ public class SpellManagerScript : NetworkBehaviour {
 	List<float> effectTickL = new List<float>();
 
 	private Duel_PlayerScript myPlayer;
+	private bool isMulti = false;
 
 	void Start () {
+		isMulti = transform.root.name.Contains("Multi");
 		SetUpSpells();
 		myPlayer = GetComponent<Duel_PlayerScript>();
 	}
@@ -43,11 +45,11 @@ public class SpellManagerScript : NetworkBehaviour {
 			for(int i=0; i<effectEndTimes.Count; i++){
 				if(effectPrevTimes[i]+effectTickL[i]<Time.time){
 					effectPrevTimes[i] = Time.time;
-					if(!NetworkServer.active){
-						Invoke("Cmd"+effectNames[i], 0f);
-					}else{
-						Invoke(effectNames[i], 0f);
-					}
+					// if(!NetworkServer.active){
+					// 	Invoke("Cmd"+effectNames[i], 0f);
+					// }else{
+					Invoke(effectNames[i], 0f);
+					// }
 				}
 				float end = effectEndTimes[i];
 				if(end<Time.time){
@@ -128,11 +130,12 @@ public class SpellManagerScript : NetworkBehaviour {
 				GetComponent<AudioSource>().Play();
 				string temp = spellNameCompendium[spellNum];
 				if(temp[0] == 'I' && temp[1] == '_'){ //check if spell is instantly cast or not
-					if(!NetworkServer.active){
-						Invoke("Cmd"+spellNameCompendium[spellNum], 0f);
-					}else{
-						Invoke(spellNameCompendium[spellNum], 0f);
-					}
+					// if(!NetworkServer.active){
+					// 	string auxName = "Cmd" + spellNameCompendium[spellNum];
+					// 	Invoke(auxName, 0f);
+					// }else{
+					Invoke(spellNameCompendium[spellNum], 0f);
+					// }
 
 					cuedSpellNum = -1;
 				}else{
@@ -163,13 +166,14 @@ public class SpellManagerScript : NetworkBehaviour {
 	public void FireSpell(){
 		if(cuedSpellNum!=-1){
 			aiming = false;
-			if(!NetworkServer.active){
-				Debug.Log("Cmd");
-				Invoke("Cmd"+spellNameCompendium[cuedSpellNum], 0f);
-			}else{
-				Debug.Log("not cmd");
-				Invoke(spellNameCompendium[cuedSpellNum], 0f);
-			}
+			// if(!NetworkServer.active){
+			// 	Debug.Log("Cmd");
+			// 	string auxName = "Cmd"+spellNameCompendium[cuedSpellNum];
+			// 	Invoke(auxName, 0f);
+			// }else{
+			// 	Debug.Log("not cmd");
+			Invoke(spellNameCompendium[cuedSpellNum], 0f);
+			// }
 			cuedSpellNum = -1;
 		}
 	}
@@ -224,18 +228,34 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("PocketSand called");
 	}
 	void Fireball(){
-		Debug.Log("Fireball called");
-		float speed = 1;
-		Vector3 dir = wandTip.position-wandHandle.position;
-		GameObject fb = Instantiate(fireballPrefab) as GameObject;
-		fb.transform.parent = spellsParent.transform;
-		fb.transform.position = wandTip.position+dir;
-		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
-		NetworkServer.Spawn(fb);
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Fireball called");
+				float speed = 1;
+				Vector3 dir = wandTip.position-wandHandle.position;
+				GameObject fb = Instantiate(fireballPrefab) as GameObject;
+				fb.transform.parent = spellsParent.transform;
+				fb.transform.position = wandTip.position+dir;
+				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+				NetworkServer.Spawn(fb);
+			}else{
+				GameObject g = CmdFireball();
+				g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("Fireball called");
+			float speed = 1;
+			Vector3 dir = wandTip.position-wandHandle.position;
+			GameObject fb = Instantiate(fireballPrefab) as GameObject;
+			fb.transform.parent = spellsParent.transform;
+			fb.transform.position = wandTip.position+dir;
+			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		}
+
 	}
 	[Command]
-	void CmdFireball(){
-		Debug.Log("Fireball called");
+	GameObject CmdFireball(){
+		Debug.Log("CmdFireball called");
 		float speed = 1;
 		Vector3 dir = wandTip.position-wandHandle.position;
 		GameObject fb = Instantiate(fireballPrefab) as GameObject;
@@ -243,6 +263,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		fb.transform.position = wandTip.position+dir;
 		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
 		NetworkServer.Spawn(fb);
+		return fb;
 	}
 	void StalkingFlare(){
 		Debug.Log("StalkingFlare called");
