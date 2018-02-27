@@ -239,8 +239,8 @@ public class SpellManagerScript : NetworkBehaviour {
 				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
 				NetworkServer.Spawn(fb);
 			}else{
-				GameObject g = CmdFireball();
-				g.transform.parent = transform.root.Find("SpellsParent");
+				CmdFireball();
+				// g.transform.parent = transform.root.Find("SpellsParent");
 			}
 		}else{
 			Debug.Log("Fireball called");
@@ -254,7 +254,7 @@ public class SpellManagerScript : NetworkBehaviour {
 
 	}
 	[Command]
-	GameObject CmdFireball(){
+	void CmdFireball(){
 		Debug.Log("CmdFireball called");
 		float speed = 1;
 		Vector3 dir = wandTip.position-wandHandle.position;
@@ -263,7 +263,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		fb.transform.position = wandTip.position+dir;
 		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
 		NetworkServer.Spawn(fb);
-		return fb;
+		// return fb;
 	}
 	void StalkingFlare(){
 		Debug.Log("StalkingFlare called");

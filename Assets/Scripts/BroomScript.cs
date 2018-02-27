@@ -342,18 +342,53 @@ public class BroomScript : MonoBehaviour
             firstPress = false;
         }
     }
+
+    public void ButtonOnePressed()
+    {
+      if(isMounted)
+      {
+        Debug.Log("Stopping");
+
+        //freeze positions of the player rigidbody
+        prb.constraints = RigidbodyConstraints.FreezePositionX;
+        prb.constraints = RigidbodyConstraints.FreezePositionY;
+        prb.constraints = RigidbodyConstraints.FreezePositionZ;
+
+        //consider messing with momentum
+      }
+    }
+
+    public void ButtonOneReleased()
+    {
+      if(isMounted)
+      {
+        //unfreezing? positions of the player rigidbody
+        prb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+        prb.constraints &= ~RigidbodyConstraints.FreezePositionY;
+        prb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
+
+        //consider messing with momentum
+      }
+    }
+
     public void ButtonTwoPressed()
     {
         if(isMounted)
         {
           Debug.Log("Leveling");
-          //match ups
-          //player.transform.up = startingUp;
-          //player.transform.rotation = Quaternion.FromToRotation(player.transform.up, Vector3.up);
-          //find rotation around forward
-          //rotate back around forward gradually
 
-          //rotate so you are parallel to the ground
+          //find intended right vector
+          Vector3 intendedRight = Vector3.Cross(Vector3.up, player.transform.forward);
+
+          //project right and intendedRight onto the plane with normal equal to the brooms forward
+          Vector3 projRight = Vector3.ProjectOnPlane(player.transform.right, player.transform.forward);
+          Vector3 projIntendedRight = Vector3.ProjectOnPlane(intendedRight, player.transform.forward);
+
+          //find angle between projected vectors
+          float angle = Vector3.Angle(projRight, projIntendedRight);
+
+          //rotate so that the rights are in line
+          player.transform.RotateAround(player.transform.position, player.transform.forward, angle);
         }
     }
 
@@ -414,7 +449,7 @@ public class BroomScript : MonoBehaviour
         //Add forward velocity
         prb.velocity = head.transform.forward * CONST_SPD;
 
-        CheckStop();
+        //CheckStop();
     }
 
     //rotate and shift method
@@ -429,7 +464,6 @@ public class BroomScript : MonoBehaviour
 
         //adjusts to rotation around y
         player.transform.RotateAround(player.transform.position, player.transform.up, yrotatespeed * yRot * speed);
-
 
         //manage the up and down motion using the heads position
         float rotationFactor;
@@ -454,7 +488,7 @@ public class BroomScript : MonoBehaviour
         }
 
         MoveForward();
-        CheckStop();
+        //CheckStop();  instead use an event listener
     }
 
     public void MoveForward()
@@ -480,6 +514,7 @@ public class BroomScript : MonoBehaviour
         }
     }
 
+    /*
     public void CheckStop()
     {
         //stop button (I copied this code from above I think it just stops you)
@@ -488,6 +523,8 @@ public class BroomScript : MonoBehaviour
         {
             bool flag = true;
             prb.velocity = transform.forward * 0;
+            //freeze all positions
+
             while (flag)
             {
                 if (OVRInput.GetDown(OVRInput.Button.One))
@@ -497,4 +534,5 @@ public class BroomScript : MonoBehaviour
             }
         }
     }
+    */
 }

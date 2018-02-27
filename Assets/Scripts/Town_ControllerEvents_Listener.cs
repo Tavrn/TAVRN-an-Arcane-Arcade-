@@ -198,11 +198,13 @@ namespace VRTK.Examples
         private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "pressed down", e);
+            broomScript.ButtonOnePressed();
         }
 
         private void DoButtonOneReleased(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "released", e);
+            broomScript.ButtonOneReleased();
         }
 
         private void DoButtonOneTouchStart(object sender, ControllerInteractionEventArgs e)
