@@ -177,6 +177,11 @@ public class SpellManagerScript : NetworkBehaviour {
 			cuedSpellNum = -1;
 		}
 	}
+	[ClientRpc]
+	void RpcParentTo(NetworkInstanceId c, NetworkInstanceId p){
+		ClientScene.FindLocalObject(c).transform.parent = ClientScene.FindLocalObject(p).transform;
+		// c.transform.parent = p.transform;
+	}
 
 	void MagicMissile(){
 		Debug.Log("called magic missile");
@@ -238,6 +243,7 @@ public class SpellManagerScript : NetworkBehaviour {
 				fb.transform.position = wandTip.position+dir;
 				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
 				NetworkServer.Spawn(fb);
+				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 			}else{
 				CmdFireball();
 				// g.transform.parent = transform.root.Find("SpellsParent");
@@ -263,6 +269,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		fb.transform.position = wandTip.position+dir;
 		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
 		NetworkServer.Spawn(fb);
+		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 		// return fb;
 	}
 	void StalkingFlare(){
@@ -294,7 +301,50 @@ public class SpellManagerScript : NetworkBehaviour {
 	}
 	void I_Heal(){
 		//20 hp healed over 5 seconds
-		Debug.Log("Heal called");
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Heal called");
+				int dur = 5;
+				float tick = 0.25f;
+				if(!effectNames.Contains("HealHelper")){
+					effectEndTimes.Add(Time.time+dur);
+					effectNames.Add("HealHelper");
+					effectTickL.Add(tick);
+					effectPrevTimes.Add(-tick);
+				}else{
+					effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
+				}
+			}else{
+				CmdHeal();
+			}
+		}else{
+			Debug.Log("Heal called");
+			int dur = 5;
+			float tick = 0.25f;
+			if(!effectNames.Contains("HealHelper")){
+				effectEndTimes.Add(Time.time+dur);
+				effectNames.Add("HealHelper");
+				effectTickL.Add(tick);
+				effectPrevTimes.Add(-tick);
+			}else{
+				effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
+			}
+		}
+		// Debug.Log("Heal called");
+		// int dur = 5;
+		// float tick = 0.25f;
+		// if(!effectNames.Contains("HealHelper")){
+		// 	effectEndTimes.Add(Time.time+dur);
+		// 	effectNames.Add("HealHelper");
+		// 	effectTickL.Add(tick);
+		// 	effectPrevTimes.Add(-tick);
+		// }else{
+		// 	effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
+		// }
+	}
+	[Command]
+	void CmdHeal(){
+		Debug.Log("CmdHeal called");
 		int dur = 5;
 		float tick = 0.25f;
 		if(!effectNames.Contains("HealHelper")){
