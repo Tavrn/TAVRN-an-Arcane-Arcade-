@@ -6713,6 +6713,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 99.99997
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1e85f2a16ce164440b0f5dd7c9a4287b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e85f2a16ce164440b0f5dd7c9a4287b, type: 3}
   m_IsPrefabParent: 0
@@ -7054,6 +7058,10 @@ Prefab:
     - target: {fileID: 400000, guid: 1e85f2a16ce164440b0f5dd7c9a4287b, type: 3}
       propertyPath: m_LocalScale.z
       value: 99.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1e85f2a16ce164440b0f5dd7c9a4287b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1e85f2a16ce164440b0f5dd7c9a4287b, type: 3}

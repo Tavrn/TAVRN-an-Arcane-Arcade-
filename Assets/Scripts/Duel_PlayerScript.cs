@@ -9,6 +9,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	public GameObject posSlot;
 	public GameObject myTargetCollider;
 	public GameObject wandtip;
+	[SyncVar]
 	public int HP = 100;
 	private float pZ = 0.6f;
 	private float zZ = 0.3f;
@@ -39,6 +40,9 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		}
 	}
 	public void tryHit(float zhit, int damage){
+		if(!isServer){
+			return;
+		}
 		float headZ = head.position.z;
 		if(headZ>pZ && zhit > 1/3f){
 			hit(damage);
@@ -53,6 +57,8 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+		Vector3 mtcp = myTargetCollider.transform.position;
+		myTargetCollider.transform.position =  new Vector3(head.transform.position.x, mtcp.y, mtcp.z);
 		float headZ = head.position.z;
 		if(headZ>pZ){
 			posSlot.transform.position = new Vector3(posSlot.transform.position.x, posSlot.transform.position.y, 2/3f);
