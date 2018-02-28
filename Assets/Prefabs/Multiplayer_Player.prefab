@@ -1537,7 +1537,7 @@ MonoBehaviour:
   wandTip: {fileID: 4103093867526204}
   wandHandle: {fileID: 4994248575766714}
   wandScript: {fileID: 114269245587060292}
-  spellsParent: {fileID: 4595093485710048}
+  spellsParent: {fileID: 4815252710261630}
   weather: 0
   myMinionSpawn: {fileID: 4495779391889618}
   minionPrefab: {fileID: 1788771677084634, guid: 6836b2c0b5a320344b6e58e84b1c7a2a,

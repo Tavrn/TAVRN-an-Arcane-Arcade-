@@ -180,6 +180,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	[ClientRpc]
 	void RpcParentTo(NetworkInstanceId c, NetworkInstanceId p){
 		ClientScene.FindLocalObject(c).transform.parent = ClientScene.FindLocalObject(p).transform;
+		Debug.Log("rpc called");
 		// c.transform.parent = p.transform;
 	}
 
