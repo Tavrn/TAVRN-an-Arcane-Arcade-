@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 47
+  controlID: 84
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 48
+  controlID: 85
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 49
+  controlID: 86
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -336,20 +336,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Prefabs/SpellPrefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Prefabs/SpellPrefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\TAVRN\Desktop\Arcane Arcade - Recent
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 1c320000
-    m_LastClickedID: 12828
-    m_ExpandedIDs: 000000001c32000036330000583500004c3600000e380000403800006c390000ec390000643a0000a83a0000c23e0000fa3e00000e3f00004c3f0000ae3f000004400000384100003a4100006c41000082410000a2410000f6410000544500005a450000f24500003a460000de4700002c480000564800003c4d00005e4e0000964e0000be4e00008a4f000012500000185600007e570000b0570000065800001e58000070590000c85a00001e5b0000605b00007c5b0000f05b00002a5c0000545c00007a5c0000da640000dc640000de64000000ca9a3bffffff7f
+    m_SelectedIDs: 8e5a0000
+    m_LastClickedID: 23182
+    m_ExpandedIDs: 000000001a32000034330000563500004a3600000c3800003e3800006a390000ea390000623a0000a63a0000c03e0000f83e00000c3f00004a3f0000ac3f00000240000036410000384100006a41000080410000a0410000f44100005245000058450000f045000038460000dc4700002a480000544800003a4d00005c4e0000944e0000bc4e0000884f000010500000165600007c570000ae570000045800001c5800006e590000c65a00001c5b00005e5b00007a5b0000ee5b0000285c0000525c0000785c0000da640000dc640000de64000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -377,7 +377,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001c32000036330000583500004c3600000e380000403800006c390000ec390000643a0000a83a0000c23e0000fa3e00000e3f00004c3f0000ae3f000004400000384100003a4100006c41000082410000a2410000f6410000544500005a450000f24500003a460000de4700002c480000564800003c4d00005e4e0000964e0000be4e00008a4f000012500000185600007e570000b0570000065800001e58000070590000c85a00001e5b0000605b00007c5b0000f05b00002a5c0000545c00007a5c0000da640000dc640000de640000
+    m_ExpandedIDs: 000000001a32000034330000563500004a3600000c3800003e3800006a390000ea390000623a0000a63a0000c03e0000f83e00000c3f00004a3f0000ac3f00000240000036410000384100006a41000080410000a0410000f44100005245000058450000f045000038460000dc4700002a480000544800003a4d00005c4e0000944e0000bc4e0000884f000010500000165600007c570000ae570000045800001c5800006e590000c65a00001c5b00005e5b00007a5b0000ee5b0000285c0000525c0000785c0000da640000dc640000de640000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -464,9 +464,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.017887, y: -3.469416, z: 6.8389435}
+    m_Target: {x: -5.521119, y: -1.5920585, z: 3.3088975}
     speed: 2
-    m_Value: {x: 5.017887, y: -3.469416, z: 6.8389435}
+    m_Value: {x: -5.521119, y: -1.5920585, z: 3.3088975}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -494,13 +494,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.21937858, y: 0.65973085, z: -0.21060248, w: -0.6872226}
+    m_Target: {x: -0.16675729, y: 0.46513373, z: -0.089695305, w: -0.8647528}
     speed: 2
-    m_Value: {x: -0.21937858, y: 0.65973085, z: -0.21060248, w: -0.6872226}
+    m_Value: {x: -0.16675729, y: 0.46513373, z: -0.089695305, w: -0.8647528}
   m_Size:
-    m_Target: 7.712144
+    m_Target: 10.495162
     speed: 2
-    m_Value: 7.712144
+    m_Value: 10.495162
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -545,18 +545,18 @@ MonoBehaviour:
     m_ExpandedIDs: eaf9ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: GameObject
+      m_OriginalName: GameObject
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 24850
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -691,7 +691,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 667
-    width: 1641
+    width: 1571
     height: 351
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &19

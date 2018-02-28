@@ -21,6 +21,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	public GameObject fireballPrefab;
 	public GameObject confettiPrefab;
 	public GameObject arcanePrefab;
+	public GameObject shieldPrefab;
 
 	private int cuedSpellNum = -1;
 	private bool aiming = false;
@@ -395,8 +396,36 @@ public class SpellManagerScript : NetworkBehaviour {
 	void Helmets(){
 		Debug.Log("Helmets called");
 	}
-	void Shields(){
-		Debug.Log("Shields called");
+	void I_Shields(){
+		Transform posSlot = GetComponent<Duel_PlayerScript>().posSlot.transform;
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Shield called");
+				GameObject s = Instantiate(shieldPrefab) as GameObject;
+				s.transform.parent = spellsParent;
+				s.transform.position = posSlot.position+posSlot.up+posSlot.forward;
+				NetworkServer.Spawn(s);
+				RpcParentTo(s.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdI_Shields();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("Shield called");
+			GameObject s = Instantiate(shieldPrefab) as GameObject;
+			s.transform.parent = spellsParent;
+			s.transform.position = posSlot.position+posSlot.up+posSlot.forward;
+		}
+	}
+	[Command]
+	void CmdI_Shields(){
+		Debug.Log("CmdShield called");
+		Transform posSlot = GetComponent<Duel_PlayerScript>().posSlot.transform;
+		GameObject s = Instantiate(shieldPrefab) as GameObject;
+		s.transform.parent = spellsParent;
+		s.transform.position = posSlot.position+posSlot.up+posSlot.forward;
+		NetworkServer.Spawn(s);
+		RpcParentTo(s.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
 	void ControlledFlow(){
 		Debug.Log("ControlledFlow called");
