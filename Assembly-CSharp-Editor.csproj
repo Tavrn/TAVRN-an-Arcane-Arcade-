@@ -80,6 +80,7 @@
      <Compile Include="Assets\Imports\VRTK\Editor\VRTK_UpdatePrompt.cs" />
      <Compile Include="Assets\OculusPlatform\Editor\GUIHelper.cs" />
      <Compile Include="Assets\OculusPlatform\Editor\OculusPlatformSettingsEditor.cs" />
+     <Compile Include="Assets\PyroParticles\Prefab\Editor\PyroParticlesEditor.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\AntialiasingEditor.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\BloomEditor.cs" />
