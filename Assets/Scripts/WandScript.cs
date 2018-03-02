@@ -26,10 +26,13 @@ public class WandScript : MonoBehaviour {
 	public List<Coordinate> pattern;
 	public List<GameObject> patternColliders;
 	public GameObject originCollider;
+	public GameObject myTargetSlot;
 	private bool isChanneling = false;
+	private float pz = 1/3f;
 
 	void Start () {
 		pattern = new List<Coordinate>();
+		originCollider = GameObject.Find("Colliders").GetComponent<CollidersScript>().originCollider;
 	}
 	public void setChanneling(bool b){
 		isChanneling = b;
@@ -52,7 +55,6 @@ public class WandScript : MonoBehaviour {
 		if(isChanneling){
 			GameObject g = c.gameObject;
 			if(g.tag=="WandCollider"){
-				Debug.Log("true");
 				g.GetComponent<MeshRenderer>().enabled = true;
 				patternColliders.Add(g);
 				ColliderScript s = g.GetComponent<ColliderScript>();
@@ -64,6 +66,28 @@ public class WandScript : MonoBehaviour {
 		spellManager.FireSpell();
 	}
 	void Update () {
-
+		if(spellManager.isAiming()){
+			bool didhit = false;
+			RaycastHit[] hits;
+			hits = Physics.RaycastAll(transform.position, transform.forward, 50, 1 << LayerMask.NameToLayer("TargetRaycast"));
+			for(int i=0; i<hits.Length; i++){
+				RaycastHit hit = hits[i];
+				if(hit.transform.root!=transform.root){
+					if(hit.point.z>pz){
+						didhit = true;
+						myTargetSlot.transform.position = new Vector3(myTargetSlot.transform.position.x, myTargetSlot.transform.position.y, 2/3f);
+					}else if(hit.point.z<pz && hit.point.z>-pz){
+						didhit = true;
+						myTargetSlot.transform.position = new Vector3(myTargetSlot.transform.position.x, myTargetSlot.transform.position.y, 0f);
+					}else if(hit.point.z<-pz){
+						didhit = true;
+						myTargetSlot.transform.position = new Vector3(myTargetSlot.transform.position.x, myTargetSlot.transform.position.y, -2/3f);
+					}
+				}
+			}
+			myTargetSlot.SetActive(didhit);
+		}else{
+			myTargetSlot.SetActive(false); //not aiming
+		}
 	}
 }

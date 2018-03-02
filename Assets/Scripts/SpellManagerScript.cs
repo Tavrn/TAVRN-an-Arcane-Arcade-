@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using CNamespace;
-public class SpellManagerScript : MonoBehaviour {
+public class SpellManagerScript : NetworkBehaviour {
 	public Transform wandTip;
 	public Transform wandHandle;
 	public WandScript wandScript;
+	public Transform spellsParent;
 	[Space(10)]
-	public Transform minionSpawn1;
-	public Transform minionSpawn2;
+	public int weather = 0; //0 = clear, 1 = fire, 2 = rain, 3 = sandstorm, 4 = wind
+	[Space(10)]
+	public Transform myMinionSpawn;
 	public GameObject minionPrefab;
 	[Space(10)]
 	public Skybox playerSkybox;
@@ -18,12 +21,46 @@ public class SpellManagerScript : MonoBehaviour {
 	public GameObject fireballPrefab;
 	public GameObject confettiPrefab;
 	public GameObject arcanePrefab;
+	public GameObject shieldPrefab;
+
 	private int cuedSpellNum = -1;
+	private bool aiming = false;
 	List<List<Coordinate>> spellCompendium = new List<List<Coordinate>>();
 	List<string> spellNameCompendium = new List<string>();
 
+	List<float> effectEndTimes = new List<float>();
+	List<string> effectNames = new List<string>();
+	List<float> effectPrevTimes = new List<float>();
+	List<float> effectTickL = new List<float>();
+
+	private Duel_PlayerScript myPlayer;
+	private bool isMulti = false;
+
 	void Start () {
+		isMulti = transform.root.name.Contains("Multi");
 		SetUpSpells();
+		myPlayer = GetComponent<Duel_PlayerScript>();
+	}
+	void FixedUpdate(){
+		if(effectEndTimes.Count>0){
+			for(int i=0; i<effectEndTimes.Count; i++){
+				if(effectPrevTimes[i]+effectTickL[i]<Time.time){
+					effectPrevTimes[i] = Time.time;
+					// if(!NetworkServer.active){
+					// 	Invoke("Cmd"+effectNames[i], 0f);
+					// }else{
+					Invoke(effectNames[i], 0f);
+					// }
+				}
+				float end = effectEndTimes[i];
+				if(end<Time.time){
+					effectNames.RemoveAt(i);
+					effectEndTimes.RemoveAt(i);
+					effectTickL.RemoveAt(i);
+					effectPrevTimes.RemoveAt(i);
+				}
+			}
+		}
 	}
 	void SetUpSpells(){
 		CreateSpell("MagicMissile", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(-1,1,1) });
@@ -50,7 +87,7 @@ public class SpellManagerScript : MonoBehaviour {
 		CreateSpell("Tailwind", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(1, 0, 0), new Coordinate(1, 1, 0), new Coordinate(0,1,0), new Coordinate(0, 1, 1) });
 		CreateSpell("Fissure", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(1, 1, 0), new Coordinate(1, 1, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("FlameCarpet", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0,1,0), new Coordinate(-1, 1, 0), new Coordinate(-1, 0, 0), new Coordinate(-1, 0, 1) });
-		CreateSpell("Heal", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1,2,1) });
+		CreateSpell("I_Heal", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1,2,1) });
 		CreateSpell("Conversion", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("Blind", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0) });
 		CreateSpell("Invisible", new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 1, 1) });
@@ -94,7 +131,13 @@ public class SpellManagerScript : MonoBehaviour {
 				GetComponent<AudioSource>().Play();
 				string temp = spellNameCompendium[spellNum];
 				if(temp[0] == 'I' && temp[1] == '_'){ //check if spell is instantly cast or not
+					// if(!NetworkServer.active){
+					// 	string auxName = "Cmd" + spellNameCompendium[spellNum];
+					// 	Invoke(auxName, 0f);
+					// }else{
 					Invoke(spellNameCompendium[spellNum], 0f);
+					// }
+
 					cuedSpellNum = -1;
 				}else{
 					cuedSpellNum = spellNum;
@@ -123,19 +166,33 @@ public class SpellManagerScript : MonoBehaviour {
 	}
 	public void FireSpell(){
 		if(cuedSpellNum!=-1){
+			aiming = false;
+			// if(!NetworkServer.active){
+			// 	Debug.Log("Cmd");
+			// 	string auxName = "Cmd"+spellNameCompendium[cuedSpellNum];
+			// 	Invoke(auxName, 0f);
+			// }else{
+			// 	Debug.Log("not cmd");
 			Invoke(spellNameCompendium[cuedSpellNum], 0f);
+			// }
 			cuedSpellNum = -1;
 		}
 	}
-
+	[ClientRpc]
+	void RpcParentTo(NetworkInstanceId c, NetworkInstanceId p){
+		ClientScene.FindLocalObject(c).transform.parent = ClientScene.FindLocalObject(p).transform;
+		Debug.Log("rpc called");
+		// c.transform.parent = p.transform;
+	}
 
 	void MagicMissile(){
 		Debug.Log("called magic missile");
+		float speed = 1f;
 		Vector3 dir = wandTip.position-wandHandle.position;
 		GameObject fb = Instantiate(arcanePrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
 		fb.transform.position = wandTip.position+dir;
-		fb.transform.LookAt(new Vector3(0,transform.position.y, 0));
-		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*5);
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
 	}
 
 	void ArcaneSphere(){
@@ -178,11 +235,44 @@ public class SpellManagerScript : MonoBehaviour {
 		Debug.Log("PocketSand called");
 	}
 	void Fireball(){
-		Debug.Log("Fireball called");
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Fireball called");
+				float speed = 1;
+				Vector3 dir = wandTip.position-wandHandle.position;
+				GameObject fb = Instantiate(fireballPrefab) as GameObject;
+				fb.transform.parent = spellsParent.transform;
+				fb.transform.position = wandTip.position+dir;
+				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+				NetworkServer.Spawn(fb);
+				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdFireball();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("Fireball called");
+			float speed = 1;
+			Vector3 dir = wandTip.position-wandHandle.position;
+			GameObject fb = Instantiate(fireballPrefab) as GameObject;
+			fb.transform.parent = spellsParent.transform;
+			fb.transform.position = wandTip.position+dir;
+			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		}
+
+	}
+	[Command]
+	void CmdFireball(){
+		Debug.Log("CmdFireball called");
+		float speed = 1;
 		Vector3 dir = wandTip.position-wandHandle.position;
 		GameObject fb = Instantiate(fireballPrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
 		fb.transform.position = wandTip.position+dir;
-		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*5);
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		NetworkServer.Spawn(fb);
+		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+		// return fb;
 	}
 	void StalkingFlare(){
 		Debug.Log("StalkingFlare called");
@@ -211,8 +301,67 @@ public class SpellManagerScript : MonoBehaviour {
 	void FlameCarpet(){
 		Debug.Log("FlameCarpet called");
 	}
-	void Heal(){
-		Debug.Log("Heal called");
+	void I_Heal(){
+		//20 hp healed over 5 seconds
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Heal called");
+				int dur = 5;
+				float tick = 0.25f;
+				if(!effectNames.Contains("HealHelper")){
+					effectEndTimes.Add(Time.time+dur);
+					effectNames.Add("HealHelper");
+					effectTickL.Add(tick);
+					effectPrevTimes.Add(-tick);
+				}else{
+					effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
+				}
+			}else{
+				CmdHeal();
+			}
+		}else{
+			Debug.Log("Heal called");
+			int dur = 5;
+			float tick = 0.25f;
+			if(!effectNames.Contains("HealHelper")){
+				effectEndTimes.Add(Time.time+dur);
+				effectNames.Add("HealHelper");
+				effectTickL.Add(tick);
+				effectPrevTimes.Add(-tick);
+			}else{
+				effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
+			}
+		}
+		// Debug.Log("Heal called");
+		// int dur = 5;
+		// float tick = 0.25f;
+		// if(!effectNames.Contains("HealHelper")){
+		// 	effectEndTimes.Add(Time.time+dur);
+		// 	effectNames.Add("HealHelper");
+		// 	effectTickL.Add(tick);
+		// 	effectPrevTimes.Add(-tick);
+		// }else{
+		// 	effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
+		// }
+	}
+	[Command]
+	void CmdHeal(){
+		Debug.Log("CmdHeal called");
+		int dur = 5;
+		float tick = 0.25f;
+		if(!effectNames.Contains("HealHelper")){
+			effectEndTimes.Add(Time.time+dur);
+			effectNames.Add("HealHelper");
+			effectTickL.Add(tick);
+			effectPrevTimes.Add(-tick);
+		}else{
+			effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
+		}
+	}
+	void HealHelper(){
+		int tickHeal = 1;
+		myPlayer.HP = Mathf.Clamp(myPlayer.HP+tickHeal, 0, 100);
+		Debug.Log("Heal helper called");
 	}
 	void Conversion(){
 		Debug.Log("Conversion called");
@@ -247,8 +396,36 @@ public class SpellManagerScript : MonoBehaviour {
 	void Helmets(){
 		Debug.Log("Helmets called");
 	}
-	void Shields(){
-		Debug.Log("Shields called");
+	void I_Shields(){
+		Transform posSlot = GetComponent<Duel_PlayerScript>().posSlot.transform;
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Shield called");
+				GameObject s = Instantiate(shieldPrefab) as GameObject;
+				s.transform.parent = spellsParent;
+				s.transform.position = posSlot.position-posSlot.right+posSlot.up;
+				NetworkServer.Spawn(s);
+				RpcParentTo(s.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdI_Shields();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("Shield called");
+			GameObject s = Instantiate(shieldPrefab) as GameObject;
+			s.transform.parent = spellsParent;
+			s.transform.position = posSlot.position-posSlot.right+posSlot.up;
+		}
+	}
+	[Command]
+	void CmdI_Shields(){
+		Debug.Log("CmdShield called");
+		Transform posSlot = GetComponent<Duel_PlayerScript>().posSlot.transform;
+		GameObject s = Instantiate(shieldPrefab) as GameObject;
+		s.transform.parent = spellsParent;
+		s.transform.position = posSlot.position-posSlot.right+posSlot.up;
+		NetworkServer.Spawn(s);
+		RpcParentTo(s.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
 	void ControlledFlow(){
 		Debug.Log("ControlledFlow called");
@@ -267,17 +444,27 @@ public class SpellManagerScript : MonoBehaviour {
 	void I_SpawnMinion(){
 		Debug.Log("spawn minion called");
 		GameObject minion = Instantiate(minionPrefab) as GameObject;
-		minion.transform.position = minionSpawn1.position;
+		minion.transform.position = myMinionSpawn.position;
 	}
 	void I_WeatherClear(){
 		playerSkybox.material = clearSkiesSkybox;
+		weather = 0;
 	}
 	void I_WeatherFire(){
 		playerSkybox.material = fireSkybox;
+		weather = 1;
 	}
 	void I_Confetti(){
 		Debug.Log("confetti");
 		GameObject c = Instantiate(confettiPrefab) as GameObject;
 		c.transform.position = wandTip.position+new Vector3(0,1,0);
+	}
+	public void TryBeginAiming(){
+		if(cuedSpellNum!=-1){
+			aiming = true;
+		}
+	}
+	public bool isAiming(){
+		return aiming;
 	}
 }

@@ -7,6 +7,8 @@ TagManager:
   - ExcludeTeleport
   - WandCollider
   - Town
+  - Duel_TargetCollider
+  - Duel_Shield
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - TargetRaycast
   - 
   - 
   - 

@@ -6,8 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Scenes/Duel Multi.unity
+    guid: ebe844419d1b08d47b4442e69b4f9e31
+  - enabled: 1
+    path: Assets/_Scenes/Town_SinglePlayer.unity
+    guid: 14494c2665a568c47ba503cfc1eaf1a7
+  - enabled: 1
     path: Assets/_Scenes/Tavern.unity
     guid: e38276b1d9549ce409fb1ba24a9d6032
   - enabled: 1
     path: Assets/_Scenes/Duel.unity
     guid: 2a16c798d12bf2843b64d640e5e6d070
+  - enabled: 1
+    path: Assets/_Scenes/Town.unity
+    guid: be3aae673a090f649aec186ed8e936f0
+  m_configObjects: {}
