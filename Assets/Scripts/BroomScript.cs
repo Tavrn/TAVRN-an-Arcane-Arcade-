@@ -283,6 +283,10 @@ public class BroomScript : MonoBehaviour
     [Range(-1, 1)]
     public int drivingMethod;
 
+    //for selecting leveling method
+    public bool levelInstantly;
+    public bool isLeveling;
+
     //the current player & their head
     public GameObject player;
     public GameObject head;
@@ -348,27 +352,14 @@ public class BroomScript : MonoBehaviour
       if(isMounted)
       {
         Debug.Log("Stopping");
-
-        //freeze positions of the player rigidbody
-        prb.constraints = RigidbodyConstraints.FreezePositionX;
-        prb.constraints = RigidbodyConstraints.FreezePositionY;
-        prb.constraints = RigidbodyConstraints.FreezePositionZ;
-
-        //consider messing with momentum
+        Debug.Log("Broom rotation -> " + transform.rotation.eulerAngles);
+        FreezePrb();
       }
     }
 
     public void ButtonOneReleased()
     {
-      if(isMounted)
-      {
-        //unfreezing? positions of the player rigidbody
-        prb.constraints &= ~RigidbodyConstraints.FreezePositionX;
-        prb.constraints &= ~RigidbodyConstraints.FreezePositionY;
-        prb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
-
-        //consider messing with momentum
-      }
+      if(isMounted) { UnfreezePrb(); }
     }
 
     public void ButtonTwoPressed()
@@ -377,18 +368,8 @@ public class BroomScript : MonoBehaviour
         {
           Debug.Log("Leveling");
 
-          //find intended right vector
-          Vector3 intendedRight = Vector3.Cross(Vector3.up, player.transform.forward);
-
-          //project right and intendedRight onto the plane with normal equal to the brooms forward
-          Vector3 projRight = Vector3.ProjectOnPlane(player.transform.right, player.transform.forward);
-          Vector3 projIntendedRight = Vector3.ProjectOnPlane(intendedRight, player.transform.forward);
-
-          //find angle between projected vectors
-          float angle = Vector3.Angle(projRight, projIntendedRight);
-
-          //rotate so that the rights are in line
-          player.transform.RotateAround(player.transform.position, player.transform.forward, angle);
+          if(levelInstantly)  { InstantLevel(); }
+          else                { TimedLevel(); }
         }
     }
 
@@ -412,6 +393,7 @@ public class BroomScript : MonoBehaviour
             startingUp = Vector3.up;
         }
     }
+
     public void DaniCurrentMethod()
     {
         Vector3 difference = head.transform.localPosition - mountLocation;
@@ -512,6 +494,75 @@ public class BroomScript : MonoBehaviour
         {
             prb.GetComponent<Rigidbody>().velocity = transform.forward * CONST_SPD;
         }
+    }
+
+    private void InstantLevel()
+    {
+      //find intended right vector
+      Vector3 intendedRight = Vector3.Cross(Vector3.up, player.transform.forward);
+
+      //project right and intendedRight onto the plane with normal equal to the brooms forward
+      Vector3 projRight = Vector3.ProjectOnPlane(player.transform.right, player.transform.forward);
+      Vector3 projIntendedRight = Vector3.ProjectOnPlane(intendedRight, player.transform.forward);
+
+      //find angle between projected vectors
+      float angle = SignedAngle(projRight, projIntendedRight, player.transform.forward);
+
+      //rotate so that the rights are in line
+      player.transform.RotateAround(player.transform.position, player.transform.forward, angle);
+    }
+
+    private void TimedLevel()
+    {
+      //find intended right vector
+      Vector3 intendedRight = Vector3.Cross(Vector3.up, player.transform.forward);
+
+      //project right and intendedRight onto the plane with normal equal to the brooms forward
+      Vector3 projRight = Vector3.ProjectOnPlane(player.transform.right, player.transform.forward);
+      Vector3 projIntendedRight = Vector3.ProjectOnPlane(intendedRight, player.transform.forward);
+
+      //find angle between projected vectors
+      float angle = SignedAngle(projRight, projIntendedRight, player.transform.forward);
+
+      //rotate so that the rights are in line
+      if(!isLeveling)
+      {
+        isLeveling = true;
+        StartCoroutine(LevelStepProp(angle));
+      }
+    }
+
+    IEnumerator LevelStepProp(float angle)
+    {
+      //duration of level
+      float duration = 1f;
+      for(var t = 0f; t < duration; t += Time.deltaTime)
+      {
+        player.transform.RotateAround(transform.position, transform.forward, Time.deltaTime * angle / duration);
+        yield return null;
+      }
+      isLeveling = false;
+    }
+
+    private float SignedAngle(Vector3 from, Vector3 to, Vector3 n)
+    {
+        return(Mathf.Atan2(Vector3.Dot(n, Vector3.Cross(from, to)), Vector3.Dot(from, to)) * Mathf.Rad2Deg);
+    }
+
+    private void FreezePrb()
+    {
+      prb.constraints = RigidbodyConstraints.FreezePositionX;
+      prb.constraints = RigidbodyConstraints.FreezePositionY;
+      prb.constraints = RigidbodyConstraints.FreezePositionZ;
+      //consider messing with momentum
+    }
+
+    private void UnfreezePrb()
+    {
+      prb.constraints &= ~RigidbodyConstraints.FreezePositionX;
+      prb.constraints &= ~RigidbodyConstraints.FreezePositionY;
+      prb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
+      //consider messing with momentum
     }
 
     /*

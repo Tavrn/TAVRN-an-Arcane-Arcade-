@@ -966,6 +966,15 @@
     <Compile Include="Assets\OculusPlatform\Scripts\VoipPCMSourceNative.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\VoipSampleRate.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\WindowsPlatform.cs" />
+    <Compile Include="Assets\PyroParticles\Demo\DemoScript.cs" />
+    <Compile Include="Assets\PyroParticles\Demo\DemoScriptEditor.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireLightScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
     <Compile Include="Assets\Rocks and Boulders 2\Shaders\RotateGameObject.cs" />
     <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
@@ -1020,6 +1029,7 @@
     <Compile Include="Assets\Scripts\HeadReference.cs" />
     <Compile Include="Assets\Scripts\HPIndicatorScript.cs" />
     <Compile Include="Assets\Scripts\MinionScript.cs" />
+    <Compile Include="Assets\Scripts\ShieldScript.cs" />
     <Compile Include="Assets\Scripts\Spell_BasicProjectile.cs" />
     <Compile Include="Assets\Scripts\SpellBookParentScript.cs" />
     <Compile Include="Assets\Scripts\SpellGeneric.cs" />
@@ -1081,6 +1091,8 @@
     <None Include="Assets\LICENSE.txt" />
     <None Include="Assets\OculusPlatform\LICENSE.txt" />
     <None Include="Assets\OculusPlatform\THIRD_PARTY_NOTICES.txt" />
+    <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+    <None Include="Assets\PyroParticles\Readme.txt" />
     <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
     <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
     <None Include="Assets\Rocks and Boulders 2\Shaders\shader info.txt" />

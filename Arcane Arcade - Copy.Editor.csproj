@@ -419,6 +419,7 @@
     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_UpdatePrompt.cs" />
     <Compile Include="Assets\OculusPlatform\Editor\GUIHelper.cs" />
     <Compile Include="Assets\OculusPlatform\Editor\OculusPlatformSettingsEditor.cs" />
+    <Compile Include="Assets\PyroParticles\Prefab\Editor\PyroParticlesEditor.cs" />
     <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\AntialiasingEditor.cs" />
     <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\BloomAndFlaresEditor.cs" />
     <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\BloomEditor.cs" />
@@ -479,6 +480,8 @@
     <None Include="Assets\LICENSE.txt" />
     <None Include="Assets\OculusPlatform\LICENSE.txt" />
     <None Include="Assets\OculusPlatform\THIRD_PARTY_NOTICES.txt" />
+    <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+    <None Include="Assets\PyroParticles\Readme.txt" />
     <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM2.shader" />
     <None Include="Assets\Rocks and Boulders 2\Shaders\Blend SM3.shader" />
     <None Include="Assets\Rocks and Boulders 2\Shaders\shader info.txt" />
