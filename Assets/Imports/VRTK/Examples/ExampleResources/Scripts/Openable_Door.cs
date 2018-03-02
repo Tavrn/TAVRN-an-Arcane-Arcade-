@@ -6,7 +6,7 @@
     {
         public bool flipped = false;
         public bool rotated = false;
-        private string toScene="Duel";
+        public string toScene="Duel";
 
         private float sideFlip = -1;
         private float side = -1;
@@ -29,6 +29,7 @@
         }
         private void LoadLevel()
         {
+            Debug.Log("Loaded level");
             SceneManager.LoadScene(toScene);
         }
 

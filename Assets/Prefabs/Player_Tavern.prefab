@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1487c36fb75d2924e8bff712895f43c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoldButton: 0
+  HoldButton: 2
   UseButton: 17
   IsRight: 1
   IsLeft: 0
@@ -585,8 +585,8 @@ MonoBehaviour:
   actualHeadset: {fileID: 1484520488574230}
   actualLeftController: {fileID: 1188967653598346}
   actualRightController: {fileID: 1795744528920932}
-  modelAliasLeftController: {fileID: 1188967653598346}
-  modelAliasRightController: {fileID: 1795744528920932}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1487c36fb75d2924e8bff712895f43c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HoldButton: 0
+  HoldButton: 2
   UseButton: 17
   IsRight: 0
   IsLeft: 1
@@ -824,7 +824,7 @@ MonoBehaviour:
   distanceBlinkDelay: 0
   headsetPositionCompensation: 1
   targetListPolicy: {fileID: 0}
-  navMeshLimitDistance: 0
+  navMeshLimitDistance: 0.1
 --- !u!114 &114754214283269958
 MonoBehaviour:
   m_ObjectHideFlags: 1
