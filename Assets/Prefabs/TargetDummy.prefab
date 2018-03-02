@@ -1347,6 +1347,7 @@ MonoBehaviour:
     type: 2}
   arcanePrefab: {fileID: 1288577529637334, guid: 8370e24c0175ce14f9b27e76c83115e8,
     type: 2}
+  shieldPrefab: {fileID: 0}
 --- !u!114 &114185011263620844
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1388,6 +1389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 114382600199874376}
   RedP: {fileID: 1270418207012728}
+  head: {fileID: 4798265896865726}
 --- !u!136 &136816919980369532
 CapsuleCollider:
   m_ObjectHideFlags: 1

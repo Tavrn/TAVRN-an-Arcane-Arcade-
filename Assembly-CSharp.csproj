@@ -708,6 +708,7 @@
      <Compile Include="Assets\Scripts\HeadReference.cs" />
      <Compile Include="Assets\Scripts\HPIndicatorScript.cs" />
      <Compile Include="Assets\Scripts\MinionScript.cs" />
+     <Compile Include="Assets\Scripts\ShieldScript.cs" />
      <Compile Include="Assets\Scripts\Spell_BasicProjectile.cs" />
      <Compile Include="Assets\Scripts\SpellBookParentScript.cs" />
      <Compile Include="Assets\Scripts\SpellGeneric.cs" />

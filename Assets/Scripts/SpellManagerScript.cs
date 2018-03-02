@@ -403,7 +403,7 @@ public class SpellManagerScript : NetworkBehaviour {
 				Debug.Log("Shield called");
 				GameObject s = Instantiate(shieldPrefab) as GameObject;
 				s.transform.parent = spellsParent;
-				s.transform.position = posSlot.position+posSlot.up+posSlot.forward;
+				s.transform.position = posSlot.position-posSlot.right+posSlot.up;
 				NetworkServer.Spawn(s);
 				RpcParentTo(s.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 			}else{
@@ -414,7 +414,7 @@ public class SpellManagerScript : NetworkBehaviour {
 			Debug.Log("Shield called");
 			GameObject s = Instantiate(shieldPrefab) as GameObject;
 			s.transform.parent = spellsParent;
-			s.transform.position = posSlot.position+posSlot.up+posSlot.forward;
+			s.transform.position = posSlot.position-posSlot.right+posSlot.up;
 		}
 	}
 	[Command]
@@ -423,7 +423,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		Transform posSlot = GetComponent<Duel_PlayerScript>().posSlot.transform;
 		GameObject s = Instantiate(shieldPrefab) as GameObject;
 		s.transform.parent = spellsParent;
-		s.transform.position = posSlot.position+posSlot.up+posSlot.forward;
+		s.transform.position = posSlot.position-posSlot.right+posSlot.up;
 		NetworkServer.Spawn(s);
 		RpcParentTo(s.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}

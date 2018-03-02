@@ -8,6 +8,7 @@ TagManager:
   - WandCollider
   - Town
   - Duel_TargetCollider
+  - Duel_Shield
   layers:
   - Default
   - TransparentFX

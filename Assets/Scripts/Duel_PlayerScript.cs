@@ -40,8 +40,10 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		}
 	}
 	public void tryHit(float zhit, int damage){
-		if(!isServer){
-			return;
+		if(gameObject.name.Contains("Multi")){
+			if(!isServer){
+				return;
+			}
 		}
 		float posSlotZ = posSlot.transform.position.z;
 		if(posSlotZ>0.5f && zhit > 1/3f){

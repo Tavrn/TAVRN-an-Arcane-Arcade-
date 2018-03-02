@@ -23,9 +23,10 @@ GameObject:
   - component: {fileID: 23232018538362788}
   - component: {fileID: 65723603894701724}
   - component: {fileID: 114353113102580262}
+  - component: {fileID: 114042475306358828}
   m_Layer: 0
   m_Name: ShieldPrefab
-  m_TagString: Untagged
+  m_TagString: Duel_Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300326630621596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 7.021, y: 5.445, z: 0}
   m_LocalScale: {x: 0.05, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3f5ac1ed491dfbe45bc69c381dadc0c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,6 +98,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114042475306358828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300326630621596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e153737361d84468ee9e4d2d0e1d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 1
 --- !u!114 &114353113102580262
 MonoBehaviour:
   m_ObjectHideFlags: 1

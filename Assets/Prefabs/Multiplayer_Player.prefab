@@ -1551,6 +1551,8 @@ MonoBehaviour:
     type: 2}
   arcanePrefab: {fileID: 1288577529637334, guid: 8370e24c0175ce14f9b27e76c83115e8,
     type: 2}
+  shieldPrefab: {fileID: 1300326630621596, guid: a0aad0947bcfcff46bb8185046700d83,
+    type: 2}
 --- !u!114 &114191615245880104
 MonoBehaviour:
   m_ObjectHideFlags: 1
