@@ -286,6 +286,7 @@ public class BroomScript : MonoBehaviour
     //for selecting leveling method
     public bool levelInstantly;
     public bool isLeveling;
+    public bool isFrozen;
 
     //the current player & their head
     public GameObject player;
@@ -351,6 +352,7 @@ public class BroomScript : MonoBehaviour
     {
       if(isMounted)
       {
+        Debug.Log("yRot: " + head.transform.localRotation.y + " playerUp: " + player.transform.up);
         Debug.Log("Stopping");
         Debug.Log("Broom rotation -> " + transform.rotation.eulerAngles);
         FreezePrb();
@@ -386,6 +388,7 @@ public class BroomScript : MonoBehaviour
         if (!isMounted)
         {
             Debug.Log("mounted");
+            Debug.Log("yRot: " + head.transform.localRotation.y + " playerUp: " + player.transform.up);
             mountLocation = head.transform.localPosition;
             isMounted = true;
             transform.parent = player.transform;
@@ -437,40 +440,43 @@ public class BroomScript : MonoBehaviour
     //rotate and shift method
     public void TestMethod1()
     {
-        //finds head displacement from broom
-        float zDif = head.transform.localPosition.z - mountLocation.z;
-        float yRot = head.transform.localRotation.y;
-
-        //finds you current speed
-        float speed = prb.velocity.magnitude;
-
-        //adjusts to rotation around y
-        player.transform.RotateAround(player.transform.position, player.transform.up, yrotatespeed * yRot * speed);
-
-        //manage the up and down motion using the heads position
-        float rotationFactor;
-        if (zDif > 0)
+        if(!isFrozen)
         {
-            //want rotating downward to be faster
-            rotationFactor = 1.2f;
-        }
-        else
-        {
-            //want rotating upward to be slower
-            rotationFactor = 0.8f;
-        }
-        //actually do the up and down rotation
-        if (zDif < maxDeviate)
-        {
-            player.transform.RotateAround(player.transform.position, player.transform.right, zrotatespeed * rotationFactor * zDif * speed);
-        }
-        else
-        {
-            player.transform.RotateAround(player.transform.position, player.transform.right, zrotatespeed * rotationFactor * maxDeviate * speed);
-        }
+          //finds head displacement from broom
+          float zDif = head.transform.localPosition.z - mountLocation.z;
+          float yRot = head.transform.localRotation.y;
 
-        MoveForward();
-        //CheckStop();  instead use an event listener
+          //finds you current speed
+          float speed = prb.velocity.magnitude;
+
+          //adjusts to rotation around y
+          player.transform.RotateAround(player.transform.position, player.transform.up, yrotatespeed * yRot * speed);
+
+          //manage the up and down motion using the heads position
+          float rotationFactor;
+          if (zDif > 0)
+          {
+              //want rotating downward to be faster
+              rotationFactor = 1.2f;
+          }
+          else
+          {
+              //want rotating upward to be slower
+              rotationFactor = 0.8f;
+          }
+          //actually do the up and down rotation
+          if (zDif < maxDeviate)
+          {
+              player.transform.RotateAround(player.transform.position, player.transform.right, zrotatespeed * rotationFactor * zDif * speed);
+          }
+          else
+          {
+              player.transform.RotateAround(player.transform.position, player.transform.right, zrotatespeed * rotationFactor * maxDeviate * speed);
+          }
+
+          MoveForward();
+          //CheckStop();  instead use an event listener
+        }
     }
 
     public void MoveForward()
@@ -551,6 +557,7 @@ public class BroomScript : MonoBehaviour
 
     private void FreezePrb()
     {
+      isFrozen = true;
       prb.constraints = RigidbodyConstraints.FreezePositionX;
       prb.constraints = RigidbodyConstraints.FreezePositionY;
       prb.constraints = RigidbodyConstraints.FreezePositionZ;
@@ -559,6 +566,7 @@ public class BroomScript : MonoBehaviour
 
     private void UnfreezePrb()
     {
+      isFrozen = false;
       prb.constraints &= ~RigidbodyConstraints.FreezePositionX;
       prb.constraints &= ~RigidbodyConstraints.FreezePositionY;
       prb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
