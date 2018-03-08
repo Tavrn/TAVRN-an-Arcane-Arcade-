@@ -158,6 +158,8 @@ GameObject:
   - component: {fileID: 114258940286532144}
   - component: {fileID: 136858687480742126}
   - component: {fileID: 95769275864286356}
+  - component: {fileID: 114190652591903898}
+  - component: {fileID: 114831832033737738}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Untagged
@@ -790,6 +792,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114190652591903898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788771677084634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 104
+    i1: 54
+    i2: 178
+    i3: 192
+    i4: 181
+    i5: 163
+    i6: 32
+    i7: 52
+    i8: 75
+    i9: 110
+    i10: 88
+    i11: 232
+    i12: 75
+    i13: 28
+    i14: 122
+    i15: 42
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114258940286532144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -802,6 +836,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!114 &114831832033737738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788771677084634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.033333335
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!136 &136858687480742126
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -22,6 +22,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	public GameObject confettiPrefab;
 	public GameObject arcanePrefab;
 	public GameObject shieldPrefab;
+	public GameObject healPrefab;
 
 	private int cuedSpellNum = -1;
 	private bool aiming = false;
@@ -440,18 +441,77 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("ExplodingGuard called");
 	}
 
-
 	void I_SpawnMinion(){
-		Debug.Log("spawn minion called");
-		GameObject minion = Instantiate(minionPrefab) as GameObject;
-		minion.transform.position = myMinionSpawn.position;
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("spawn minion called");
+				GameObject m = Instantiate(minionPrefab) as GameObject;
+				m.transform.position = myMinionSpawn.position;
+				m.transform.parent = spellsParent;
+				NetworkServer.Spawn(m);
+				RpcParentTo(m.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdI_Shields();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("spawn minion called");
+			GameObject minion = Instantiate(minionPrefab) as GameObject;
+			minion.transform.position = myMinionSpawn.position;
+			minion.transform.parent = spellsParent;
+		}
+	}
+	[Command]
+	void CmdI_SpawnMinion(){
+		Debug.Log("CmdSpawnMinion called");
+		GameObject m = Instantiate(minionPrefab) as GameObject;
+		m.transform.parent = spellsParent;
+		m.transform.position = myMinionSpawn.position;
+		NetworkServer.Spawn(m);
+		RpcParentTo(m.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
 	void I_WeatherClear(){
-		playerSkybox.material = clearSkiesSkybox;
+		// playerSkybox.material = clearSkiesSkybox;
+		RenderSettings.skybox = clearSkiesSkybox;
+		weather = 0;
+		if(Multi){
+			if(NetworkServer.active){
+				RpcI_WeatherClear();
+			}else{
+				CmdI_WeatherClear();
+			}
+		}
+	}
+	[ClientRpc]
+	void RpcI_WeatherClear(){
+		RenderSettings.skybox = clearSkiesSkybox;
+		weather = 0;
+	}
+	[Command]
+	void CmdI_WeatherClear(){
+		RenderSettings.skybox = clearSkiesSkybox;
 		weather = 0;
 	}
 	void I_WeatherFire(){
-		playerSkybox.material = fireSkybox;
+		// playerSkybox.material = clearSkiesSkybox;
+		RenderSettings.skybox = fireSkybox;
+		weather = 1;
+		if(Multi){
+			if(NetworkServer.active){
+				RpcI_WeatherClear();
+			}else{
+				CmdI_WeatherClear();
+			}
+		}
+	}
+	[ClientRpc]
+	void RpcI_WeatherFire(){
+		RenderSettings.skybox = fireSkybox;
+		weather = 1;
+	}
+	[Command]
+	void CmdI_WeatherFire(){
+		RenderSettings.skybox = fireSkybox;
 		weather = 1;
 	}
 	void I_Confetti(){

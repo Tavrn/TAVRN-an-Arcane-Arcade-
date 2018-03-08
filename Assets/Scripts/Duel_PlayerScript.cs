@@ -11,6 +11,8 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	public GameObject wandtip;
 	[SyncVar]
 	public int HP = 100;
+	[SyncVar]
+	public int mana = 100;
 	private float pZ = 0.6f;
 	private float zZ = 0.3f;
 	void Start () {
