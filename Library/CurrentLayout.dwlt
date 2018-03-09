@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 681, y: 492}
+  m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 98
+  controlID: 92
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1336
     height: 947
-  m_MinSize: {x: 406, y: 492}
+  m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 99
+  controlID: 93
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1336
     height: 575
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 100
+  controlID: 94
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -380,20 +380,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Assets/Materials_2
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Assets/Materials_2
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\TAVRN\Desktop\Arcane Arcade - Copy\Arcane Arcade - Copy
+  m_LastProjectPath: C:\Users\TAVRN\Desktop\Arcane Arcade - Recent
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1314}
-    m_SelectedIDs: 32ad0000
-    m_LastClickedID: 44338
-    m_ExpandedIDs: 00000000a0a40000c0a5000000a60000b2a700000aa8000008a90000ceaa0000f8aa0000faaa000062ab000032ac0000b4ac000032ad00003cad00007aad000010ae00004aae0000c8ae000094b00000c8b1000014b2000042b200005ab2000078b20000c0b2000022b300005eb4000060b4000062b4000094b40000a8b40000c4b400001ab5000080b8000010b9000058b900000abb00008abb000020bc00005abf000088c00000c0c10000f4c100000cc30000a0c30000a2c900000eca00000acb00007acb0000b0cb0000b4cb000006cc000022cc000048cd0000b2cd000004cf00000acf000060cf000068d00000a4d00000d0d00000d8d00000f6d00000f8d000003adf00003cdf00003edf000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 159}
+    m_SelectedIDs: c6b70000
+    m_LastClickedID: 47046
+    m_ExpandedIDs: 000000008aae0000aaaf0000e8af000036b100008eb100008ab2000050b400007ab400007cb40000e8b40000bab5000040b60000b8b60000c2b6000000b7000064b7000096b70000d2b700004eb800001eba000058bb0000a4bb0000d2bb0000eabb00000abc000050bc0000b2bc0000eebd0000f0bd0000f2bd000024be00003abe000056be0000acbe0000b2be000014c20000a2c20000eac20000a2c4000022c50000b8c50000ccc80000f0c900002ccb000062cb000050cc0000e6cc00008ed20000f8d20000f8d3000068d40000a0d40000a4d40000f4d4000010d5000006d6000072d60000c4d70000cad7000020d80000fcd800003ad9000066d900006ed900008cd900008ed90000d6dc0000d8dc0000dadc000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -421,7 +421,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a0a40000c0a5000000a60000b2a700000aa8000008a90000ceaa0000f8aa0000faaa000032ac0000b4ac000032ad00007aad000010ae00004aae0000c8ae000094b00000c8b1000014b2000042b200005ab2000078b20000c0b2000022b300005eb4000060b4000062b4000094b40000a8b40000c4b400001ab5000080b8000010b9000058b900000abb00008abb00005abf000088c00000c0c10000f4c100000cc30000a0c30000a2c900000eca00000acb00007acb0000b0cb0000b4cb000006cc000022cc000048cd0000b2cd000004cf00000acf000060cf000068d00000a4d00000d0d00000d8d00000f6d00000f8d000003adf00003cdf00003edf0000
+    m_ExpandedIDs: 000000008aae0000aaaf0000e8af000036b100008eb100008ab2000050b400007ab400007cb40000e8b40000bab5000040b60000b8b60000c2b6000000b7000096b70000d2b700004eb800001eba000058bb0000a4bb0000d2bb0000eabb00000abc000050bc0000b2bc0000eebd0000f0bd0000f2bd000024be00003abe000056be0000acbe000014c20000a2c20000eac20000a2c4000022c50000b8c50000ccc80000f0c900002ccb000062cb000050cc0000e6cc00008ed20000f8d20000f8d3000068d40000a0d40000a4d40000f4d4000010d5000006d6000072d60000c4d70000cad7000020d80000fcd800003ad9000066d900006ed900008cd900008ed90000d6dc0000d8dc0000dadc0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -503,14 +503,14 @@ MonoBehaviour:
     height: 554
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 3511.2610662158772
+  lastFramingTime: 5678.824094193099
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -14.873671, y: 3.2563233, z: 8.725931}
+    m_Target: {x: -14.440735, y: 148.18402, z: -451.3577}
     speed: 2
-    m_Value: {x: -14.873671, y: 3.2563233, z: 8.725931}
+    m_Value: {x: -14.440735, y: 148.18402, z: -451.3577}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -538,13 +538,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.045692172, y: 0.55311126, z: -0.030385235, w: -0.83129835}
+    m_Target: {x: 0.028247094, y: 0.9492832, z: -0.08940704, w: 0.30020812}
     speed: 2
-    m_Value: {x: -0.045692172, y: 0.55311126, z: -0.030385235, w: -0.83129835}
+    m_Value: {x: 0.028246315, y: 0.949257, z: -0.08940458, w: 0.30019987}
   m_Size:
-    m_Target: 27.018064
+    m_Target: 979.8719
     speed: 2
-    m_Value: 27.018064
+    m_Value: 979.8719
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -583,10 +583,10 @@ MonoBehaviour:
     height: 554
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 4980}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 828df8ff3e8ef8ff488ef8ff08b3f8ff5eb3f8ffc4b3f8ffceb3f8ffa4ecf8ffaeecf8ffb4ecf8ff32edf8ff4838f9ff0439f9ff0e39f9ff9c42faffa642faffac42faff2a43faffb6c7faff0cc8faff0ec8faff72c8faff7cc8faff2c36feff9292feff782cffff822cffffaa4fffff8a6dffff00000000
+    m_ExpandedIDs: 78d6f6ff7ad6f6ffb6d7f6fffa44f9ff42dff9ff8ea1faffd21afcff7afcfeff1405ffff7a25ffff5231ffff0000000012f60000d2f6000044bb0100ecbb0100aebc0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -605,7 +605,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Duel Multi
+  - Town
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 1

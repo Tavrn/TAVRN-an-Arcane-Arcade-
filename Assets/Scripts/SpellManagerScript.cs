@@ -474,7 +474,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		// playerSkybox.material = clearSkiesSkybox;
 		RenderSettings.skybox = clearSkiesSkybox;
 		weather = 0;
-		if(Multi){
+		if(isMulti){
 			if(NetworkServer.active){
 				RpcI_WeatherClear();
 			}else{
@@ -496,7 +496,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		// playerSkybox.material = clearSkiesSkybox;
 		RenderSettings.skybox = fireSkybox;
 		weather = 1;
-		if(Multi){
+		if(isMulti){
 			if(NetworkServer.active){
 				RpcI_WeatherClear();
 			}else{
