@@ -869,6 +869,16 @@
     <Compile Include="Assets\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseDefines.cs" />
     <Compile Include="Assets\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseHeadset.cs" />
     <Compile Include="Assets\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseSystem.cs" />
+    <Compile Include="Assets\MagicArsenal\Demo\Scripts\MagicButtonScript.cs" />
+    <Compile Include="Assets\MagicArsenal\Demo\Scripts\MagicDragMouseOrbit.cs" />
+    <Compile Include="Assets\MagicArsenal\Demo\Scripts\MagicFireProjectile.cs" />
+    <Compile Include="Assets\MagicArsenal\Demo\Scripts\MagicLoadSceneOnClick.cs" />
+    <Compile Include="Assets\MagicArsenal\Demo\Scripts\MagicLoopScript.cs" />
+    <Compile Include="Assets\MagicArsenal\Demo\Scripts\MagicProjectileScript.cs" />
+    <Compile Include="Assets\MagicArsenal\Effects\Scripts\MagicBeamScript.cs" />
+    <Compile Include="Assets\MagicArsenal\Effects\Scripts\MagicLightFade.cs" />
+    <Compile Include="Assets\MagicArsenal\Effects\Scripts\MagicLightFlicker.cs" />
+    <Compile Include="Assets\MagicArsenal\Effects\Scripts\MagicRotation.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AchievementType.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\AndroidPlatform.cs" />
     <Compile Include="Assets\OculusPlatform\Scripts\BufferedAudioStream.cs" />
@@ -1093,6 +1103,7 @@
     <Compile Include="Assets\Town\Scripts\QualitySetup.cs" />
     <Compile Include="Assets\Town\Scripts\SkyboxReplacer.cs" />
     <Compile Include="Assets\Town\Scripts\twinkle.cs" />
+    <Compile Include="Assets\Water.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Imports\Laterns and candles\Shaders\GlassStainedBumpDistort.shader" />
@@ -1136,6 +1147,8 @@
     <None Include="Assets\Imports\VRTK\Scripts\Internal\Shaders\Unlit_TransparentColor.shader" />
     <None Include="Assets\Imports\VRTK\Scripts\Internal\Shaders\VRTK_OutlineBasic.shader" />
     <None Include="Assets\LICENSE.txt" />
+    <None Include="Assets\MagicArsenal\MagicArsenal - ReadMe.txt" />
+    <None Include="Assets\NatureStarterKit2\info.txt" />
     <None Include="Assets\OculusPlatform\LICENSE.txt" />
     <None Include="Assets\OculusPlatform\THIRD_PARTY_NOTICES.txt" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
@@ -1252,6 +1265,15 @@
     <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
     <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\Projectors\Guidelines.txt" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+    <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Rocks and Boulders 2\readme.txt" />
     <None Include="Assets\Town\Shaders\DistanceFade.shader" />
     <None Include="Assets\Town\Shaders\TerrainSurface.shader" />

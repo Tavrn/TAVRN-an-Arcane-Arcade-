@@ -451,7 +451,7 @@ public class SpellManagerScript : NetworkBehaviour {
 				NetworkServer.Spawn(m);
 				RpcParentTo(m.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 			}else{
-				CmdI_Shields();
+				CmdI_SpawnMinion();
 				// g.transform.parent = transform.root.Find("SpellsParent");
 			}
 		}else{
@@ -471,6 +471,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		RpcParentTo(m.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
 	void I_WeatherClear(){
+		Debug.Log("clear");
 		// playerSkybox.material = clearSkiesSkybox;
 		RenderSettings.skybox = clearSkiesSkybox;
 		weather = 0;
@@ -484,11 +485,13 @@ public class SpellManagerScript : NetworkBehaviour {
 	}
 	[ClientRpc]
 	void RpcI_WeatherClear(){
+		Debug.Log("rpcclear");
 		RenderSettings.skybox = clearSkiesSkybox;
 		weather = 0;
 	}
 	[Command]
 	void CmdI_WeatherClear(){
+		Debug.Log("cmdclear");
 		RenderSettings.skybox = clearSkiesSkybox;
 		weather = 0;
 	}
@@ -498,9 +501,9 @@ public class SpellManagerScript : NetworkBehaviour {
 		weather = 1;
 		if(isMulti){
 			if(NetworkServer.active){
-				RpcI_WeatherClear();
+				RpcI_WeatherFire();
 			}else{
-				CmdI_WeatherClear();
+				CmdI_WeatherFire();
 			}
 		}
 	}
@@ -514,6 +517,73 @@ public class SpellManagerScript : NetworkBehaviour {
 		RenderSettings.skybox = fireSkybox;
 		weather = 1;
 	}
+}
+void I_WeatherRain(){
+	// playerSkybox.material = clearSkiesSkybox;
+	RenderSettings.skybox = rainSkybox;
+	weather = 2;
+	if(isMulti){
+		if(NetworkServer.active){
+			RpcI_WeatherRain();
+		}else{
+			CmdI_WeatherRain();
+		}
+	}
+}
+[ClientRpc]
+void RpcI_WeatherRain(){
+	RenderSettings.skybox = rainSkybox;
+	weather = 2;
+}
+[Command]
+void CmdI_WeatherRain(){
+	RenderSettings.skybox = rainSkybox;
+	weather = 2;
+}
+void I_WeatherSand(){
+	// playerSkybox.material = clearSkiesSkybox;
+	RenderSettings.skybox = sandSkybox;
+	weather = 3;
+	if(isMulti){
+		if(NetworkServer.active){
+			RpcI_WeatherSand();
+		}else{
+			CmdI_WeatherSand();
+		}
+	}
+}
+[ClientRpc]
+void RpcI_WeatherSand(){
+	RenderSettings.skybox = sandSkybox;
+	weather = 3;
+}
+[Command]
+void CmdI_WeatherSand(){
+	RenderSettings.skybox = sandSkybox;
+	weather = 3;
+}
+void I_WeatherWind(){
+	// playerSkybox.material = clearSkiesSkybox;
+	RenderSettings.skybox = windSkybox;
+	weather = 4;
+	if(isMulti){
+		if(NetworkServer.active){
+			RpcI_WeatherWind();
+		}else{
+			CmdI_WeatherWind();
+		}
+	}
+}
+[ClientRpc]
+void RpcI_WeatherWind(){
+	RenderSettings.skybox = windSkybox;
+	weather = 4;
+}
+[Command]
+void CmdI_WeatherWind(){
+	RenderSettings.skybox = windSkybox;
+	weather = 4;
+}
 	void I_Confetti(){
 		Debug.Log("confetti");
 		GameObject c = Instantiate(confettiPrefab) as GameObject;

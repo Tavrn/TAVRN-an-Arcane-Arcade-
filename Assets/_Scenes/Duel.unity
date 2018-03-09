@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1840747754}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028377, g: 0.22571409, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18107,11 +18107,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1267203384128310, guid: 474ff19a6aaffac48be21ed5e939c24f,
     type: 2}
   m_PrefabInternal: {fileID: 2068151075}
---- !u!45 &887797686 stripped
-Skybox:
-  m_PrefabParentObject: {fileID: 45970974282737362, guid: 474ff19a6aaffac48be21ed5e939c24f,
-    type: 2}
-  m_PrefabInternal: {fileID: 2068151075}
 --- !u!1001 &912007819
 Prefab:
   m_ObjectHideFlags: 0
@@ -19149,7 +19144,7 @@ Prefab:
         type: 2}
       propertyPath: playerSkybox
       value: 
-      objectReference: {fileID: 887797686}
+      objectReference: {fileID: 0}
     - target: {fileID: 1395572842612118, guid: b7368e65134181c49b4516f13789cc4d, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -23686,47 +23681,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1201235390101270, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924879643840602, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 114004634626291462, guid: 474ff19a6aaffac48be21ed5e939c24f,
+        type: 2}
+      propertyPath: playerSkybox
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 114337573153218172, guid: 474ff19a6aaffac48be21ed5e939c24f,
         type: 2}
-      propertyPath: OverrideAll
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114337573153218172, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: OverrideOculus
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114337573153218172, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: OverrideAllLeftHand
+      propertyPath: OverrideOculusLeftHand
       value: 
-      objectReference: {fileID: 1726231793004224, guid: 398227f7805c3fe42a9931b71f1d7d31,
+      objectReference: {fileID: 1657246792782100, guid: 10bf16f7505825641a43bdefbdbc257f,
         type: 2}
     - target: {fileID: 114337573153218172, guid: 474ff19a6aaffac48be21ed5e939c24f,
         type: 2}
-      propertyPath: OverrideAllLeftHandPhysicalColliders
+      propertyPath: OverrideOculusRightHand
       value: 
-      objectReference: {fileID: 1726231793004224, guid: 398227f7805c3fe42a9931b71f1d7d31,
-        type: 2}
-    - target: {fileID: 114337573153218172, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: OverrideAllRightHand
-      value: 
-      objectReference: {fileID: 1726231793004224, guid: 398227f7805c3fe42a9931b71f1d7d31,
-        type: 2}
-    - target: {fileID: 114337573153218172, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: OverrideAllRightHandPhysicalColliders
-      value: 
-      objectReference: {fileID: 1726231793004224, guid: 398227f7805c3fe42a9931b71f1d7d31,
+      objectReference: {fileID: 1657246792782100, guid: 10bf16f7505825641a43bdefbdbc257f,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}

@@ -163,7 +163,6 @@ GameObject:
   - component: {fileID: 92385822482518248}
   - component: {fileID: 124278459014072352}
   - component: {fileID: 81715629192338010}
-  - component: {fileID: 45970974282737362}
   - component: {fileID: 65354858245178428}
   - component: {fileID: 114401109543213266}
   m_Layer: 0
@@ -1157,14 +1156,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1582968114147232}
   m_Mesh: {fileID: 4300000, guid: bb8e78d35597ff146a91906bac6729f2, type: 3}
---- !u!45 &45970974282737362
-Skybox:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267203384128310}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 71f14a2d79f732f4d9893ef1b911f4ff, type: 2}
 --- !u!54 &54778145058782742
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -1396,7 +1387,7 @@ MonoBehaviour:
   myMinionSpawn: {fileID: 4707230836497460}
   minionPrefab: {fileID: 1788771677084634, guid: 6836b2c0b5a320344b6e58e84b1c7a2a,
     type: 2}
-  playerSkybox: {fileID: 45970974282737362}
+  playerSkybox: {fileID: 0}
   clearSkiesSkybox: {fileID: 2100000, guid: 71f14a2d79f732f4d9893ef1b911f4ff, type: 2}
   fireSkybox: {fileID: 2100000, guid: 4067de1a02072244798361060c5e7325, type: 2}
   fireballPrefab: {fileID: 1673865275875592, guid: 9f8f7ffa3d105a74a8432c6a4c99095c,
@@ -1406,6 +1397,7 @@ MonoBehaviour:
   arcanePrefab: {fileID: 1288577529637334, guid: 8370e24c0175ce14f9b27e76c83115e8,
     type: 2}
   shieldPrefab: {fileID: 0}
+  healPrefab: {fileID: 0}
 --- !u!114 &114059020885811250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1498,6 +1490,7 @@ MonoBehaviour:
   myTargetCollider: {fileID: 1059644422041354}
   wandtip: {fileID: 1062360692521550}
   HP: 100
+  mana: 100
 --- !u!114 &114330357692523242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1552,27 +1545,25 @@ MonoBehaviour:
     type: 2}
   EditorPlayspaceOverride: 0
   EditorPlayspaceDefault: {x: 2, y: 1.5}
-  OverrideAll: 0
-  OverrideAllLeftHand: {fileID: 56742944, guid: 55e83fd42960be248a3e117078f3da8b,
+  OverrideAll: 1
+  OverrideAllLeftHand: {fileID: 1726231793004224, guid: 398227f7805c3fe42a9931b71f1d7d31,
     type: 2}
-  OverrideAllLeftHandPhysicalColliders: {fileID: 54487328, guid: 7c3b57f429838f14a8a2c2c179e9e9e9,
+  OverrideAllLeftHandPhysicalColliders: {fileID: 1726231793004224, guid: 398227f7805c3fe42a9931b71f1d7d31,
     type: 2}
-  OverrideAllRightHand: {fileID: 56745632, guid: 55e83fd42960be248a3e117078f3da8b,
+  OverrideAllRightHand: {fileID: 1726231793004224, guid: 398227f7805c3fe42a9931b71f1d7d31,
     type: 2}
-  OverrideAllRightHandPhysicalColliders: {fileID: 56746656, guid: 7c3b57f429838f14a8a2c2c179e9e9e9,
+  OverrideAllRightHandPhysicalColliders: {fileID: 1726231793004224, guid: 398227f7805c3fe42a9931b71f1d7d31,
     type: 2}
   OverrideSteamVR: 0
   OverrideSteamVRLeftHand: {fileID: 0}
   OverrideSteamVRLeftHandPhysicalColliders: {fileID: 0}
   OverrideSteamVRRightHand: {fileID: 0}
   OverrideSteamVRRightHandPhysicalColliders: {fileID: 0}
-  OverrideOculus: 1
-  OverrideOculusLeftHand: {fileID: 1657246792782100, guid: 10bf16f7505825641a43bdefbdbc257f,
-    type: 2}
+  OverrideOculus: 0
+  OverrideOculusLeftHand: {fileID: 0}
   OverrideOculusLeftHandPhysicalColliders: {fileID: 56753312, guid: 7c3b57f429838f14a8a2c2c179e9e9e9,
     type: 2}
-  OverrideOculusRightHand: {fileID: 1657246792782100, guid: 10bf16f7505825641a43bdefbdbc257f,
-    type: 2}
+  OverrideOculusRightHand: {fileID: 0}
   OverrideOculusRightHandPhysicalColliders: {fileID: 56641824, guid: 7c3b57f429838f14a8a2c2c179e9e9e9,
     type: 2}
   Head: {fileID: 114854989262781848}
