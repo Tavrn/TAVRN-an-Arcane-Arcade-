@@ -17,6 +17,9 @@ public class SpellManagerScript : NetworkBehaviour {
 	public Skybox playerSkybox;
 	public Material clearSkiesSkybox;
 	public Material fireSkybox;
+	public Material rainSkybox;
+	public Material sandSkybox;
+	public Material windSkybox;
 	[Space(10)]
 	public GameObject fireballPrefab;
 	public GameObject confettiPrefab;
@@ -517,7 +520,6 @@ public class SpellManagerScript : NetworkBehaviour {
 		RenderSettings.skybox = fireSkybox;
 		weather = 1;
 	}
-}
 void I_WeatherRain(){
 	// playerSkybox.material = clearSkiesSkybox;
 	RenderSettings.skybox = rainSkybox;
