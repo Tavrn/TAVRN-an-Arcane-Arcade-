@@ -757,6 +757,7 @@
      <Compile Include="Assets\Scripts\ColliderScript.cs" />
      <Compile Include="Assets\Scripts\CollidersScript.cs" />
      <Compile Include="Assets\Scripts\CustomDoor.cs" />
+     <Compile Include="Assets\Scripts\DeckSelect.cs" />
      <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener.cs" />
      <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener_LH.cs" />
      <Compile Include="Assets\Scripts\Duel_HeadScript.cs" />
@@ -772,6 +773,7 @@
      <Compile Include="Assets\Scripts\TargetColliderScript.cs" />
      <Compile Include="Assets\Scripts\Tavern_EventListener.cs" />
      <Compile Include="Assets\Scripts\Town_ControllerEvents_Listener.cs" />
+     <Compile Include="Assets\Scripts\UserDeck.cs" />
      <Compile Include="Assets\Scripts\WandParentScript.cs" />
      <Compile Include="Assets\Scripts\WandScript.cs" />
      <Compile Include="Assets\Town\Scripts\ControlSwitch.cs" />

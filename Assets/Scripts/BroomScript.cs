@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BroomScript : MonoBehaviour
 {
-    //for selecting driving method
-    [Range(-1, 1)]
-    public int drivingMethod;
 
     //for selecting leveling method
     public bool emergencyReverse;
@@ -27,7 +24,7 @@ public class BroomScript : MonoBehaviour
     private bool firstPress = true;
 
     //for rotation control
-    private float yrotatespeed = 0.5f;
+    private float yrotatespeed = 0.003f;
     private float zrotatespeed = 0.5f;
     private Vector3 startingUp;
 
@@ -57,9 +54,7 @@ public class BroomScript : MonoBehaviour
     {
         if (isMounted)
         {
-            if      (drivingMethod == 1)  { TestMethod1(); }
-            else if (drivingMethod == -1) { SammyTestMethod(); }
-            else                          { DaniCurrentMethod(); }
+            TestMethod1();
         }
     }
 
@@ -68,9 +63,6 @@ public class BroomScript : MonoBehaviour
         currentPressure = f;
         if(isMounted)
         {
-          Debug.Log(" playerUp: " + player.transform.up);
-          Debug.Log("yRot: " + head.transform.localRotation.y + " headQuat: " + head.transform.localRotation);
-          Debug.Log("Broom rot " + transform.rotation.eulerAngles + " Broom Quat " + transform.rotation);
           if(firstPress)
           {
             //put the broom under you when you first want to move
@@ -90,7 +82,6 @@ public class BroomScript : MonoBehaviour
     {
       if(isMounted)
       {
-        Debug.Log("Stopping");
         FreezePrb();
       }
     }
@@ -104,8 +95,6 @@ public class BroomScript : MonoBehaviour
     {
         if(isMounted)
         {
-          Debug.Log("Leveling");
-
           if(levelInstantly)  { InstantLevel(); }
           else                { TimedLevel(); }
         }
@@ -123,54 +112,12 @@ public class BroomScript : MonoBehaviour
     {
         if (!isMounted)
         {
-            Debug.Log("mounted");
-            Debug.Log("yRot: " + head.transform.localRotation.y + " playerUp: " + player.transform.up);
             mountLocation = head.transform.localPosition;
             isMounted = true;
             transform.parent = player.transform;
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             startingUp = Vector3.up;
         }
-    }
-
-    public void DaniCurrentMethod()
-    {
-        Vector3 difference = head.transform.localPosition - mountLocation;
-        float speed = prb.velocity.magnitude;
-        if (difference.x < maxDeviate)
-        {
-            player.transform.RotateAround(player.transform.position, player.transform.up, yrotatespeed * difference.x * speed);
-        }
-        else
-        {
-            player.transform.RotateAround(player.transform.position, player.transform.up, yrotatespeed * maxDeviate * speed);
-        }
-        if (difference.z < maxDeviate)
-        {
-            player.transform.RotateAround(player.transform.position, player.transform.right, zrotatespeed * difference.z * speed);
-        }
-        else
-        {
-            player.transform.RotateAround(player.transform.position, player.transform.right, zrotatespeed * maxDeviate * speed);
-        }
-        prb.AddForce(player.transform.forward * acceleration * currentPressure);
-        prb.velocity = transform.forward * prb.velocity.magnitude;
-        if (prb.velocity.magnitude > maxSpeed)
-        {
-            prb.velocity = transform.forward * maxSpeed;
-        }
-    }
-
-    //only forward
-    public void SammyTestMethod()
-    {
-        //sync rotation with head (may need to smooth this out)
-        transform.rotation = head.transform.localRotation;
-
-        //Add forward velocity
-        prb.velocity = head.transform.forward * CONST_SPD;
-
-        //CheckStop();
     }
 
     //rotate and shift method
@@ -182,14 +129,12 @@ public class BroomScript : MonoBehaviour
           float zDif = head.transform.localPosition.z - mountLocation.z;
           float yRot = 0.0f;
 
-          if(emergencyReverse)
+          yRot = head.transform.localRotation.eulerAngles.y;
+          if(yRot > 180)
           {
-            yRot = -1 * head.transform.localRotation.y;
+            yRot = yRot - 360;
           }
-          else
-          {
-            yRot = head.transform.localRotation.y;
-          }
+
           //finds you current speed
           float speed = prb.velocity.magnitude;
 
