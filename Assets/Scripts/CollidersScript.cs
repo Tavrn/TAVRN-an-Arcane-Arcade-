@@ -10,9 +10,9 @@ public class CollidersScript : MonoBehaviour {
 	public WandScript wandScript;
 	[HideInInspector]
 	public GameObject originCollider;
-	private int height = 5;
-	private int width = 5;
-	private int depth = 5;
+	private int height = 3;
+	private int width = 3;
+	private int depth = 3;
 	// Use this for initialization
 	void Start () {
 		for(int h=-height; h<=height; h++){
@@ -20,7 +20,7 @@ public class CollidersScript : MonoBehaviour {
 				for(int w=-width; w<=width; w++){
 					GameObject c = Instantiate(colliderPrefab) as GameObject;
 					c.transform.parent = transform;
-					c.transform.position = new Vector3(w*0.1f,h*0.1f,d*0.1f);
+					c.transform.position = new Vector3(w*0.15f,h*0.15f,d*0.15f);
 					ColliderScript s = c.GetComponent<ColliderScript>();
 					s.x = w;
 					s.y = h;
