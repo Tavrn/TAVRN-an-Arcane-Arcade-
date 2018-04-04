@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1840747754}
-  m_IndirectSpecularColor: {r: 0.36137855, g: 0.32689393, b: 0.35770828, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8847,7 +8847,7 @@ MonoBehaviour:
   m_OnlineScene: Duel Multi
   m_SpawnPrefabs:
   - {fileID: 1164635755521438, guid: 03a5fca0aa163284d949a8de00647d02, type: 2}
-  - {fileID: 1673865275875592, guid: 9f8f7ffa3d105a74a8432c6a4c99095c, type: 2}
+  - {fileID: 1450673449457036, guid: 1dff682dcbcf69444a7adff7d891861d, type: 2}
   - {fileID: 1300326630621596, guid: a0aad0947bcfcff46bb8185046700d83, type: 2}
   - {fileID: 1064373745252902, guid: 88a286df2e262eb4daa8cc8621900a53, type: 2}
   - {fileID: 1788771677084634, guid: 6836b2c0b5a320344b6e58e84b1c7a2a, type: 2}
