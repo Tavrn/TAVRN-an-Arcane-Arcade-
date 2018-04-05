@@ -19,6 +19,8 @@ public class SpellGeneric : MonoBehaviour {
 				c.GetComponent<ShieldScript>().Hit();
 				Destroy(gameObject);
 			}
+		}else if(c.gameObject.tag == "GarbageCollector"){
+			Destroy(gameObject);
 		}
 	}
 	public virtual void Trigger(Vector3 v, Duel_PlayerScript p, SpellManagerScript s){

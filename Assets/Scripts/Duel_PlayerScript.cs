@@ -13,7 +13,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	public int HP = 100;
 	[SyncVar]
 	public int mana = 100;
-	
+
 	private float pZ = 0.6f;
 	private float zZ = 0.3f;
 	void Start () {
@@ -58,7 +58,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		}
 	}
 	public void hit(int damage){
-		HP -= damage;
+		HP = Mathf.Clamp(HP-damage, 0, 100);
 	}
 	// Update is called once per frame
 	void Update () {

@@ -1731,7 +1731,7 @@ MonoBehaviour:
   myTargetCollider: {fileID: 1059644422041354}
   wandtip: {fileID: 1062360692521550}
   HP: 100
-  mana: 100
+  mana: 50
 --- !u!114 &114330357692523242
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,6 +9,7 @@ TagManager:
   - Town
   - Duel_TargetCollider
   - Duel_Shield
+  - GarbageCollector
   layers:
   - Default
   - TransparentFX

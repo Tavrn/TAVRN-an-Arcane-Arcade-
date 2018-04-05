@@ -94,7 +94,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		CreateSpell("Fissure", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(1, 1, 0), new Coordinate(1, 1, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("FlameCarpet", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0,1,0), new Coordinate(-1, 1, 0), new Coordinate(-1, 0, 0), new Coordinate(-1, 0, 1) });
 		CreateSpell("I_Heal", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1,2,1) });
-		CreateSpell("Conversion", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(0, 1, 1) });
+		CreateSpell("I_Conversion", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("Blind", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0) });
 		CreateSpell("Invisible", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 1, 1) });
 		CreateSpell("Taunt", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1) });
@@ -408,17 +408,6 @@ public class SpellManagerScript : NetworkBehaviour {
 				effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
 			}
 		}
-		// Debug.Log("Heal called");
-		// int dur = 5;
-		// float tick = 0.25f;
-		// if(!effectNames.Contains("HealHelper")){
-		// 	effectEndTimes.Add(Time.time+dur);
-		// 	effectNames.Add("HealHelper");
-		// 	effectTickL.Add(tick);
-		// 	effectPrevTimes.Add(-tick);
-		// }else{
-		// 	effectEndTimes[effectNames.IndexOf("HealHelper")] = Time.time+dur;
-		// }
 	}
 	[Command]
 	void CmdHeal(){
@@ -439,8 +428,60 @@ public class SpellManagerScript : NetworkBehaviour {
 		myPlayer.HP = Mathf.Clamp(myPlayer.HP+tickHeal, 0, 100);
 		Debug.Log("Heal helper called");
 	}
-	void Conversion(){
-		Debug.Log("Conversion called");
+	void I_Conversion(){
+		//20 hp healed over 5 seconds
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Conversion called");
+				int dur = 10;
+				float tick = 1f;
+				if(!effectNames.Contains("ConversionHelper")){
+					effectEndTimes.Add(Time.time+dur);
+					effectNames.Add("ConversionHelper");
+					effectTickL.Add(tick);
+					effectPrevTimes.Add(-tick);
+				}else{
+					effectEndTimes[effectNames.IndexOf("ConversionHelper")] = Time.time+dur;
+				}
+			}else{
+				CmdConversion();
+			}
+		}else{
+			Debug.Log("Conversion called");
+			int dur = 10;
+			float tick = 1f;
+			if(!effectNames.Contains("ConversionHelper")){
+				effectEndTimes.Add(Time.time+dur);
+				effectNames.Add("ConversionHelper");
+				effectTickL.Add(tick);
+				effectPrevTimes.Add(-tick);
+			}else{
+				effectEndTimes[effectNames.IndexOf("ConversionHelper")] = Time.time+dur;
+			}
+		}
+	}
+	[Command]
+	void CmdConversion(){
+		Debug.Log("CmdConversion called");
+		int dur = 10;
+		float tick = 1f;
+		if(!effectNames.Contains("ConversionHelper")){
+			effectEndTimes.Add(Time.time+dur);
+			effectNames.Add("ConversionHelper");
+			effectTickL.Add(tick);
+			effectPrevTimes.Add(-tick);
+		}else{
+			effectEndTimes[effectNames.IndexOf("ConversionHelper")] = Time.time+dur;
+		}
+	}
+	void ConversionHelper(){
+		Debug.Log("Conversion helper called");
+		int tickDamage = 5;
+		int tickMana = 5;
+		if(myPlayer.HP>tickDamage){
+			myPlayer.HP = Mathf.Clamp(myPlayer.HP-tickDamage, 0, 100);
+			myPlayer.mana = Mathf.Clamp(myPlayer.mana + tickMana, 0, 100);
+		}
 	}
 	void Blind(){
 		Debug.Log("Blind called");
