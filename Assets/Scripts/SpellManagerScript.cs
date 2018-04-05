@@ -26,6 +26,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	public GameObject magicMissilePrefab;
 	public GameObject arcaneSpherePrefab;
 	public GameObject aquaOrbPrefab;
+	public GameObject scalingShotPrefab;
 	public GameObject shieldPrefab;
 	public GameObject healPrefab;
 
@@ -72,7 +73,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	void SetUpSpells(){
 		CreateSpell("MagicMissile", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(-1,1,1) });
 		CreateSpell("ArcaneSphere", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0)});
-		CreateSpell("Rekka", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(0,0,0) });
+		CreateSpell("ScalingShot", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(0,0,0) });
 		CreateSpell("TripleLock", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(1,1,0), new Coordinate(2, 1, 0), new Coordinate(2, 2, 0) });
 		CreateSpell("LightningBolt", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(0,2,0), new Coordinate(1, 2, 0), new Coordinate(1, 3, 0) });
 		CreateSpell("AquaOrb", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-1, -1, 1) });
@@ -275,8 +276,44 @@ public class SpellManagerScript : NetworkBehaviour {
 		NetworkServer.Spawn(fb);
 		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
-	void Rekka(){
-		Debug.Log("Rekka called");
+	void ScalingShot(){
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("ScalingShot called");
+				float speed = 1f;
+				Vector3 dir = wandTip.position-wandHandle.position;
+				GameObject fb = Instantiate(scalingShotPrefab) as GameObject;
+				fb.transform.parent = spellsParent.transform;
+				fb.transform.position = wandTip.position+dir;
+				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+				NetworkServer.Spawn(fb);
+				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdScalingShot();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("ScalingShot called");
+			float speed = 1f;
+			Vector3 dir = wandTip.position-wandHandle.position;
+			GameObject fb = Instantiate(scalingShotPrefab) as GameObject;
+			fb.transform.parent = spellsParent.transform;
+			fb.transform.position = wandTip.position+dir;
+			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		}
+
+	}
+	[Command]
+	void CmdScalingShot(){
+		Debug.Log("CmdScalingShot called");
+		float speed = 1f;
+		Vector3 dir = wandTip.position-wandHandle.position;
+		GameObject fb = Instantiate(scalingShotPrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
+		fb.transform.position = wandTip.position+dir;
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		NetworkServer.Spawn(fb);
+		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
 	void TripleLock(){
 		Debug.Log("TripleLock called");
@@ -288,7 +325,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		if(isMulti){
 			if(NetworkServer.active){
 				Debug.Log("AquaOrb called");
-				float speed = 0.5f;
+				float speed = 0.75f;
 				Vector3 dir = wandTip.position-wandHandle.position;
 				GameObject fb = Instantiate(aquaOrbPrefab) as GameObject;
 				fb.transform.parent = spellsParent.transform;
@@ -302,7 +339,7 @@ public class SpellManagerScript : NetworkBehaviour {
 			}
 		}else{
 			Debug.Log("AquaOrb called");
-			float speed = 0.5f;
+			float speed = 0.75f;
 			Vector3 dir = wandTip.position-wandHandle.position;
 			GameObject fb = Instantiate(aquaOrbPrefab) as GameObject;
 			fb.transform.parent = spellsParent.transform;
@@ -314,7 +351,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	[Command]
 	void CmdAquaOrb(){
 		Debug.Log("CmdAquaOrb called");
-		float speed = 0.5f;
+		float speed = 0.75f;
 		Vector3 dir = wandTip.position-wandHandle.position;
 		GameObject fb = Instantiate(aquaOrbPrefab) as GameObject;
 		fb.transform.parent = spellsParent.transform;

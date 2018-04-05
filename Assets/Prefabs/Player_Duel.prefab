@@ -1638,6 +1638,8 @@ MonoBehaviour:
     type: 2}
   aquaOrbPrefab: {fileID: 1391202917938966, guid: 3651b43792ab00848b1006500d83639d,
     type: 2}
+  scalingShotPrefab: {fileID: 1322988710798350, guid: f8c4eaad0c62ac74ea1b0a1496a97ead,
+    type: 2}
   shieldPrefab: {fileID: 1300326630621596, guid: a0aad0947bcfcff46bb8185046700d83,
     type: 2}
   healPrefab: {fileID: 1064373745252902, guid: 88a286df2e262eb4daa8cc8621900a53, type: 2}
