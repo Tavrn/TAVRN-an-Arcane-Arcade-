@@ -2027,7 +2027,10 @@ MonoBehaviour:
     type: 2}
   confettiPrefab: {fileID: 1176760780449528, guid: 311903483d379ed4fa603844b43e5dea,
     type: 2}
-  arcanePrefab: {fileID: 1288577529637334, guid: 8370e24c0175ce14f9b27e76c83115e8,
+  magicMissilePrefab: {fileID: 0}
+  arcaneSpherePrefab: {fileID: 1950669074272730, guid: 15822f647bf86d344b7b2fd73a51f9f9,
+    type: 2}
+  aquaOrbPrefab: {fileID: 1391202917938966, guid: 3651b43792ab00848b1006500d83639d,
     type: 2}
   shieldPrefab: {fileID: 1300326630621596, guid: a0aad0947bcfcff46bb8185046700d83,
     type: 2}

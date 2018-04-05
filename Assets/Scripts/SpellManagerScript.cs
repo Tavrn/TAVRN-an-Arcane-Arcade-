@@ -25,6 +25,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	public GameObject confettiPrefab;
 	public GameObject magicMissilePrefab;
 	public GameObject arcaneSpherePrefab;
+	public GameObject aquaOrbPrefab;
 	public GameObject shieldPrefab;
 	public GameObject healPrefab;
 
@@ -284,7 +285,43 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("LightningBolt called");
 	}
 	void AquaOrb(){
-		Debug.Log("AquaOrb called");
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("AquaOrb called");
+				float speed = 0.5f;
+				Vector3 dir = wandTip.position-wandHandle.position;
+				GameObject fb = Instantiate(aquaOrbPrefab) as GameObject;
+				fb.transform.parent = spellsParent.transform;
+				fb.transform.position = wandTip.position+dir;
+				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+				NetworkServer.Spawn(fb);
+				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdAquaOrb();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("AquaOrb called");
+			float speed = 0.5f;
+			Vector3 dir = wandTip.position-wandHandle.position;
+			GameObject fb = Instantiate(aquaOrbPrefab) as GameObject;
+			fb.transform.parent = spellsParent.transform;
+			fb.transform.position = wandTip.position+dir;
+			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		}
+
+	}
+	[Command]
+	void CmdAquaOrb(){
+		Debug.Log("CmdAquaOrb called");
+		float speed = 0.5f;
+		Vector3 dir = wandTip.position-wandHandle.position;
+		GameObject fb = Instantiate(aquaOrbPrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
+		fb.transform.position = wandTip.position+dir;
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		NetworkServer.Spawn(fb);
+		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
 	void WaterHose(){
 		Debug.Log("WaterHose called");

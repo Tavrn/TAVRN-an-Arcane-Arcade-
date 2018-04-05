@@ -1636,6 +1636,8 @@ MonoBehaviour:
     type: 2}
   arcaneSpherePrefab: {fileID: 1950669074272730, guid: 15822f647bf86d344b7b2fd73a51f9f9,
     type: 2}
+  aquaOrbPrefab: {fileID: 1391202917938966, guid: 3651b43792ab00848b1006500d83639d,
+    type: 2}
   shieldPrefab: {fileID: 1300326630621596, guid: a0aad0947bcfcff46bb8185046700d83,
     type: 2}
   healPrefab: {fileID: 1064373745252902, guid: 88a286df2e262eb4daa8cc8621900a53, type: 2}
