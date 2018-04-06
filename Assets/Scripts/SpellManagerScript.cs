@@ -26,7 +26,10 @@ public class SpellManagerScript : NetworkBehaviour {
 	public GameObject magicMissilePrefab;
 	public GameObject arcaneSpherePrefab;
 	public GameObject aquaOrbPrefab;
+	public GameObject bubblePrefab;
 	public GameObject scalingShotPrefab;
+	public GameObject lightningBoltPrefab;
+	public GameObject meteorPrefab;
 	public GameObject shieldPrefab;
 	public GameObject healPrefab;
 
@@ -87,7 +90,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		CreateSpell("PocketSand", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(1,1,0), new Coordinate(1, 1, 1), new Coordinate(2, 1, 0), new Coordinate(2, 0, 0) });
 		CreateSpell("Fireball", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1) });
 		CreateSpell("StalkingFlare", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1) });
-		CreateSpell("Meteor", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1), new Coordinate(-4, 1, 1) });
+		CreateSpell("Meteor", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1) });
 		CreateSpell("Convert", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(-1, 2, 0) });
 		CreateSpell("ShockingBlast", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 2, 0), new Coordinate(-1, 2, 1) });
 		CreateSpell("Caltrops", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1) });
@@ -319,7 +322,43 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("TripleLock called");
 	}
 	void LightningBolt(){
-		Debug.Log("LightningBolt called");
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("LightningBolt called");
+				float speed = 2f;
+				Vector3 dir = wandTip.position-wandHandle.position;
+				GameObject fb = Instantiate(lightningBoltPrefab) as GameObject;
+				fb.transform.parent = spellsParent.transform;
+				fb.transform.position = wandTip.position+dir;
+				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+				NetworkServer.Spawn(fb);
+				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdLightningBolt();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("LightningBolt called");
+			float speed = 2f;
+			Vector3 dir = wandTip.position-wandHandle.position;
+			GameObject fb = Instantiate(lightningBoltPrefab) as GameObject;
+			fb.transform.parent = spellsParent.transform;
+			fb.transform.position = wandTip.position+dir;
+			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		}
+
+	}
+	[Command]
+	void CmdLightningBolt(){
+		Debug.Log("CmdLightningBolt called");
+		float speed = 2f;
+		Vector3 dir = wandTip.position-wandHandle.position;
+		GameObject fb = Instantiate(lightningBoltPrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
+		fb.transform.position = wandTip.position+dir;
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		NetworkServer.Spawn(fb);
+		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
 	void AquaOrb(){
 		if(isMulti){
@@ -364,7 +403,43 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("WaterHose called");
 	}
 	void Bubble(){
-		Debug.Log("Bubble called");
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Bubble called");
+				float speed = 0.5f;
+				Vector3 dir = wandTip.position-wandHandle.position;
+				GameObject fb = Instantiate(bubblePrefab) as GameObject;
+				fb.transform.parent = spellsParent.transform;
+				fb.transform.position = wandTip.position+dir;
+				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+				NetworkServer.Spawn(fb);
+				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdBubble();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("Bubble called");
+			float speed = 0.5f;
+			Vector3 dir = wandTip.position-wandHandle.position;
+			GameObject fb = Instantiate(bubblePrefab) as GameObject;
+			fb.transform.parent = spellsParent.transform;
+			fb.transform.position = wandTip.position+dir;
+			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		}
+
+	}
+	[Command]
+	void CmdBubble(){
+		Debug.Log("CmdBubble called");
+		float speed = 0.5f;
+		Vector3 dir = wandTip.position-wandHandle.position;
+		GameObject fb = Instantiate(bubblePrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
+		fb.transform.position = wandTip.position+dir;
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		NetworkServer.Spawn(fb);
+		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 	}
 	void Airslice(){
 		Debug.Log("Airslice called");
@@ -388,7 +463,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		if(isMulti){
 			if(NetworkServer.active){
 				Debug.Log("Fireball called");
-				float speed = 1;
+				float speed = 1f;
 				Vector3 dir = wandTip.position-wandHandle.position;
 				GameObject fb = Instantiate(fireballPrefab) as GameObject;
 				fb.transform.parent = spellsParent.transform;
@@ -402,7 +477,7 @@ public class SpellManagerScript : NetworkBehaviour {
 			}
 		}else{
 			Debug.Log("Fireball called");
-			float speed = 1;
+			float speed = 1f;
 			Vector3 dir = wandTip.position-wandHandle.position;
 			GameObject fb = Instantiate(fireballPrefab) as GameObject;
 			fb.transform.parent = spellsParent.transform;
@@ -414,7 +489,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	[Command]
 	void CmdFireball(){
 		Debug.Log("CmdFireball called");
-		float speed = 1;
+		float speed = 1f;
 		Vector3 dir = wandTip.position-wandHandle.position;
 		GameObject fb = Instantiate(fireballPrefab) as GameObject;
 		fb.transform.parent = spellsParent.transform;
@@ -428,7 +503,44 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("StalkingFlare called");
 	}
 	void Meteor(){
-		Debug.Log("Meteor called");
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("Meteor called");
+				float speed = 1f;
+				Vector3 dir = wandTip.position-wandHandle.position;
+				GameObject fb = Instantiate(meteorPrefab) as GameObject;
+				fb.transform.parent = spellsParent.transform;
+				fb.transform.position = wandTip.position+dir;
+				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+				NetworkServer.Spawn(fb);
+				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+			}else{
+				CmdMeteor();
+				// g.transform.parent = transform.root.Find("SpellsParent");
+			}
+		}else{
+			Debug.Log("Meteor called");
+			float speed = 1f;
+			Vector3 dir = wandTip.position-wandHandle.position;
+			GameObject fb = Instantiate(meteorPrefab) as GameObject;
+			fb.transform.parent = spellsParent.transform;
+			fb.transform.position = wandTip.position+dir;
+			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		}
+
+	}
+	[Command]
+	void CmdMeteor(){
+		Debug.Log("CmdMeteor called");
+		float speed = 1f;
+		Vector3 dir = wandTip.position-wandHandle.position;
+		GameObject fb = Instantiate(meteorPrefab) as GameObject;
+		fb.transform.parent = spellsParent.transform;
+		fb.transform.position = wandTip.position+dir;
+		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		NetworkServer.Spawn(fb);
+		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+		// return fb;
 	}
 	void Convert(){
 		Debug.Log("Convert called");

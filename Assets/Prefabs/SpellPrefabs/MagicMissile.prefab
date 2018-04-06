@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 33246912055415518}
   - component: {fileID: 23130375390527486}
   - component: {fileID: 135708476350585782}
+  - component: {fileID: 114845636199673668}
   - component: {fileID: 54572160242856690}
   - component: {fileID: 114662816703286338}
-  - component: {fileID: 114845636199673668}
   - component: {fileID: 114072179772366752}
   m_Layer: 0
   m_Name: MagicMissile
