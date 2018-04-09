@@ -5,26 +5,35 @@ using UnityEngine;
 public class DeckSelect : MonoBehaviour {
 
   //public GameObject userDeckPrefab = userDeckPrefab;
-	public GameObject userDeck;
 
-	// Use this for initialization
-	void Awake () {
-		//try to find userDeck
-		  //if it exists set userDeck =  to what you found
-			//else create a userDeck using Instantiate and DontDestroyOnLoad
-
-	  /*
-		userDeck = Find("UserDeck");
-		if(userDeck == null)
-		{
-			userDeck = Instantiate(userDeckPrefab, gameObject);
-			DontDestroyOnLoad(userDeck);
-		}
-		*/
-	}
+  private int currentPage = 0;
+	private string[] pageToKey = new string[10];
 
 	// Update is called once per frame
+  void Start() {
+	  for(int i = 0; i < 10; ++i)
+		{
+			pageToKey[i] = "string" + i;
+		}
+	}
+
 	void Update () {
+
+	}
+
+	void FlipRight() {
+		//change to the appropriate
+	}
+
+	void FlipLeft() {
+
+	}
+
+	void AddPage() {
+
+	}
+
+	bool ContainsPage() {
 
 	}
 
