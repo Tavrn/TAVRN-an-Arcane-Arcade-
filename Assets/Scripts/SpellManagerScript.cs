@@ -51,6 +51,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		isMulti = transform.root.name.Contains("Multi");
 		SetUpSpells();
 		myPlayer = GetComponent<Duel_PlayerScript>();
+		BasicManaRegenStart();
 	}
 	void FixedUpdate(){
 		if(effectEndTimes.Count>0){
@@ -199,7 +200,54 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("rpc called");
 		// c.transform.parent = p.transform;
 	}
-
+	void BasicManaRegenStart(){
+		if(isMulti){
+			if(NetworkServer.active){
+				int dur = 10;
+				float tick = 0.5f;
+				if(!effectNames.Contains("BasicManaRegenHelper")){
+					effectEndTimes.Add(Time.time+dur);
+					effectNames.Add("BasicManaRegenHelper");
+					effectTickL.Add(tick);
+					effectPrevTimes.Add(-tick);
+				}else{
+					effectEndTimes[effectNames.IndexOf("BasicManaRegenHelper")] = Time.time+dur;
+				}
+			}else{
+				CmdBasicManaRegenStart();
+			}
+		}else{
+			int dur = 10;
+			float tick = 0.5f;
+			if(!effectNames.Contains("BasicManaRegenHelper")){
+				effectEndTimes.Add(Time.time+dur);
+				effectNames.Add("BasicManaRegenHelper");
+				effectTickL.Add(tick);
+				effectPrevTimes.Add(-tick);
+			}else{
+				effectEndTimes[effectNames.IndexOf("BasicManaRegenHelper")] = Time.time+dur;
+			}
+		}
+	}
+	[Command]
+	void CmdBasicManaRegenStart(){
+		int dur = 10;
+		float tick = 0.5f;
+		if(!effectNames.Contains("BasicManaRegenHelper")){
+			effectEndTimes.Add(Time.time+dur);
+			effectNames.Add("BasicManaRegenHelper");
+			effectTickL.Add(tick);
+			effectPrevTimes.Add(-tick);
+		}else{
+			effectEndTimes[effectNames.IndexOf("BasicManaRegenHelper")] = Time.time+dur;
+		}
+	}
+	void BasicManaRegenHelper(){
+		int tickManaRegen = 1;
+		myPlayer.mana = Mathf.Clamp(myPlayer.mana+tickManaRegen, 0, 100);
+		effectEndTimes[effectNames.IndexOf("BasicManaRegenHelper")] = Time.time + 10;
+		Debug.Log("helper");
+	}
 	void MagicMissile(){
 		if(isMulti){
 			if(NetworkServer.active){
