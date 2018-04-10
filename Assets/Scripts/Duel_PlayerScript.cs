@@ -62,8 +62,6 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-		// Vector3 mtcp = myTargetCollider.transform.position;
-		// myTargetCollider.transform.position =  new Vector3(head.transform.position.x, mtcp.y, mtcp.z);
 		float headZ = head.position.z;
 		if(headZ>pZ){
 			posSlot.transform.position = new Vector3(posSlot.transform.position.x, posSlot.transform.position.y, 2/3f);

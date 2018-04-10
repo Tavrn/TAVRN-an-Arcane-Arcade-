@@ -34,7 +34,7 @@ public class DeckSelect : MonoBehaviour {
 	}
 
 	bool ContainsPage() {
-
+    return false;
 	}
 
 	//functions to make

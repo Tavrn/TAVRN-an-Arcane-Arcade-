@@ -13,8 +13,8 @@ public class SpellManagerScript : NetworkBehaviour {
 	[Space(10)]
 	public Transform myMinionSpawn;
 	public GameObject minionPrefab;
+	public Transform meteorSpawn;
 	[Space(10)]
-	public Skybox playerSkybox;
 	public Material clearSkiesSkybox;
 	public Material fireSkybox;
 	public Material rainSkybox;
@@ -510,8 +510,8 @@ public class SpellManagerScript : NetworkBehaviour {
 				Vector3 dir = wandTip.position-wandHandle.position;
 				GameObject fb = Instantiate(meteorPrefab) as GameObject;
 				fb.transform.parent = spellsParent.transform;
-				fb.transform.position = wandTip.position+dir;
-				fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+				fb.transform.position = meteorSpawn.position;
+				fb.GetComponent<Rigidbody>().AddForce(new Vector3(dir.normalized.x, -2, dir.normalized.z)*speed);
 				NetworkServer.Spawn(fb);
 				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 			}else{
@@ -524,8 +524,8 @@ public class SpellManagerScript : NetworkBehaviour {
 			Vector3 dir = wandTip.position-wandHandle.position;
 			GameObject fb = Instantiate(meteorPrefab) as GameObject;
 			fb.transform.parent = spellsParent.transform;
-			fb.transform.position = wandTip.position+dir;
-			fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+			fb.transform.position = meteorSpawn.position;
+			fb.GetComponent<Rigidbody>().AddForce(new Vector3(dir.normalized.x, -2, dir.normalized.z)*speed);
 		}
 
 	}
@@ -536,8 +536,8 @@ public class SpellManagerScript : NetworkBehaviour {
 		Vector3 dir = wandTip.position-wandHandle.position;
 		GameObject fb = Instantiate(meteorPrefab) as GameObject;
 		fb.transform.parent = spellsParent.transform;
-		fb.transform.position = wandTip.position+dir;
-		fb.GetComponent<Rigidbody>().AddForce(dir.normalized*speed);
+		fb.transform.position = meteorSpawn.position;
+		fb.GetComponent<Rigidbody>().AddForce(new Vector3(dir.normalized.x, -2, dir.normalized.z)*speed);
 		NetworkServer.Spawn(fb);
 		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 		// return fb;

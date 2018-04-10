@@ -8664,35 +8664,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1657246792782100, guid: 10bf16f7505825641a43bdefbdbc257f,
         type: 2}
-    - target: {fileID: 114004634626291462, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: lightningBoltPrefab
-      value: 
-      objectReference: {fileID: 1168116550255918, guid: 5c68752e3eb386246a75b1ba11a3f9a0,
-        type: 2}
-    - target: {fileID: 114004634626291462, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: aquaOrbPrefab
-      value: 
-      objectReference: {fileID: 1391202917938966, guid: 3651b43792ab00848b1006500d83639d,
-        type: 2}
-    - target: {fileID: 114004634626291462, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: bubblePrefab
-      value: 
-      objectReference: {fileID: 1410995269438178, guid: cc73d564902769847b0c742dac5c005e,
-        type: 2}
-    - target: {fileID: 114004634626291462, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: meteorPrefab
-      value: 
-      objectReference: {fileID: 1203349301723648, guid: c4577c0437cb27b46b5cc4603d018f47,
-        type: 2}
-    - target: {fileID: 114308038952876478, guid: 474ff19a6aaffac48be21ed5e939c24f,
-        type: 2}
-      propertyPath: mana
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
   m_IsPrefabParent: 0
