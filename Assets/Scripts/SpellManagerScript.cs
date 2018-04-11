@@ -92,7 +92,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		CreateSpell("Fireball", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1) });
 		CreateSpell("StalkingFlare", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1) });
 		CreateSpell("Meteor", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1) });
-		CreateSpell("Convert", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(-1, 2, 0) });
+		CreateSpell("I_Convert", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(-1, 2, 0) });
 		CreateSpell("ShockingBlast", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 2, 0), new Coordinate(-1, 2, 1) });
 		CreateSpell("Caltrops", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1) });
 		CreateSpell("TidalWave", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-2, -1, 0), new Coordinate(-2, -1, 1) });
@@ -590,8 +590,62 @@ public class SpellManagerScript : NetworkBehaviour {
 		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 		// return fb;
 	}
-	void Convert(){
-		Debug.Log("Convert called");
+	void I_Convert(){
+		if(isMulti){
+			if(NetworkServer.active){
+				Debug.Log("I_Convert called");
+				GameObject[] minions = GameObject.FindGameObjectsWithTag("Minion");
+				if(minions.Length>0){
+					int i=0;
+					bool converted = false;
+					while(i<minions.Length && !converted){
+						if(minions[i].transform.root!=transform.root){
+							converted = true;
+							minions[i].transform.parent = spellsParent;
+							minions[i].GetComponent<MinionScript>().Convert();
+							RpcParentTo(minions[i].GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+						}
+						i++;
+					}
+				}
+			}else{
+				CmdConvert();
+			}
+		}else{
+			Debug.Log("I_Convert called");
+			GameObject[] minions = GameObject.FindGameObjectsWithTag("Minion");
+			if(minions.Length>0){
+				int i=0;
+				bool converted = false;
+				while(i<minions.Length && !converted){
+					if(minions[i].transform.root!=transform.root){
+						converted = true;
+						minions[i].transform.parent = spellsParent;
+						minions[i].GetComponent<MinionScript>().Convert();
+					}
+					i++;
+				}
+			}
+		}
+	}
+
+	[Command]
+	void CmdConvert(){
+		Debug.Log("CmdConvert called");
+		GameObject[] minions = GameObject.FindGameObjectsWithTag("Minion");
+		if(minions.Length>0){
+			int i=0;
+			bool converted = false;
+			while(i<minions.Length && !converted){
+				if(minions[i].transform.root!=transform.root){
+					converted = true;
+					minions[i].transform.parent = spellsParent;
+					minions[i].GetComponent<MinionScript>().Convert();
+					RpcParentTo(minions[i].GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
+				}
+				i++;
+			}
+		}
 	}
 	void ShockingBlast(){
 		Debug.Log("ShockingBlast called");

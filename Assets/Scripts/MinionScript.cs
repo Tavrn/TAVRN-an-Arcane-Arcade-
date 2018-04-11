@@ -17,6 +17,9 @@ public class MinionScript : MonoBehaviour {
 	void Update () {
 
 	}
+	public void Convert(){
+		direction *= -1;
+	}
 	void FixedUpdate(){
 		transform.position += (speed*direction*Time.deltaTime*new Vector3(1,0,0));
 	}

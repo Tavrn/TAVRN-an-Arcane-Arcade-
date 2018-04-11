@@ -10,6 +10,7 @@ TagManager:
   - Duel_TargetCollider
   - Duel_Shield
   - GarbageCollector
+  - Minion
   layers:
   - Default
   - TransparentFX
