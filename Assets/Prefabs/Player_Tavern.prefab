@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 114041336131316618}
   - component: {fileID: 114543172375700324}
   - component: {fileID: 114809353209103226}
+  - component: {fileID: 114242199295873676}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: Untagged
@@ -154,6 +155,24 @@ GameObject:
   - component: {fileID: 114588051375268992}
   m_Layer: 0
   m_Name: RightHand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1842502470306722
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4071846844470538}
+  - component: {fileID: 33774145661642222}
+  - component: {fileID: 23596006022746334}
+  - component: {fileID: 65936071742740454}
+  m_Layer: 0
+  m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,6 +205,7 @@ GameObject:
   - component: {fileID: 114056957556716038}
   - component: {fileID: 114919289410481292}
   - component: {fileID: 114811209379448636}
+  - component: {fileID: 114011480702917328}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: Untagged
@@ -193,6 +213,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4071846844470538
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842502470306722}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.0000000035949, y: 0.31, z: 0.02}
+  m_LocalScale: {x: 0.78001475, y: 0.39000747, z: 0.008276679}
+  m_Children: []
+  m_Father: {fileID: 4158987506205708}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!4 &4101848495205700
 Transform:
   m_ObjectHideFlags: 1
@@ -228,9 +261,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188967653598346}
   m_LocalRotation: {x: 0.63768727, y: -0.014112005, z: -0.122183196, w: 0.7604125}
-  m_LocalPosition: {x: -0.6456903, y: 0.8343636, z: 0.69915223}
+  m_LocalPosition: {x: -0.712, y: 0.698, z: 0.638}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4071846844470538}
   m_Father: {fileID: 4946956721490664}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -368,6 +402,48 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!23 &23596006022746334
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842502470306722}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 4a95f6267b009bd42aafd9ee7c354473, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33774145661642222
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842502470306722}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &65015003967007816
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -379,6 +455,18 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65936071742740454
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1842502470306722}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!81 &81785591571734518
 AudioListener:
@@ -394,6 +482,21 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484520488574230}
   m_Enabled: 1
+--- !u!114 &114011480702917328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995905353044094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f45a9b2a7515743bf0d93607c4b140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door1C: {fileID: 0}
+  door2C: {fileID: 0}
+  d1SC: {fileID: 0}
+  d2SC: {fileID: 0}
 --- !u!114 &114015578290477108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -618,6 +721,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26c559d33e04cf4ba89d5e8d32a0353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114242199295873676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711775568542796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f45a9b2a7515743bf0d93607c4b140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door1C: {fileID: 0}
+  door2C: {fileID: 0}
+  d1SC: {fileID: 0}
+  d2SC: {fileID: 0}
 --- !u!114 &114254504461841070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -870,12 +988,10 @@ MonoBehaviour:
   OverrideSteamVRRightHand: {fileID: 0}
   OverrideSteamVRRightHandPhysicalColliders: {fileID: 0}
   OverrideOculus: 1
-  OverrideOculusLeftHand: {fileID: 1657246792782100, guid: 10bf16f7505825641a43bdefbdbc257f,
-    type: 2}
+  OverrideOculusLeftHand: {fileID: 0}
   OverrideOculusLeftHandPhysicalColliders: {fileID: 56753312, guid: 7c3b57f429838f14a8a2c2c179e9e9e9,
     type: 2}
-  OverrideOculusRightHand: {fileID: 1657246792782100, guid: 10bf16f7505825641a43bdefbdbc257f,
-    type: 2}
+  OverrideOculusRightHand: {fileID: 0}
   OverrideOculusRightHandPhysicalColliders: {fileID: 56641824, guid: 7c3b57f429838f14a8a2c2c179e9e9e9,
     type: 2}
   Head: {fileID: 114106144470073988}
