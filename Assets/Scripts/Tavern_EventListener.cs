@@ -138,7 +138,7 @@ namespace VRTK.Examples
 							d2SC.transform.parent.GetComponent<CustomDoor>().Toggle();
 						}
         }
-				
+
 
         private void DoGripReleased(object sender, ControllerInteractionEventArgs e)
         {

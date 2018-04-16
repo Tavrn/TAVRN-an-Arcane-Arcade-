@@ -1074,6 +1074,7 @@
     <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\Scripts\BroomScript.cs" />
+    <Compile Include="Assets\Scripts\BroomTutorial.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\ColliderScript.cs" />
     <Compile Include="Assets\Scripts\CollidersScript.cs" />
@@ -1094,8 +1095,8 @@
     <Compile Include="Assets\Scripts\SpellManagerScript.cs" />
     <Compile Include="Assets\Scripts\TargetColliderScript.cs" />
     <Compile Include="Assets\Scripts\Tavern_EventListener.cs" />
+    <Compile Include="Assets\Scripts\TextOutline.cs" />
     <Compile Include="Assets\Scripts\Town_ControllerEvents_Listener.cs" />
-    <Compile Include="Assets\Scripts\UserDeck.cs" />
     <Compile Include="Assets\Scripts\WandParentScript.cs" />
     <Compile Include="Assets\Scripts\WandScript.cs" />
     <Compile Include="Assets\Town\Scripts\ControlSwitch.cs" />

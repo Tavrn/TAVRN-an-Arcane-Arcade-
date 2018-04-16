@@ -41,6 +41,9 @@ public class BroomScript : MonoBehaviour
     //player's rigid body, velocity changes made on this
     private Rigidbody prb;
 
+    //for tutorial stuff
+    public int tutLvl = 0;
+
     //???
     private float broomD = 0.75f;
 
@@ -69,6 +72,7 @@ public class BroomScript : MonoBehaviour
             mountLocation = head.transform.localPosition;
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             firstPress = false;
+            tutLvl = 2;
           }
           else if(doesDrag && currentPressure < .5)
           {
@@ -83,6 +87,10 @@ public class BroomScript : MonoBehaviour
       if(isMounted)
       {
         FreezePrb();
+        if(tutLvl == 4)
+        {
+          tutLvl = 5;
+        }
       }
     }
 
@@ -97,6 +105,11 @@ public class BroomScript : MonoBehaviour
         {
           if(levelInstantly)  { InstantLevel(); }
           else                { TimedLevel(); }
+
+          if(tutLvl == 5)
+          {
+            tutLvl = 6;
+          }
         }
     }
 
@@ -117,6 +130,7 @@ public class BroomScript : MonoBehaviour
             transform.parent = player.transform;
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             startingUp = Vector3.up;
+            tutLvl = 1;
         }
     }
 
@@ -134,6 +148,10 @@ public class BroomScript : MonoBehaviour
           {
             yRot = yRot - 360;
           }
+          if(Mathf.Abs(yRot) >= 20.0f && tutLvl == 2)
+          {
+            tutLvl = 3;
+          }
 
           //finds you current speed
           float speed = prb.velocity.magnitude;
@@ -143,6 +161,10 @@ public class BroomScript : MonoBehaviour
 
           //manage the up and down motion using the heads position
           float rotationFactor;
+          if(Mathf.Abs(zDif) >= 0.05 && tutLvl == 3)
+          {
+            tutLvl = 4;
+          }
           if (zDif > 0)
           {
               //want rotating downward to be faster
