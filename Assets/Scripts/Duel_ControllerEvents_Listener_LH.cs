@@ -251,6 +251,7 @@ namespace VRTK.Examples
         private void DoStartMenuPressed(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "START MENU", "pressed down", e);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Tavern");
         }
 
         private void DoStartMenuReleased(object sender, ControllerInteractionEventArgs e)
