@@ -6,12 +6,24 @@ public class SpellBookParentScript : MonoBehaviour {
 	public GameObject hand;
 	public GameObject openBook;
 	public GameObject closedBook;
-	private bool open = false;
+	private bool open = true;
 	private int deckSize = 10;
 	private int spellPage = 0;
+	private List<string> glyphs = new List<string>();
+	private Transform glyphsParent;
 	// Use this for initialization
 	void Start () {
-
+		int count = 0;
+		glyphsParent = openBook.transform.Find("GlyphsParent");
+		foreach(Transform r in glyphsParent){
+			glyphs.Add(r.gameObject.name);
+			if(count>0){
+				r.gameObject.SetActive(false);
+			}
+			count++;
+		}
+		deckSize = count;
+		ToggleOpen();
 	}
 
 	// Update is called once per frame
@@ -30,15 +42,21 @@ public class SpellBookParentScript : MonoBehaviour {
 		}
 	}
 	public void FlipRight(){
-		spellPage++;
-		if(spellPage==deckSize)
-			spellPage = 0;
-		Debug.Log(spellPage);
+		if(open){
+			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(false);
+			spellPage++;
+			if(spellPage==deckSize)
+				spellPage = 0;
+			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(true);
+		}
 	}
 	public void FlipLeft(){
-		spellPage--;
-		if(spellPage==-1)
-			spellPage = deckSize-1;
-		Debug.Log(spellPage);
+		if(open){
+			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(false);
+			spellPage--;
+			if(spellPage==-1)
+				spellPage = deckSize-1;
+			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(true);
+		}
 	}
 }

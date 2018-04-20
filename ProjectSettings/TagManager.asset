@@ -11,6 +11,7 @@ TagManager:
   - Duel_Shield
   - GarbageCollector
   - Minion
+  - Glyph
   layers:
   - Default
   - TransparentFX

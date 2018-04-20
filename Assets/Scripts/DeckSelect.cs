@@ -22,9 +22,10 @@ public class DeckSelect : MonoBehaviour {
 	}
 
 	void Update () {
-
+    //
 	}
 
+  //turns the currentPage counter to the one corresponding to the page to the right
 	void FlipRight() {
     currentPage = currentPage + 1;
     currentPage = currentPage % 10;
@@ -32,6 +33,7 @@ public class DeckSelect : MonoBehaviour {
     spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currentPage, -1);
 	}
 
+  //turns the currentPage counter to the corresponding to the page to the left
 	void FlipLeft() {
     currentPage = currentPage - 1;
     currentPage = currentPage % 10;
@@ -39,7 +41,8 @@ public class DeckSelect : MonoBehaviour {
     spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currentPage, -1);
 	}
 
-	void AddPage() {
+  //adds a page for a spell corresponding to int target
+	void AddPage(int target) {
     if(DeckContains(spellNum) == true)
     {
       PlayerPrefs.SetInt("Spell_" + currentPage, spellNum);
@@ -47,7 +50,8 @@ public class DeckSelect : MonoBehaviour {
     }
 	}
 
-   bool DeckContains(int target) {
+  //checks if there is a spell corresponding to int target
+  bool DeckContains(int target) {
     for(int i = 0; i < 10; ++i)
     {
       int temp;

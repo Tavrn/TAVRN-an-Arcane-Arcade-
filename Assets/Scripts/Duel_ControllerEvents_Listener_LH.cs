@@ -196,13 +196,13 @@ namespace VRTK.Examples
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "TOUCHPAD", "axis changed", e);
             if(e.touchpadAxis.magnitude>0.7){
               if(!inRange){
+                inRange = true;
                 if(e.touchpadAngle>70  && e.touchpadAngle<110){
                   sbps.FlipRight();
                 }else if(e.touchpadAngle>250 && e.touchpadAngle<290){
                   sbps.FlipLeft();
                 }
               }
-              inRange = true;
             }else{
               inRange = false;
             }

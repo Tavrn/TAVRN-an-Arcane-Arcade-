@@ -828,6 +828,7 @@
      <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
      <None Include="Assets\Town\Shaders\DistanceFade.shader" />
+     <None Include="Assets\Materials\cloudy\readme.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />

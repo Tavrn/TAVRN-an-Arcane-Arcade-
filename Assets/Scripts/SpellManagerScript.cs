@@ -261,7 +261,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		int tickManaRegen = 1;
 		myPlayer.mana = Mathf.Clamp(myPlayer.mana+tickManaRegen, 0, 100);
 		effectEndTimes[effectNames.IndexOf("BasicManaRegenHelper")] = Time.time + 10;
-		Debug.Log("helper");
+		// Debug.Log("helper");
 	}
 	void MagicMissile(){
 		if(isMulti){
