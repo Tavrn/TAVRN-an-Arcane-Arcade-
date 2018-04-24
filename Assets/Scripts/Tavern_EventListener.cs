@@ -4,6 +4,7 @@ namespace VRTK.Examples
 
     public class Tavern_EventListener : MonoBehaviour
     {
+        public GameObject dsBook;
 				public BoxCollider door1C;
 				public BoxCollider door2C;
 				public BoxCollider d1SC;
@@ -208,6 +209,10 @@ namespace VRTK.Examples
         private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "pressed down", e);
+            DeckSelect dsScript;
+            dsScript = dsBook.GetComponent<DeckSelect>();
+            dsScript.AddPage(); //SOMETHING ABOUT THIS LINE IS NOT WORKING. DOES NOT SEEM TO CALL ADDPAGE ???
+            Debug.Log("pressed" + dsBook);
         }
 
         private void DoButtonOneReleased(object sender, ControllerInteractionEventArgs e)
