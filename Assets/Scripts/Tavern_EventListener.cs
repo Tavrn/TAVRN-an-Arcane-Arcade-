@@ -9,8 +9,16 @@ namespace VRTK.Examples
 				public BoxCollider door2C;
 				public BoxCollider d1SC;
 				public BoxCollider d2SC;
+
+        private Transform plyr;
+        private bool hasFlip = false;
+
         private void Start()
         {
+            plyr = transform.parent.parent.Find("NewtonSDK/NVRPlayer");
+//            Debug.Log("ayy " + gameObject + " " + plyr + " " + plyr.Find("LeftHand").childCount);
+//            transform.parent.Find("Render Model for RightHand").GetComponent<SphereCollider>().radius = 0.7f;
+
             if (GetComponent<VRTK_ControllerEvents>() == null)
             {
                 VRTK_Logger.Error(VRTK_Logger.GetCommonMessage(VRTK_Logger.CommonMessageKeys.REQUIRED_COMPONENT_MISSING_FROM_GAMEOBJECT, "VRTK_ControllerEvents_ListenerExample", "VRTK_ControllerEvents", "the same"));
@@ -184,6 +192,11 @@ namespace VRTK.Examples
         private void DoTouchpadPressed(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "TOUCHPAD", "pressed down", e);
+            //Makes hand colliders smaller for easier deck selection use
+            //Debug.Log("ayy " + gameObject + " " + plyr + " " + plyr.Find("LeftHand/Render Model for LeftHand"));
+            plyr.Find("LeftHand/Render Model for LeftHand").GetComponent<SphereCollider>().radius = 0.07f;
+            plyr.Find("RightHand/Render Model for RightHand").GetComponent<SphereCollider>().radius = 0.07f;
+            Debug.Log("shrunk");
         }
 
         private void DoTouchpadReleased(object sender, ControllerInteractionEventArgs e)
@@ -204,15 +217,33 @@ namespace VRTK.Examples
         private void DoTouchpadAxisChanged(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "TOUCHPAD", "axis changed", e);
+
+            if(!hasFlip)
+            {
+              if(e.touchpadAxis.x >= .7) {
+                hasFlip = true;
+                dsBook.GetComponent<DeckSelect>().FlipRight();
+              }
+              else if(e.touchpadAxis.x <= -.7) {
+                hasFlip = true;
+                dsBook.GetComponent<DeckSelect>().FlipLeft();
+              }
+            }
+            else {
+              if(e.touchpadAxis.x < .7 && e.touchpadAxis.x > -.7) {
+                hasFlip = false;
+              }
+            }
         }
 
         private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
         {
+            Debug.Log("pressed");
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "BUTTON ONE", "pressed down", e);
             DeckSelect dsScript;
             dsScript = dsBook.GetComponent<DeckSelect>();
-            dsScript.AddPage(); //SOMETHING ABOUT THIS LINE IS NOT WORKING. DOES NOT SEEM TO CALL ADDPAGE ???
             Debug.Log("pressed" + dsBook);
+            dsScript.AddPage(); //SOMETHING ABOUT THIS LINE IS NOT WORKING. DOES NOT SEEM TO CALL ADDPAGE ???
         }
 
         private void DoButtonOneReleased(object sender, ControllerInteractionEventArgs e)

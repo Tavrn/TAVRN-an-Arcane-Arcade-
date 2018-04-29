@@ -1,10 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DeckSelect : MonoBehaviour {
 
   //public GameObject userDeckPrefab = userDeckPrefab;
+
+  private int DECKSIZE = 3;
 
   public static int currProposal = 0;
   private int prevProposal = 0;
@@ -18,9 +20,9 @@ public class DeckSelect : MonoBehaviour {
 	// Update is called once per frame
   void Start() {
     //resets deck each time you enter the tavern for testing
-    for(int i = 0; i < 10; ++i)
+    for(int i = 0; i < DECKSIZE; ++i)
     {
-      PlayerPrefs.SetInt("Spell_" + i, i);
+      PlayerPrefs.SetInt("Spell_" + i, i + 1);
     }
     pgTxt.text = " Page \n number: \n" + currPage;
     spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currPage, -1);
@@ -40,36 +42,41 @@ public class DeckSelect : MonoBehaviour {
   }
 
   //turns the currentPage counter to the one corresponding to the page to the right
-	void FlipRight() {
+	public void FlipRight() {
     currPage = currPage + 1;
-    currPage = currPage % 10;
+    if (currPage > DECKSIZE - 1)
+    {
+      currPage = 0;
+    }
     pgTxt.text = " Page \n number: \n" + currPage;
     spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currPage, -1);
 	}
 
   //turns the currentPage counter to the corresponding to the page to the left
-	void FlipLeft() {
+	public void FlipLeft() {
     currPage = currPage - 1;
-    currPage = currPage % 10;
+    if (currPage < 0)
+    {
+      currPage = DECKSIZE - 1;
+    }
     pgTxt.text = " Page \n number: \n" + currPage;
     spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currPage, -1);
 	}
 
   //adds currProposal to currDeck if not already present
 	public void AddPage() {
-Debug.Log("step1");
-    if(DeckContains(currProposal) == true)
+//Debug.Log("function");
+    if(!DeckContains(currProposal))
     {
-Debug.Log("step3");
-      PlayerPrefs.SetInt("Spell_" + currPage, spellNum);
-      spTxt.text = " Spell \n number: \n" + spellNum;
+//Debug.Log(currProposal);
+      PlayerPrefs.SetInt("Spell_" + currPage, currProposal);
+      spTxt.text = " Spell \n number: \n" + currProposal;
     }
 	}
 
   //checks if there is a spell corresponding to int target
   bool DeckContains(int target) {
-Debug.Log("step2");
-    for(int i = 0; i < 10; ++i)
+    for(int i = 0; i < DECKSIZE; ++i)
     {
       int temp;
       temp = PlayerPrefs.GetInt("Spell_" + i, -1);
