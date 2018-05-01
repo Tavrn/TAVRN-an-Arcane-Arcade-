@@ -6,7 +6,7 @@ public class DeckSelect : MonoBehaviour {
 
   //public GameObject userDeckPrefab = userDeckPrefab;
 
-  private int DECKSIZE = 3;
+  private int DECKSIZE = 10;
 
   public static int currProposal = 0;
   private int prevProposal = 0;
@@ -20,9 +20,13 @@ public class DeckSelect : MonoBehaviour {
 	// Update is called once per frame
   void Start() {
     //resets deck each time you enter the tavern for testing
-    for(int i = 0; i < DECKSIZE; ++i)
+    if(PlayerPrefs.HasKey("DeckInitialized") == false)
     {
-      PlayerPrefs.SetInt("Spell_" + i, i + 1);
+      for(int i = 0; i < DECKSIZE; ++i)
+      {
+        PlayerPrefs.SetInt("Spell_" + i, i + 1);
+      }
+      PlayerPrefs.SetInt("DeckInitialized", 1);
     }
     pgTxt.text = " Page \n number: \n" + currPage;
     spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currPage, -1);

@@ -12,6 +12,8 @@ TagManager:
   - GarbageCollector
   - Minion
   - Glyph
+  - Hoop
+  - Broom
   layers:
   - Default
   - TransparentFX
