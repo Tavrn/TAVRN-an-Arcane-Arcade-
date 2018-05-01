@@ -1085,7 +1085,9 @@
     <Compile Include="Assets\Scripts\Duel_HeadScript.cs" />
     <Compile Include="Assets\Scripts\Duel_PlayerScript.cs" />
     <Compile Include="Assets\Scripts\GlyphDrawer.cs" />
+    <Compile Include="Assets\Scripts\HandShrink.cs" />
     <Compile Include="Assets\Scripts\HeadReference.cs" />
+    <Compile Include="Assets\Scripts\HoopScript.cs" />
     <Compile Include="Assets\Scripts\HPIndicatorScript.cs" />
     <Compile Include="Assets\Scripts\ManaIndicatorScript.cs" />
     <Compile Include="Assets\Scripts\MinionScript.cs" />
@@ -1100,6 +1102,7 @@
     <Compile Include="Assets\Scripts\TextOutline.cs" />
     <Compile Include="Assets\Scripts\Town_ControllerEvents_Listener.cs" />
     <Compile Include="Assets\Scripts\Town_LH_ControllerEventListener.cs" />
+    <Compile Include="Assets\Scripts\TownPlayer.cs" />
     <Compile Include="Assets\Scripts\WandParentScript.cs" />
     <Compile Include="Assets\Scripts\WandScript.cs" />
     <Compile Include="Assets\Town\Scripts\ControlSwitch.cs" />

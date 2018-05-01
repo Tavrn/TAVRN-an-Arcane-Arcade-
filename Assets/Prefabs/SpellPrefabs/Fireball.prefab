@@ -595,7 +595,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  deathPS: {fileID: 1963098803784910}
+  deathPS1: {fileID: 1963098803784910}
+  deathPS2: {fileID: 0}
+  deathPS3: {fileID: 0}
+  deathPS4: {fileID: 0}
 --- !u!114 &114466960549580964
 MonoBehaviour:
   m_ObjectHideFlags: 1

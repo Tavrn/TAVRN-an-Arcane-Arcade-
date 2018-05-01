@@ -1802,7 +1802,7 @@ MonoBehaviour:
     type: 2}
   shieldPrefab: {fileID: 1300326630621596, guid: a0aad0947bcfcff46bb8185046700d83,
     type: 2}
-  healPrefab: {fileID: 1064373745252902, guid: 88a286df2e262eb4daa8cc8621900a53, type: 2}
+  healPrefab: {fileID: 1322843141695952, guid: 189477905d0c0e849b113eaf75f31d36, type: 2}
 --- !u!114 &114055365292239582
 MonoBehaviour:
   m_ObjectHideFlags: 1
