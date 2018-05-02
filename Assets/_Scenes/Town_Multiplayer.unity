@@ -14,9 +14,9 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.6911765, g: 0.6911765, b: 0.6911765, a: 1}
-  m_FogMode: 2
+  m_FogMode: 3
   m_FogDensity: 0.001
   m_LinearFogStart: 800
   m_LinearFogEnd: 800.01
@@ -574,8 +574,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 66030259}
-  m_LocalRotation: {x: 0.022751052, y: -0.4512018, z: 0.011507575, w: 0.8920577}
-  m_LocalPosition: {x: 65.74146, y: 121.531845, z: 202.77472}
+  m_LocalRotation: {x: -0.008688353, y: -0.98017305, z: 0.04413537, w: -0.19297007}
+  m_LocalPosition: {x: 52.38092, y: 108.84866, z: 207.34735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031112222}
@@ -30431,8 +30431,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761999588}
-  m_LocalRotation: {x: 0.022751052, y: -0.4512018, z: 0.011507575, w: 0.8920577}
-  m_LocalPosition: {x: 65.74146, y: -86.66818, z: 202.77472}
+  m_LocalRotation: {x: 0.008879582, y: -0.9708656, z: 0.0364221, w: 0.23667406}
+  m_LocalPosition: {x: 52.38093, y: -99.35138, z: 207.34737}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031112222}
