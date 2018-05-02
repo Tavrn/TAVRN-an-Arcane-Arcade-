@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using VRTK;
+using UnityEngine.SceneManagement;
 public class Duel_PlayerScript : NetworkBehaviour {
 	public bool isLive;
 	public Transform head;
@@ -58,7 +59,59 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		}
 	}
 	public void hit(int damage){
-		HP = Mathf.Clamp(HP-damage, 0, 100);
+		// HP = Mathf.Clamp(HP-damage, 0, 100);
+		HP -= damage;
+		if(HP<=0){
+			startLosing();
+			//LOSE
+		}
+	}
+	public void ReturnToTavern(){
+		SceneManager.LoadScene("Tavern");
+	}
+	public void Lose(){
+		Transform t = GameObject.Find("LosePanel").transform;
+		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+		Invoke("ReturnToTavern", 5);
+	}
+
+	[Command]
+	public void CmdLose(){
+		Transform t = GameObject.Find("LosePanel").transform;
+		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+		Invoke("ReturnToTavern", 5);
+	}
+
+	public void Win(){
+		Transform t = GameObject.Find("WinPanel").transform;
+		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+		Invoke("ReturnToTavern", 5);
+	}
+
+	[Command]
+	public void CmdWin(){
+		Transform t = GameObject.Find("WinPanel").transform;
+		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+		Invoke("ReturnToTavern", 5);
+	}
+
+	public void startLosing(){
+		if(gameObject.name.Contains("Multi")){
+			if(!isServer){
+				return;
+			}
+			if(isLocalPlayer){
+				Lose();
+				CmdWin();
+			}else{
+				Win();
+				CmdLose();
+			}
+		}else{
+			Transform t = GameObject.Find("WinPanel").transform;
+			t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+			Invoke("ReturnToTavern", 5);
+		}
 	}
 	// Update is called once per frame
 	void Update () {
