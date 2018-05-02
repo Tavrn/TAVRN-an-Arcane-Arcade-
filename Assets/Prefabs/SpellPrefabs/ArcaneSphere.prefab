@@ -320,7 +320,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  deathPS: {fileID: 0}
+  deathPS1: {fileID: 0}
+  deathPS2: {fileID: 0}
+  deathPS3: {fileID: 0}
+  deathPS4: {fileID: 0}
 --- !u!135 &135307009330698456
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -13852,7 +13855,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7
+      scalar: 1.25
       minScalar: 5
       maxCurve:
         serializedVersion: 2
