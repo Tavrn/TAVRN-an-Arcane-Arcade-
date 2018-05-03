@@ -574,8 +574,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 66030259}
-  m_LocalRotation: {x: -0.1661979, y: 0.21180207, z: 0.036574863, w: 0.9623827}
-  m_LocalPosition: {x: 31.006962, y: 119.449326, z: 180.96304}
+  m_LocalRotation: {x: 0.027895592, y: 0.9482763, z: 0.08701871, w: -0.30400947}
+  m_LocalPosition: {x: 2.6193619, y: 115.65588, z: 145.51062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031112222}
@@ -30045,8 +30045,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761999588}
-  m_LocalRotation: {x: 0.09728047, y: 0.038180757, z: 0.003736789, w: -0.9945174}
-  m_LocalPosition: {x: 32.07158, y: -90.504196, z: 8.303507}
+  m_LocalRotation: {x: 0.027895592, y: 0.9482763, z: 0.08701871, w: -0.30400947}
+  m_LocalPosition: {x: 2.6193619, y: -92.54414, z: 145.51062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031112222}
@@ -31290,32 +31290,6 @@ MeshFilter:
 Transform:
   m_PrefabParentObject: {fileID: 400034, guid: ebbf0754e4811b6479a9bb7f70e836bc, type: 2}
   m_PrefabInternal: {fileID: 1914531801}
---- !u!1 &1836099114 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 100014, guid: b8a7fdb1634f3744d950eb6be505e96b, type: 2}
-  m_PrefabInternal: {fileID: 1334439939}
---- !u!205 &1836099115
-LODGroup:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1836099114}
-  serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
-  m_Size: 1
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
-  m_LODs:
-  - screenRelativeHeight: 0.77952737
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.071397476
-    fadeTransitionWidth: 0
-    renderers: []
-  - screenRelativeHeight: 0.0061818445
-    fadeTransitionWidth: 0
-    renderers: []
-  m_Enabled: 1
 --- !u!1 &1844487170
 GameObject:
   m_ObjectHideFlags: 0
