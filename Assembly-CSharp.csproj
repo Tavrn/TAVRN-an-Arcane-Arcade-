@@ -752,6 +752,7 @@
      <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+     <Compile Include="Assets\Scripts\AudienceMinion.cs" />
      <Compile Include="Assets\Scripts\BroomScript.cs" />
      <Compile Include="Assets\Scripts\BroomTutorial.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
