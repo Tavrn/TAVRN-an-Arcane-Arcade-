@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Tavern.unity
+- path: Assets/_Scenes/Town_Singleplayer.unity
   isLoaded: 1
   isActive: 1
