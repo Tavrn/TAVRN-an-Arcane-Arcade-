@@ -47,7 +47,7 @@ public class BroomTutorial : MonoBehaviour {
 					txtMsh.text = "Move your head forward or\nbackward to turn down or up";
 					break;
 				case 4: //move -> A
-					txtMsh.text = "Press the A button to stop";
+					txtMsh.text = "Press and hold the A button to stop";
 					break;
 				case 5: //A -> B
 					txtMsh.text = "Press the B button\nto level out";

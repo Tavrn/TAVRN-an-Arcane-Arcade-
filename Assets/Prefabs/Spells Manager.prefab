@@ -219,7 +219,8 @@ MonoBehaviour:
   rainSkybox: {fileID: 0}
   sandSkybox: {fileID: 0}
   windSkybox: {fileID: 0}
-  fireballPrefab: {fileID: 0}
+  fireballPrefab: {fileID: 1450673449457036, guid: 1dff682dcbcf69444a7adff7d891861d,
+    type: 2}
   confettiPrefab: {fileID: 1176760780449528, guid: 311903483d379ed4fa603844b43e5dea,
     type: 2}
   magicMissilePrefab: {fileID: 1288577529637334, guid: 8370e24c0175ce14f9b27e76c83115e8,
@@ -236,5 +237,7 @@ MonoBehaviour:
     type: 2}
   meteorPrefab: {fileID: 1203349301723648, guid: c4577c0437cb27b46b5cc4603d018f47,
     type: 2}
-  shieldPrefab: {fileID: 0}
-  healPrefab: {fileID: 1322843141695952, guid: 189477905d0c0e849b113eaf75f31d36, type: 2}
+  shieldPrefab: {fileID: 1300326630621596, guid: a0aad0947bcfcff46bb8185046700d83,
+    type: 2}
+  healEffectPrefab: {fileID: 1322843141695952, guid: 189477905d0c0e849b113eaf75f31d36,
+    type: 2}

@@ -31,7 +31,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	public GameObject lightningBoltPrefab;
 	public GameObject meteorPrefab;
 	public GameObject shieldPrefab;
-	public GameObject healPrefab;
+	public GameObject healEffectPrefab;
 
 	private int cuedSpellNum = -1;
 	private bool aiming = false;
@@ -77,7 +77,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	void SetUpSpells(){
 		CreateSpell("MagicMissile", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(-1,1,1) });
 		CreateSpell("ArcaneSphere", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0)});
-		CreateSpell("ScalingShot", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(0,0,0) });
+		CreateSpell("ScalingShot", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(1,1,0) });
 		CreateSpell("LightningBolt", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(0,2,0), new Coordinate(1, 2, 0), new Coordinate(1, 3, 0) });
 		CreateSpell("AquaOrb", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-1, -1, 1) });
 		CreateSpell("TripleLock", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(1,1,0), new Coordinate(2, 1, 0), new Coordinate(2, 2, 0) });
@@ -116,7 +116,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		CreateSpell("Return", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(0, 2, 1), new Coordinate(1, 2, 1) });
 		CreateSpell("Counterspell", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1, 2, 1), new Coordinate(-1, 2, 2), new Coordinate(-1, 1, 2) });
 		CreateSpell("Helmets", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 2, 0), new Coordinate(-1, 2, 0), new Coordinate(-1,1,0) });
-		CreateSpell("Shields", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(-1, 2, 0), new Coordinate(-1, 1, 0) });
+		CreateSpell("Shields", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(-1, 2, 0) });
 		CreateSpell("ControlledFlow", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-1, -2, 0), new Coordinate(-2, -2, 0) });
 		CreateSpell("AssistingAir", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(1, 0, 0), new Coordinate(1, 1, 0), new Coordinate(1, 1, 1), new Coordinate(1, 1, 2) });
 		CreateSpell("RoughSkin", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(1, 1, 0), new Coordinate(1, 1, 1), new Coordinate(1, 0, 1) });
@@ -691,6 +691,9 @@ public class SpellManagerScript : NetworkBehaviour {
 				Debug.Log("Heal called");
 				int dur = 5;
 				float tick = 0.25f;
+				// GameObject hep = Instantiate(healEffectPrefab) as GameObject;
+				// hep.transform.parent = transform;
+				// hep.transform.localPosition = transform.position;
 				if(!effectNames.Contains("HealHelper")){
 					effectEndTimes.Add(Time.time+dur);
 					effectNames.Add("HealHelper");
@@ -706,6 +709,9 @@ public class SpellManagerScript : NetworkBehaviour {
 			Debug.Log("Heal called");
 			int dur = 5;
 			float tick = 0.25f;
+			GameObject hep = Instantiate(healEffectPrefab) as GameObject;
+			hep.transform.parent = spellsParent.transform;
+			hep.transform.localPosition = new Vector3(0,0,0);
 			if(!effectNames.Contains("HealHelper")){
 				effectEndTimes.Add(Time.time+dur);
 				effectNames.Add("HealHelper");
