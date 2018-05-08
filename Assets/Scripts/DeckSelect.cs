@@ -6,7 +6,7 @@ public class DeckSelect : MonoBehaviour {
 
   //public GameObject userDeckPrefab = userDeckPrefab;
 
-  private int DECKSIZE = 10;
+  private int DECKSIZE = 17;
 
   public static int currProposal = 0;
   private int prevProposal = 0;

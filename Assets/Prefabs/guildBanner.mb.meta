@@ -1,0 +1,193 @@
+fileFormatVersion: 2
+guid: cdd37729eaa45194a9123b77694a56e9
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cylinder
+    100002: Cylinder.001
+    100004: group1
+    100006: //RootNode
+    100008: height
+    100010: pasted__pasted__Cube
+    100012: Torus
+    100014: Torus.001
+    100016: Torus.002
+    100018: Torus.003
+    100020: group
+    100022: pasted__group1
+    100024: pasted__pasted__pasted__Cube
+    100026: pCube1
+    100028: pCube2
+    100030: pCube2 1
+    100032: pCube3
+    100034: pCube5
+    100036: pCube5 1
+    100038: pCube7
+    100040: transform1
+    100042: transform2
+    100044: transform3
+    100046: transform4
+    100048: transform5
+    100050: transform6
+    100052: pasted__wand
+    100054: sign
+    100056: wand
+    400000: Cylinder
+    400002: Cylinder.001
+    400004: group1
+    400006: //RootNode
+    400008: height
+    400010: pasted__pasted__Cube
+    400012: Torus
+    400014: Torus.001
+    400016: Torus.002
+    400018: Torus.003
+    400020: group
+    400022: pasted__group1
+    400024: pasted__pasted__pasted__Cube
+    400026: pCube1
+    400028: pCube2
+    400030: pCube2 1
+    400032: pCube3
+    400034: pCube5
+    400036: pCube5 1
+    400038: pCube7
+    400040: transform1
+    400042: transform2
+    400044: transform3
+    400046: transform4
+    400048: transform5
+    400050: transform6
+    400052: pasted__wand
+    400054: sign
+    400056: wand
+    2100000: lambert1
+    2300000: Cylinder
+    2300002: Cylinder.001
+    2300004: height
+    2300006: pasted__pasted__Cube
+    2300008: Torus
+    2300010: Torus.001
+    2300012: Torus.002
+    2300014: Torus.003
+    2300016: pasted__pasted__pasted__Cube
+    2300018: pCube1
+    2300020: pCube2
+    2300022: pCube5
+    2300024: pasted__wand
+    2300026: sign
+    2300028: wand
+    3300000: Cylinder
+    3300002: Cylinder.001
+    3300004: height
+    3300006: pasted__pasted__Cube
+    3300008: Torus
+    3300010: Torus.001
+    3300012: Torus.002
+    3300014: Torus.003
+    3300016: pasted__pasted__pasted__Cube
+    3300018: pCube1
+    3300020: pCube2
+    3300022: pCube5
+    3300024: pasted__wand
+    3300026: sign
+    3300028: wand
+    4300000: height
+    4300002: Cylinder
+    4300004: Cylinder.001
+    4300006: Torus.003
+    4300008: Torus.001
+    4300010: Torus.002
+    4300012: Torus
+    4300014: pasted__pasted__Cube
+    4300016: pasted__pasted__pasted__Cube
+    4300018: pCube1
+    4300020: pCube2
+    4300022: pCube5
+    4300024: sign
+    4300026: wand
+    4300028: pasted__wand
+    2186277476908879412: ImportLogs
+    2186277476908879414: ImportLogs
+    2186277476908879416: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
