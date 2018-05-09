@@ -8,6 +8,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	public Transform wandHandle;
 	public WandScript wandScript;
 	public Transform spellsParent;
+	public GameObject aimLine;
 	[Space(10)]
 	public int weather = 0; //0 = clear, 1 = fire, 2 = rain, 3 = sandstorm, 4 = wind
 	[Space(10)]
@@ -209,6 +210,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	public void FireSpell(){
 		if(cuedSpellNum!=-1){
 			aiming = false;
+			aimLine.SetActive(false);
 			Invoke(spellNameCompendium[cuedSpellNum], 0f);
 			cuedSpellNum = -1;
 		}
@@ -1020,6 +1022,7 @@ void CmdI_WeatherWind(){
 	public void TryBeginAiming(){
 		if(cuedSpellNum!=-1){
 			aiming = true;
+			aimLine.SetActive(true);
 		}
 	}
 	public bool isAiming(){

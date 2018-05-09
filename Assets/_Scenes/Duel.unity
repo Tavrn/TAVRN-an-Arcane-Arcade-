@@ -692,10 +692,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1657246792782100, guid: 10bf16f7505825641a43bdefbdbc257f,
         type: 2}
-    - target: {fileID: 1009063394830994, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
   m_IsPrefabParent: 0
@@ -31169,6 +31165,7 @@ MonoBehaviour:
   wandHandle: {fileID: 0}
   wandScript: {fileID: 0}
   spellsParent: {fileID: 0}
+  aimLine: {fileID: 0}
   weather: 0
   myMinionSpawn: {fileID: 83336772}
   minionPrefab: {fileID: 1788771677084634, guid: 6836b2c0b5a320344b6e58e84b1c7a2a,
