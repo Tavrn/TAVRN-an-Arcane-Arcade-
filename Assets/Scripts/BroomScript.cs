@@ -43,6 +43,7 @@ public class BroomScript : MonoBehaviour
 
     //for tutorial stuff
     public int tutLvl = 0;
+    public float waitLeft = 1f;
 
     //???
     private float broomD = 0.75f;
@@ -59,6 +60,7 @@ public class BroomScript : MonoBehaviour
         {
             TestMethod1();
         }
+        waitLeft = waitLeft - Time.deltaTime;
     }
 
     public void UpdateCurrentPressure(float f)
@@ -73,6 +75,7 @@ public class BroomScript : MonoBehaviour
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             firstPress = false;
             tutLvl = 2;
+            waitLeft = 5f;
           }
           else if(doesDrag && currentPressure < .5)
           {
@@ -87,9 +90,10 @@ public class BroomScript : MonoBehaviour
       if(isMounted)
       {
         FreezePrb();
-        if(tutLvl == 4)
+        if(tutLvl == 5 && waitLeft < 0f)
         {
-          tutLvl = 5;
+          tutLvl = 6;
+          waitLeft = 5f;
         }
       }
     }
@@ -106,9 +110,10 @@ public class BroomScript : MonoBehaviour
           if(levelInstantly)  { InstantLevel(); }
           else                { TimedLevel(); }
 
-          if(tutLvl == 5)
+          if(tutLvl == 4 && waitLeft < 0f)
           {
-            tutLvl = 6;
+            tutLvl = 5;
+            waitLeft = 5f;
           }
         }
     }
@@ -131,6 +136,7 @@ public class BroomScript : MonoBehaviour
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             startingUp = Vector3.up;
             tutLvl = 1;
+            waitLeft = 5f;
         }
     }
 
@@ -148,23 +154,32 @@ public class BroomScript : MonoBehaviour
           {
             yRot = yRot - 360;
           }
-          if(Mathf.Abs(yRot) >= 20.0f && tutLvl == 2)
+          if(Mathf.Abs(yRot) >= 20.0f && tutLvl == 2 && waitLeft < 0f)
           {
             tutLvl = 3;
+            waitLeft = 5f;
           }
 
           //finds you current speed
           float speed = prb.velocity.magnitude;
 
           //adjusts to rotation around y
-          player.transform.RotateAround(player.transform.position, player.transform.up, yrotatespeed * yRot * speed);
+          if(tutLvl >= 2)
+          {
+            if(tutLvl != 3)
+            {
+              player.transform.RotateAround(player.transform.position, player.transform.up, yrotatespeed * yRot * speed);
+            }
+            if(Mathf.Abs(zDif) >= 0.05 && tutLvl == 3 && waitLeft < 0f)
+            {
+              tutLvl = 4;
+              waitLeft = 5f;
+            }
+          }
 
           //manage the up and down motion using the heads position
           float rotationFactor;
-          if(Mathf.Abs(zDif) >= 0.05 && tutLvl == 3)
-          {
-            tutLvl = 4;
-          }
+
           if (zDif > 0)
           {
               //want rotating downward to be faster
@@ -176,13 +191,16 @@ public class BroomScript : MonoBehaviour
               rotationFactor = 0.8f;
           }
           //actually do the up and down rotation
-          if (zDif < maxDeviate)
+          if(tutLvl >= 3)
           {
+            if (zDif < maxDeviate)
+            {
               player.transform.RotateAround(player.transform.position, player.transform.right, zrotatespeed * rotationFactor * zDif * speed);
-          }
-          else
-          {
+            }
+            else
+            {
               player.transform.RotateAround(player.transform.position, player.transform.right, zrotatespeed * rotationFactor * maxDeviate * speed);
+            }
           }
 
           MoveForward();
