@@ -81,8 +81,6 @@ public class SpellManagerScript : NetworkBehaviour {
 		CreateSpell("ScalingShot", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(1,1,0) });
 		CreateSpell("LightningBolt", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(0,2,0), new Coordinate(1, 2, 0), new Coordinate(1, 3, 0) });
 		CreateSpell("AquaOrb", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-1, -1, 1) });
-		CreateSpell("TripleLock", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(1,1,0), new Coordinate(2, 1, 0), new Coordinate(2, 2, 0) });
-		CreateSpell("WaterHose", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-1, 0, 0), new Coordinate(-1, 0, 1), new Coordinate(0, 0, 1) });
 		CreateSpell("Bubble", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-1, 0, 0), new Coordinate(-1, 0, 1), new Coordinate(0, 0, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("Fireball", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1) });
 		CreateSpell("Meteor", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1) });
@@ -94,6 +92,8 @@ public class SpellManagerScript : NetworkBehaviour {
 		CreateSpell("I_WeatherFire", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0)});
 		CreateSpell("I_Confetti", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(0,-1,0), new Coordinate(0,-2,0), new Coordinate(0,-2,-1), new Coordinate(0,-2,-2)});
 
+		CreateSpell("TripleLock", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(1,1,0), new Coordinate(2, 1, 0), new Coordinate(2, 2, 0) });
+		CreateSpell("WaterHose", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-1, 0, 0), new Coordinate(-1, 0, 1), new Coordinate(0, 0, 1) });
 		CreateSpell("Airslice", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(1, 0, 0), new Coordinate(1, 1, 0), new Coordinate(1, 1, 1) });
 		CreateSpell("BoomerangBlast", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(1, 0, 0), new Coordinate(1, 1, 0), new Coordinate(1, 1, 1), new Coordinate(1, 0, 1), new Coordinate(0, 0, 1) });
 		CreateSpell("Typhoon", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(1, 0, 0), new Coordinate(1, 1, 0), new Coordinate(1, 1, 1), new Coordinate(0, 1, 1), new Coordinate(0, 2, 1), new Coordinate(-1, 2, 1) });
@@ -138,7 +138,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		//checks target int against the deck stored in player prefs
 		//idk if it actually works actually selecting your deck is still wip
 		//default deck is {0,1,2,3,4,5,6,7,8,9}
-	 	for(int i = 0; i < 17; ++i)
+	 	for(int i = 0; i < 15; ++i)
 	 	{
 		 	int temp;
 		 	temp = PlayerPrefs.GetInt("Spell_" + i, -1);

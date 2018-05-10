@@ -665,6 +665,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1809110136686822
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4671568481536536}
+  - component: {fileID: 33779618515801972}
+  - component: {fileID: 23562669988533826}
+  - component: {fileID: 65155697956524462}
+  m_Layer: 0
+  m_Name: AimLine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1836460035097252
 GameObject:
   m_ObjectHideFlags: 1
@@ -1160,6 +1178,19 @@ Transform:
   m_Father: {fileID: 4726744437508136}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4671568481536536
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1809110136686822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.3381}
+  m_LocalScale: {x: 0.0123160025, y: 0.012316004, z: 0.6504052}
+  m_Children: []
+  m_Father: {fileID: 4994248575766714}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4707847463289718
 Transform:
   m_ObjectHideFlags: 1
@@ -1419,6 +1450,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 15.000014}
   m_Children:
   - {fileID: 4103093867526204}
+  - {fileID: 4671568481536536}
   m_Father: {fileID: 4450890264844458}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -29.218002, y: 0, z: 0}
@@ -1706,6 +1738,41 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23562669988533826
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1809110136686822}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 2b1d3db26001df44c8bbec944e6936bb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!23 &23619246194538206
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1923,6 +1990,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1038351975841170}
   m_Mesh: {fileID: 4300000, guid: cfe8a390fb8e15a46babddddc871b3c2, type: 3}
+--- !u!33 &33779618515801972
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1809110136686822}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &54081852685847394
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -2022,6 +2096,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65155697956524462
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1809110136686822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65481740032563558
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2424,6 +2510,7 @@ MonoBehaviour:
   wandHandle: {fileID: 4994248575766714}
   wandScript: {fileID: 114269245587060292}
   spellsParent: {fileID: 4815252710261630}
+  aimLine: {fileID: 1809110136686822}
   weather: 0
   myMinionSpawn: {fileID: 4495779391889618}
   minionPrefab: {fileID: 1788771677084634, guid: 6836b2c0b5a320344b6e58e84b1c7a2a,
@@ -2454,7 +2541,7 @@ MonoBehaviour:
     type: 2}
   shieldPrefab: {fileID: 1300326630621596, guid: a0aad0947bcfcff46bb8185046700d83,
     type: 2}
-  healPrefab: {fileID: 1322843141695952, guid: 189477905d0c0e849b113eaf75f31d36, type: 2}
+  healEffectPrefab: {fileID: 0}
 --- !u!114 &114191615245880104
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 103
+  controlID: 92
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 104
+  controlID: 93
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 105
+  controlID: 94
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -369,9 +369,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 007c0100
-    m_LastClickedID: 97280
-    m_ExpandedIDs: 5cb3fcffcce9fefff6fefeff00000000c6fd0000667d01007e820100
+    m_SelectedIDs: 68f9ffff
+    m_LastClickedID: -1688
+    m_ExpandedIDs: 3cf8ffff40f8ffff44f8ffff52f8ffff5cf8ffff8cf8ffffa0f8ffff64f9ffff68f9ffffe8f9ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Tavern
+  - Duel
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 1
@@ -422,14 +422,14 @@ MonoBehaviour:
     height: 650
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 1693.3043505397607
+  lastFramingTime: 605.7683251722917
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.6727732, y: 0.8592982, z: -3.0354323}
+    m_Target: {x: 7.3472238, y: 5.187003, z: -0.5501726}
     speed: 2
-    m_Value: {x: -1.6727732, y: 0.8592982, z: -3.0354323}
+    m_Value: {x: 7.3472238, y: 5.187003, z: -0.5501726}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -457,13 +457,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+    m_Target: {x: -0.107865885, y: 0.64926696, z: -0.0937416, w: -0.74702096}
     speed: 2
-    m_Value: {x: -0.70710677, y: -0, z: 0, w: -0.70710677}
+    m_Value: {x: -0.10786532, y: 0.64926356, z: -0.09374111, w: -0.747017}
   m_Size:
-    m_Target: 5.2877655
+    m_Target: 4.2911167
     speed: 2
-    m_Value: 5.2877655
+    m_Value: 4.2911167
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -569,20 +569,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Scenes
+    - Assets/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scenes
+  - Assets/Materials
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\TAVRN\Desktop\Arcane Arcade - Copy\Arcane Arcade - Copy
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 84e20000
-    m_LastClickedID: 57988
-    m_ExpandedIDs: 0000000014c500009cc50000fcc500002cc6000068c6000064c70000aac7000004c80000fac80000b6ca0000e0ca0000e2ca000038cb00004ecb000074cb000020cc0000a8cc000018cd000022cd00005ecd00002cce0000a4ce000052cf000064d000009cd10000fcd1000044d2000064d20000a8d2000008d3000040d4000042d4000044d4000078d4000090d40000aed4000000d5000066d80000f2d8000036d90000dcda000066db00006cdb000000dc000014df00003ae0000060e1000096e1000084e2000024e30000bae8000022e900001cea00008eea0000c6ea0000ccea00001aeb000034eb00001cec000084ec0000dced0000e2ed000016ef000052ef00007eef000086ef0000a4ef0000a6ef0000cefb0000d0fb0000d2fb0000d4fb0000d6fb000000ca9a3bffffff7f
+    m_SelectedIDs: 4c4b0000
+    m_LastClickedID: 19276
+    m_ExpandedIDs: 00000000d6330000863400002e35000070350000ea350000183800008a3800002c390000d83a0000c63d00004a3e00004c3e0000c83e00004e3f0000624000004c410000184200002242000086420000fc4300000a460000ca4700001e4a0000ee4a0000664b0000aa4b0000244c0000de4c0000684e00006a4e00006c4e0000e84e0000284f00007c4f0000fe4f0000e4530000005500006e5500003c580000365900003e590000105a0000265e00005663000034650000d06500006267000090680000ac6f0000567000004c720000c2720000407300005a730000e0730000147400005e7600000a770000fa78000008790000487b00009c7b0000de7b0000f47b0000367c0000467c00001c9300001e93000020930000229300002493000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,7 +610,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000014c500009cc50000fcc500002cc6000068c6000064c70000aac7000004c80000fac80000b6ca0000e0ca0000e2ca000038cb00004ecb000074cb000020cc0000a8cc000018cd000022cd00005ecd00002cce0000a4ce000052cf000064d000009cd10000fcd1000044d2000064d20000a8d2000008d3000040d4000042d4000044d4000078d4000090d40000aed4000000d5000066d80000f2d8000036d90000dcda000066db00006cdb000000dc000014df00003ae0000060e1000096e1000084e2000024e30000bae8000022e900001cea00008eea0000c6ea0000ccea00001aeb000034eb00001cec000084ec0000dced0000e2ed000016ef000052ef00007eef000086ef0000a4ef0000a6ef0000cefb0000d0fb0000d2fb0000d4fb0000d6fb0000
+    m_ExpandedIDs: 00000000d6330000863400002e35000070350000ea350000183800008a3800002c390000d83a0000c63d00004a3e00004c3e0000c83e00000a3f00004e3f0000624000004c410000184200002242000086420000fc430000a44400000a460000ca4700001e4a0000ee4a0000664b0000aa4b0000244c0000de4c0000684e00006a4e00006c4e0000e84e0000284f00007c4f0000fe4f0000e4530000005500006e5500003c580000365900003e590000105a0000265e00005663000034650000d06500006267000090680000ac6f0000567000004c720000c2720000407300005a730000e0730000147400005e7600000a770000fa78000008790000487b00009c7b0000de7b0000f47b0000367c0000467c00001c9300001e930000209300002293000024930000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -654,7 +654,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 9}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -662,7 +662,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 195}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 378
 --- !u!114 &18

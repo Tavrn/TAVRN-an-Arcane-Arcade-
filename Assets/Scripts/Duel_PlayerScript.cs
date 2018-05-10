@@ -75,8 +75,8 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		Invoke("ReturnToTavern", 5);
 	}
 
-	[Command]
-	public void CmdLose(){
+	[ClientRpc]
+	public void RpcLose(){
 		Transform t = GameObject.Find("LosePanel").transform;
 		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
 		Invoke("ReturnToTavern", 5);
@@ -88,8 +88,8 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		Invoke("ReturnToTavern", 5);
 	}
 
-	[Command]
-	public void CmdWin(){
+	[ClientRpc]
+	public void RpcWin(){
 		Transform t = GameObject.Find("WinPanel").transform;
 		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
 		Invoke("ReturnToTavern", 5);
@@ -102,10 +102,10 @@ public class Duel_PlayerScript : NetworkBehaviour {
 			}
 			if(isLocalPlayer){
 				Lose();
-				CmdWin();
+				RpcWin();
 			}else{
 				Win();
-				CmdLose();
+				RpcLose();
 			}
 		}else{
 			Transform t = GameObject.Find("WinPanel").transform;
