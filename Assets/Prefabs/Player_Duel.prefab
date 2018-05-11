@@ -5173,7 +5173,7 @@ LineRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 71c7eeec06ddc0941a0f2e720088377d, type: 2}
+  - {fileID: 2100000, guid: 55c5ea87d145e2543b9e1286f791a919, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
