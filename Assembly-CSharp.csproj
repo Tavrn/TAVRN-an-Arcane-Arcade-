@@ -763,6 +763,7 @@
      <Compile Include="Assets\Scripts\DeckSelect.cs" />
      <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener.cs" />
      <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener_LH.cs" />
+     <Compile Include="Assets\Scripts\Duel_GameManager.cs" />
      <Compile Include="Assets\Scripts\Duel_HeadScript.cs" />
      <Compile Include="Assets\Scripts\Duel_PlayerScript.cs" />
      <Compile Include="Assets\Scripts\GlyphDrawer.cs" />

@@ -227,7 +227,7 @@ public class BroomScript : MonoBehaviour
         }
         else //if there is no acceleration
         {
-            prb.GetComponent<Rigidbody>().velocity = transform.forward * CONST_SPD;
+            prb.velocity = transform.forward * CONST_SPD;
         }
     }
 

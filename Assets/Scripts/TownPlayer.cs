@@ -9,6 +9,13 @@ public class TownPlayer : MonoBehaviour {
 	public Material passedHoopMat;
 	public Material nextHoopMat;
 	private int numHoops = 41;
+	private Vector3 startPos;
+	private Quaternion startRot;
+
+	void Start () {
+		startPos = transform.position;
+		startRot = transform.rotation;
+	}
 
 	public void HitHoop(int number, GameObject h){
 		if(number==prevHoop+1){
@@ -27,6 +34,27 @@ public class TownPlayer : MonoBehaviour {
 			}
 		}
 	}
+	public void ResetToHoop(){
+		if(prevHoop>0){
+			string num = "Hoop";
+			if(prevHoop<9){
+				num += "0" + (prevHoop);
+			}else{
+				num += (prevHoop) + "";
+			}
+			GameObject pHoop = GameObject.Find(num);
+			Vector3 pos = pHoop.transform.position;
+			transform.position = pos;
+			Rigidbody rb = GetComponent<Rigidbody>();
+			rb.MovePosition(pos);
+			rb.velocity = Vector3.zero;
+			transform.rotation = pHoop.transform.rotation;
+		}else{
+			transform.position = startPos;
+			transform.rotation = startRot;
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+		}
+	}
 	public void Finish(){
 		if(gameObject.name.Contains("Multi")){
 
@@ -36,5 +64,10 @@ public class TownPlayer : MonoBehaviour {
 	}
 	public void ReturnToTavern(){
 		SceneManager.LoadScene("Tavern");
+	}
+	void OnTriggerEnter(Collider c){
+		if(c.transform.root.tag=="Town"){
+			ResetToHoop();
+		}
 	}
 }

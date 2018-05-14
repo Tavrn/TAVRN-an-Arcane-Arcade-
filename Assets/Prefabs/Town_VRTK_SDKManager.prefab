@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 114026308076067364}
   - component: {fileID: 54246224503428096}
   - component: {fileID: 114863650578188392}
-  - component: {fileID: 114228253798188608}
+  - component: {fileID: 65884169284782488}
   m_Layer: 0
   m_Name: Town_VRTK_SDKManager
   m_TagString: Untagged
@@ -311,7 +311,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913150174758306}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47799873, y: 1.9579926, z: 0.8950043}
+  m_LocalPosition: {x: -0.13, y: 0.14, z: 2.67}
   m_LocalScale: {x: 0.014, y: 0.012, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4338324234259814}
@@ -525,6 +525,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65884169284782488
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354992744718064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20328522, y: 0.22032166, z: 2.1880798}
+  m_Center: {x: -0.5162239, y: 0.7663193, z: -0.5940399}
 --- !u!81 &81092451000911874
 AudioListener:
   m_ObjectHideFlags: 1
@@ -639,20 +651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc5079d7f6872142b7e595c6a118090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114228253798188608
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1354992744718064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 950332ab870fc55409bbe4c675e07e50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prevHoop: 0
-  passedHoopMat: {fileID: 2100000, guid: b9d4e17410b8bfe4980d1b4de393becb, type: 2}
-  nextHoopMat: {fileID: 2100000, guid: 036d6fe3a6e4497469f1449f6adfc143, type: 2}
 --- !u!114 &114348227061900510
 MonoBehaviour:
   m_ObjectHideFlags: 1
