@@ -1074,6 +1074,7 @@
     <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\Scripts\AudienceMinion.cs" />
+    <Compile Include="Assets\Scripts\AutoNetMM.cs" />
     <Compile Include="Assets\Scripts\BroomScript.cs" />
     <Compile Include="Assets\Scripts\BroomTutorial.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />
@@ -1083,6 +1084,7 @@
     <Compile Include="Assets\Scripts\DeckSelect.cs" />
     <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener.cs" />
     <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener_LH.cs" />
+    <Compile Include="Assets\Scripts\Duel_GameManager.cs" />
     <Compile Include="Assets\Scripts\Duel_HeadScript.cs" />
     <Compile Include="Assets\Scripts\Duel_PlayerScript.cs" />
     <Compile Include="Assets\Scripts\GlyphDrawer.cs" />

@@ -27,7 +27,7 @@ public class TownPlayer : MonoBehaviour {
 			}else{
 				num += (prevHoop+1) + "";
 			}
-			if(prevHoop<41){
+			if(prevHoop<40){
 				GameObject.Find(num).GetComponent<MeshRenderer>().material = nextHoopMat;
 			}else{
 				Finish();
