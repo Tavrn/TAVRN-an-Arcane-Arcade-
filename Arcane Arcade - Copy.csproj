@@ -1102,6 +1102,7 @@
     <Compile Include="Assets\Scripts\SpellManagerScript.cs" />
     <Compile Include="Assets\Scripts\TargetColliderScript.cs" />
     <Compile Include="Assets\Scripts\Tavern_EventListener.cs" />
+    <Compile Include="Assets\Scripts\Tavern_Minion.cs" />
     <Compile Include="Assets\Scripts\TextOutline.cs" />
     <Compile Include="Assets\Scripts\Town_ControllerEvents_Listener.cs" />
     <Compile Include="Assets\Scripts\Town_LH_ControllerEventListener.cs" />
@@ -1289,6 +1290,7 @@
     <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
     <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
     <None Include="Assets\Rocks and Boulders 2\readme.txt" />
+    <None Include="Assets\Standard Assets\water well\readme.txt" />
     <None Include="Assets\Town\Shaders\DistanceFade.shader" />
     <None Include="Assets\Town\Shaders\TerrainSurface.shader" />
     <None Include="Assets\Town\Shaders\WavingGrass.shader" />
