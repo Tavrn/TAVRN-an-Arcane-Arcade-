@@ -8,6 +8,7 @@ public class BroomTutorial : MonoBehaviour {
 
 	private BroomScript brms;
 	private TextMesh txtMsh;
+  public bool isMulti = false;
   public int stage = 0;
 	private float storedTime;
 	private bool done;
@@ -29,44 +30,47 @@ public class BroomTutorial : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(stage < 6)
-		{
-			stage = brms.tutLvl;
-		}
-		if (!done)
-		{
-			switch (stage)
-			{
-				case 1: //mount -> trigger
-					txtMsh.text = "Press the trigger\nto move forward";
-					break;
-				case 2: ///trigger -> turn
-					txtMsh.text = "Turn your head left or right\nto turn in that direction";
-					break;
-				case 3: //turn -> move
-					txtMsh.text = "Lean forward or backward\n to turn down or up";
-					break;
-				case 4: //A -> B
-					txtMsh.text = "Press the B button\nto level out";
-					break;
-				case 5: //move -> A
-					txtMsh.text = "Press and hold the A button to stop";
-					storedTime = Time.time;
-					break;
-				case 6: //B -> fun
-					txtMsh.text = "Enjoy your ride!";
-					if(Time.time - storedTime >= 3f)
-					{
-						stage = 7;
-					}
-					break;
-				case 7: //fun -> none
-					txtMsh.text = "";
-					done = true;
-					break;
-				default:
-					break;
-			}
-		}
+    if(!isMulti)
+    {
+  		if(stage < 6)
+  		{
+  			stage = brms.tutLvl;
+  		}
+  		if (!done)
+  		{
+  			switch (stage)
+  			{
+  				case 1: //mount -> trigger
+  					txtMsh.text = "Press the trigger\nto move forward";
+  					break;
+  				case 2: ///trigger -> turn
+  					txtMsh.text = "Turn your head left or right\nto turn in that direction";
+  					break;
+  				case 3: //turn -> move
+  					txtMsh.text = "Lean forward or backward\n to turn down or up";
+  					break;
+  				case 4: //A -> B
+  					txtMsh.text = "Press the B button\nto level out";
+  					break;
+  				case 5: //move -> A
+  					txtMsh.text = "Press and hold the A button to stop";
+  					storedTime = Time.time;
+  					break;
+  				case 6: //B -> fun
+  					txtMsh.text = "Enjoy your ride!";
+  					if(Time.time - storedTime >= 3f)
+  					{
+  						stage = 7;
+  					}
+  					break;
+  				case 7: //fun -> none
+  					txtMsh.text = "";
+  					done = true;
+  					break;
+  				default:
+  					break;
+  			}
+  		}
+    }
 	}
 }

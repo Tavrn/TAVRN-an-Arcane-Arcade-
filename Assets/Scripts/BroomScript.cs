@@ -15,7 +15,7 @@ public class BroomScript : MonoBehaviour
     //the current player & their head
     public GameObject player;
     public GameObject head;
-
+    public bool isMulti = false;
     //is there anyone riding
     private bool isMounted = false;
     private Vector3 mountLocation;
@@ -51,7 +51,7 @@ public class BroomScript : MonoBehaviour
 
     void Start()
     {
-        prb = player.GetComponent<Rigidbody>();
+      prb = player.GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
@@ -74,7 +74,9 @@ public class BroomScript : MonoBehaviour
             mountLocation = head.transform.localPosition;
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             firstPress = false;
-            tutLvl = 2;
+            if(!isMulti){
+              tutLvl = 2;
+            }
             waitLeft = 5f;
           }
           else if(doesDrag && currentPressure < .5)
@@ -135,7 +137,9 @@ public class BroomScript : MonoBehaviour
             transform.parent = player.transform;
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             startingUp = Vector3.up;
-            tutLvl = 1;
+            if(!isMulti){
+              tutLvl = 1;
+            }
             waitLeft = 5f;
         }
     }

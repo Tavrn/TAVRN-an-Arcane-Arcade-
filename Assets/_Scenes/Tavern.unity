@@ -15619,14 +15619,15 @@ MonoBehaviour:
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
-  m_LogLevel: 2
+  m_LogLevel: 0
   m_PlayerPrefab: {fileID: 0}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
-  m_OfflineScene: Town_SinglePlayer
+  m_OfflineScene: Tavern
   m_OnlineScene: 
   m_SpawnPrefabs:
-  - {fileID: 1354992744718064, guid: fb4580e1a77daa04f9abc5ea0150b28a, type: 2}
+  - {fileID: 1164635755521438, guid: 03a5fca0aa163284d949a8de00647d02, type: 2}
+  - {fileID: 1094193597895826, guid: a7360653812a91345b9e155cbb1d9004, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -15685,12 +15686,13 @@ MonoBehaviour:
   m_ShowLobbyGUI: 1
   m_MaxPlayers: 2
   m_MaxPlayersPerConnection: 1
-  m_MinPlayers: 2
-  m_LobbyPlayerPrefab: {fileID: 0}
-  m_GamePlayerPrefab: {fileID: 1354992744718064, guid: fb4580e1a77daa04f9abc5ea0150b28a,
+  m_MinPlayers: 0
+  m_LobbyPlayerPrefab: {fileID: 114177089034377250, guid: a7360653812a91345b9e155cbb1d9004,
     type: 2}
-  m_LobbyScene: Town_SinglePlayer
-  m_PlayScene: Town_Multiplayer
+  m_GamePlayerPrefab: {fileID: 1164635755521438, guid: 03a5fca0aa163284d949a8de00647d02,
+    type: 2}
+  m_LobbyScene: Tavern
+  m_PlayScene: Duel Multi
   lobbySlots: []
 --- !u!4 &1152320324
 Transform:

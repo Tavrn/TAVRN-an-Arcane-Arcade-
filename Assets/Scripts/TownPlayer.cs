@@ -3,16 +3,31 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+using VRTK;
 
-public class TownPlayer : MonoBehaviour {
+public class TownPlayer : NetworkBehaviour {
 	public int prevHoop = 0;
 	public Material passedHoopMat;
 	public Material nextHoopMat;
 	private int numHoops = 41;
 	private Vector3 startPos;
 	private Quaternion startRot;
+	private bool isMulti;
 
 	void Start () {
+		isMulti = gameObject.name.Contains("Multi");
+		if(isMulti){
+			if(isLocalPlayer){
+				VRTK_SDKManager m = gameObject.AddComponent(typeof(VRTK_SDKManager)) as VRTK_SDKManager;
+				m.scriptAliasLeftController = transform.Find("VRTK_Scripts").Find("LeftHand").gameObject;
+				m.scriptAliasRightController = transform.Find("VRTK_Scripts").Find("RightHand").gameObject;
+				VRTK_SDKSetup[] list = {transform.Find("NewtonSDK").GetComponent<VRTK_SDKSetup>()};
+				m.TryLoadSDKSetup(0, true, list);
+				transform.Find("VRTK_Scripts").Find("LeftHand").GetComponent<VRTK_ControllerEvents>().enabled = true;
+				transform.Find("VRTK_Scripts").Find("RightHand").GetComponent<VRTK_ControllerEvents>().enabled = true;
+			}
+		}
 		startPos = transform.position;
 		startRot = transform.rotation;
 	}

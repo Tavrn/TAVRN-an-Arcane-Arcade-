@@ -68,11 +68,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4905046432299958}
-  - component: {fileID: 114026308076067364}
   - component: {fileID: 54246224503428096}
   - component: {fileID: 114754826107306648}
   - component: {fileID: 114442046712622794}
   - component: {fileID: 114898696109603238}
+  - component: {fileID: 65227861410017190}
   m_Layer: 0
   m_Name: Town_Player_Multi
   m_TagString: Untagged
@@ -555,6 +555,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3, z: 0.3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65227861410017190
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1354992744718064}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.20328522, y: 0.22032166, z: 2.1880798}
+  m_Center: {x: 0, y: 0.7663193, z: 0.35}
 --- !u!65 &65409658708538486
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -592,26 +604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd93dbead6c28e42b0408c298a10966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114026308076067364
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1354992744718064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5837af0260a118e4d808bfe0405429a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  persistOnLoad: 0
-  autoManageScriptDefines: 1
-  activeScriptingDefineSymbolsWithoutSDKClasses: []
-  scriptAliasLeftController: {fileID: 1006912814445688}
-  scriptAliasRightController: {fileID: 1455974143753268}
-  autoManageVRSettings: 1
-  autoLoadSetup: 1
-  setups:
-  - {fileID: 114726495640981190}
 --- !u!114 &114068372659253476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -788,8 +780,10 @@ MonoBehaviour:
   doesDrag: 1
   player: {fileID: 1354992744718064}
   head: {fileID: 1380272581142878}
+  isMulti: 1
   constVel: 0
-  tutLvl: 0
+  tutLvl: 7
+  waitLeft: 1
 --- !u!114 &114538580230496052
 MonoBehaviour:
   m_ObjectHideFlags: 1
