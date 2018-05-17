@@ -84,9 +84,10 @@ public class SpellManagerScript : NetworkBehaviour {
 		CreateSpell("Bubble", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, -1, 0), new Coordinate(-1, -1, 0), new Coordinate(-1, 0, 0), new Coordinate(-1, 0, 1), new Coordinate(0, 0, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("Fireball", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1) });
 		CreateSpell("Meteor", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1) });
-		CreateSpell("I_Convert", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(-1, 2, 0) });
-		CreateSpell("I_Heal", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1,2,1) });
 		CreateSpell("I_Conversion", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(0, 1, 1) });
+		CreateSpell("I_Heal", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1,2,1) });
+
+		CreateSpell("I_Convert", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(-1, 2, 0) });
 		CreateSpell("I_SpawnMinion", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(0,0,1), new Coordinate(0,0,2)});
 		CreateSpell("I_WeatherClear", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(1,0,0),new Coordinate(1, 1, 0), new Coordinate(2, 1, 0)});
 		CreateSpell("I_WeatherFire", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0)});
@@ -138,7 +139,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		//checks target int against the deck stored in player prefs
 		//idk if it actually works actually selecting your deck is still wip
 		//default deck is {0,1,2,3,4,5,6,7,8,9}
-	 	for(int i = 0; i < 15; ++i)
+	 	for(int i = 0; i < 10; ++i)
 	 	{
 		 	int temp;
 		 	temp = PlayerPrefs.GetInt("Spell_" + i, -1);

@@ -6,7 +6,7 @@ public class DeckSelect : MonoBehaviour {
 
   //public GameObject userDeckPrefab = userDeckPrefab;
 
-  private int DECKSIZE = 15;
+  private int DECKSIZE = 10;
 
   public static int currProposal = 0;
   private int prevProposal = 0;
@@ -16,6 +16,8 @@ public class DeckSelect : MonoBehaviour {
   public TextMesh pgTxt;
   public TextMesh spTxt;
   public TextMesh prTxt;
+
+  private List<string> spellNames = new List<string>{"Magic Missile", "Arcane Sphere", "Scaling Shot", "Lightning Bolt", "Aqua Orb", "Bubble Shot", "Fireball", "Meteor", "Conversion", "Heal"};
 
 	// Update is called once per frame
   void Start() {
@@ -29,8 +31,8 @@ public class DeckSelect : MonoBehaviour {
       PlayerPrefs.SetInt("DeckInitialized", 1);
     }
     pgTxt.text = " Page \n number: \n" + currPage;
-    spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currPage, -1);
-    prTxt.text = " Proposed spell \nnumber: " + 0;
+    spTxt.text = " Current \n spell: \n" +  spellNames[PlayerPrefs.GetInt("Spell_" + currPage, -1)];
+    prTxt.text = " Proposed spell: \n" + spellNames[0];
 	}
 
 	void Update () {
@@ -41,7 +43,7 @@ public class DeckSelect : MonoBehaviour {
 	}
 
   void ProposalChanged() {
-    prTxt.text = " Proposed spell \nnumber: " + currProposal;
+    prTxt.text = " Proposed spell: \n" + spellNames[currProposal];
     prevProposal = currProposal;
   }
 
@@ -53,7 +55,7 @@ public class DeckSelect : MonoBehaviour {
       currPage = 0;
     }
     pgTxt.text = " Page \n number: \n" + currPage;
-    spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currPage, -1);
+    spTxt.text = " Current \n spell: \n" +  spellNames[PlayerPrefs.GetInt("Spell_" + currPage, -1)];
 	}
 
   //turns the currentPage counter to the corresponding to the page to the left
@@ -64,7 +66,7 @@ public class DeckSelect : MonoBehaviour {
       currPage = DECKSIZE - 1;
     }
     pgTxt.text = " Page \n number: \n" + currPage;
-    spTxt.text = " Spell \n number: \n" +  PlayerPrefs.GetInt("Spell_" + currPage, -1);
+    spTxt.text = " Current \n spell: \n" +  spellNames[PlayerPrefs.GetInt("Spell_" + currPage, -1)];
 	}
 
   //adds currProposal to currDeck if not already present
@@ -74,7 +76,7 @@ public class DeckSelect : MonoBehaviour {
     {
 //Debug.Log(currProposal);
       PlayerPrefs.SetInt("Spell_" + currPage, currProposal);
-      spTxt.text = " Spell \n number: \n" + currProposal;
+      spTxt.text = " Current \n spell: \n" + spellNames[currProposal];
     }
 	}
 

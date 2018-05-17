@@ -3,31 +3,59 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectSpell : MonoBehaviour {
-
+  public Material dimMat;
+  public Material brightMat;
+  public bool isParent;
   public int spellNumber;
-
+  private MeshRenderer mr;
+  private SelectSpell parentScript;
 	// Use this for initialization
 	void Start () {
-    if(transform.childCount>0){
-      transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+    if(!isParent){
+      if(transform.childCount>0){
+        foreach(Transform t in transform){
+          t.gameObject.SetActive(false);
+        }
+      }
+      mr = GetComponent<MeshRenderer>();
+      parentScript = transform.parent.GetComponent<SelectSpell>();
+    }else{
+      foreach(Transform t in transform){
+        t.gameObject.SetActive(true);
+      }
     }
 	}
-
-	// Update is called once per frame
-	void Update () {
-
-	}
-
+  public void ParentDim(bool b){
+    foreach(Transform t in transform){
+      if(b){
+        t.GetComponent<MeshRenderer>().material = dimMat;
+      }else{
+        t.GetComponent<MeshRenderer>().material = brightMat;
+      }
+    }
+  }
 	void OnTriggerEnter(Collider col)
 	{
 		DeckSelect.currProposal = spellNumber;
-    if(transform.childCount>0){
-      transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+    if(!isParent){
+      if(transform.childCount>0){
+        foreach(Transform t in transform){
+          t.gameObject.SetActive(true);
+        }
+      }
+      // mr.enabled = false;
+      parentScript.ParentDim(true);
     }
 	}
   void OnTriggerExit(Collider c){
-    if(transform.childCount>0){
-      transform.GetChild(0).GetChild(0).gameObject.SetActive(false);
+    if(!isParent){
+      if(transform.childCount>0){
+        foreach(Transform t in transform){
+          t.gameObject.SetActive(false);
+        }
+      }
+      // mr.enabled = true;
+      parentScript.ParentDim(false);
     }
   }
 }
