@@ -18219,7 +18219,7 @@ MonoBehaviour:
   m_RunInBackground: 1
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
-  m_LogLevel: 0
+  m_LogLevel: -1
   m_PlayerPrefab: {fileID: 0}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
@@ -18286,7 +18286,7 @@ MonoBehaviour:
   m_ShowLobbyGUI: 1
   m_MaxPlayers: 2
   m_MaxPlayersPerConnection: 1
-  m_MinPlayers: 0
+  m_MinPlayers: 2
   m_LobbyPlayerPrefab: {fileID: 114177089034377250, guid: a7360653812a91345b9e155cbb1d9004,
     type: 2}
   m_GamePlayerPrefab: {fileID: 1164635755521438, guid: 03a5fca0aa163284d949a8de00647d02,

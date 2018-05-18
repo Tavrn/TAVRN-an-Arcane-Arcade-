@@ -135,6 +135,14 @@ public class SpellManagerScript : NetworkBehaviour {
 		spellCompendium.Add(pat);
 		spellManaCosts.Add(cost);
 	}
+	int SpellAtPg(int page)
+	{
+		//checks if page number is in range
+		//if so, it will return the spell number corresponding with the spell at that page
+		//else it will return -1
+		//untested but "should" work
+		return(PlayerPrefs.GetInt("Spell_" + page, -1));
+	}
 	bool DeckContains(int target) {
 		//checks target int against the deck stored in player prefs
 		//idk if it actually works actually selecting your deck is still wip

@@ -71,6 +71,7 @@ public class AutoNetMM : NetworkLobbyManager {
         {
             // Success
             Debug.Log("Successfully joined: " + matchInfo.networkId);
+						//StartClient();
         }
     }
 
@@ -94,7 +95,7 @@ public class AutoNetMM : NetworkLobbyManager {
         {
             //success
             Debug.Log("successful creation: " + matchInfo.networkId);
+						//StartHost();
         }
     }
-
 }
