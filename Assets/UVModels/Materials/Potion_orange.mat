@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Potion
+  m_Name: Potion_orange
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
@@ -72,5 +72,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.31206205, g: 0.40417933, b: 0.8000001, a: 1}
-    - _EmissionColor: {r: 0.3862414, g: 0.49728578, b: 0.98491555, a: 0}
+    - _Color: {r: 0.9764706, g: 0.4117647, b: 0, a: 1}
+    - _EmissionColor: {r: 1.4979999, g: 0.6316867, b: 0, a: 0}

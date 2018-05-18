@@ -33,22 +33,43 @@ public class TownPlayer : NetworkBehaviour {
 	}
 
 	public void HitHoop(int number, GameObject h){
-		if(number==prevHoop+1){
-			prevHoop = number;
-			h.GetComponent<MeshRenderer>().material = passedHoopMat;
-			string num = "Hoop";
-			if(prevHoop<9){
-				num += "0" + (prevHoop+1);
-			}else{
-				num += (prevHoop+1) + "";
+		if(!isMulti){
+			if(number==prevHoop+1){
+				prevHoop = number;
+				h.GetComponent<MeshRenderer>().material = passedHoopMat;
+				string num = "Hoop";
+				if(prevHoop<9){
+					num += "0" + (prevHoop+1);
+				}else{
+					num += (prevHoop+1) + "";
+				}
+				if(prevHoop<40){
+					GameObject.Find(num).GetComponent<MeshRenderer>().material = nextHoopMat;
+				}else{
+					Finish();
+				}
 			}
-			if(prevHoop<40){
-				GameObject.Find(num).GetComponent<MeshRenderer>().material = nextHoopMat;
-			}else{
-				Finish();
+		}else{
+			if(isLocalPlayer){
+				if(number==prevHoop+1){
+					prevHoop = number;
+					h.GetComponent<MeshRenderer>().material = passedHoopMat;
+					string num = "Hoop";
+					if(prevHoop<9){
+						num += "0" + (prevHoop+1);
+					}else{
+						num += (prevHoop+1) + "";
+					}
+					if(prevHoop<40){
+						GameObject.Find(num).GetComponent<MeshRenderer>().material = nextHoopMat;
+					}else{
+						Finish();
+					}
+				}
 			}
 		}
 	}
+
 	public void ResetToHoop(){
 		if(prevHoop>0){
 			string num = "Hoop";
@@ -72,7 +93,7 @@ public class TownPlayer : NetworkBehaviour {
 	}
 	public void Finish(){
 		if(gameObject.name.Contains("Multi")){
-
+			GameObject.Find("MultiplayerBroomManager").GetComponent<MultiplayerBroomManager>().Finish();
 		}else{
 			Invoke("ReturnToTavern", 5);
 		}
