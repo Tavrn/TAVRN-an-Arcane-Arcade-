@@ -109,7 +109,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 77
+  controlID: 63
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 91
+  controlID: 64
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 92
+  controlID: 65
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -368,29 +368,29 @@ MonoBehaviour:
     height: 606
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 54ef0000
-    m_LastClickedID: 0
-    m_ExpandedIDs: 0c63efff148eefffd29befff4876f2ff5e82f2ffe6d5f3ffaaccfbffb0dffbff300cfefffe1ffeffa624feff662bfeff2e45fefff4ffffff00000000
+    scrollPos: {x: 0, y: 851}
+    m_SelectedIDs: 2e8fffff
+    m_LastClickedID: -28882
+    m_ExpandedIDs: 06aeffffceedffffeaf9ffff000000000e810000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Spot Light (1)
+      m_OriginalName: Spot Light (1)
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 34236
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Town_SinglePlayer
+  - Tavern
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 1
@@ -422,14 +422,14 @@ MonoBehaviour:
     height: 606
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 4114.36001546769
+  lastFramingTime: 519.5258459655572
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.5530388, y: 1.5642717, z: -4.043738}
+    m_Target: {x: 16.865913, y: 0.42937994, z: 0.6240281}
     speed: 2
-    m_Value: {x: -1.5530388, y: 1.5642717, z: -4.043738}
+    m_Value: {x: 16.865913, y: 0.42937994, z: 0.6240281}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -457,13 +457,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.00008166793, y: 0.9997908, z: -0.020400401, w: -0.0015126613}
+    m_Target: {x: -0.09019566, y: -0.66866654, z: 0.08229532, w: -0.7334694}
     speed: 2
-    m_Value: {x: -0.00008166793, y: 0.9997908, z: -0.020400401, w: -0.0015126613}
+    m_Value: {x: -0.09019566, y: -0.66866654, z: 0.08229532, w: -0.7334694}
   m_Size:
-    m_Target: 2.616834
+    m_Target: 13.943914
     speed: 2
-    m_Value: 2.616834
+    m_Value: 13.943914
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -569,20 +569,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/_Scenes
+    - Assets/UVModels/Materials
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scenes
+  - Assets/UVModels/Materials
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\TAVRN\Desktop\Arcane Arcade - Copy\Arcane Arcade - Copy
+  m_LastProjectPath: C:\Users\TAVRN\Desktop\Arcane Arcade - Recent
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: deea0000
-    m_LastClickedID: 60126
-    m_ExpandedIDs: 000000008ecd000014ce000076ce0000a6ce0000d8cf00001ed0000076d000006ad1000026d3000050d3000052d30000a6d30000e0d300008cd4000014d5000090d50000ccd5000098d60000bad70000ced8000002da000060da0000a8da0000c8da00000cdb00006edb0000a6dc0000a8dc0000aadc0000e0dc0000f8dc000016dd000066dd0000c6e0000054e1000098e100003ee30000c8e30000cee3000062e4000076e700009ce80000bee90000f4e900007aeb00007ceb000024ed00005eee000058ef0000caef000002f0000008f0000056f000006ef000005af10000c0f1000012f3000018f30000b4f300004cf4000086f40000b2f40000baf40000daf4000066020100680201006a0201006c0201006e02010000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 214}
+    m_SelectedIDs: d45a0000
+    m_LastClickedID: 23252
+    m_ExpandedIDs: 0000000020320000de3200008a330000cc33000074360000ea3600008c3700003e390000323c0000bc3c0000be3c00003a3d0000c23d0000da3e0000cc3f0000a64000000c410000824200009444000062460000be4800008e490000064a00004a4a0000c44a0000804b00000c4d00000e4d0000104d00008c4d0000cc4d0000204e0000a24e00008e520000ae5300001c540000f0560000ec570000f4570000d2580000f45c00002662000012640000ae6400006e670000866a0000586d0000486f000040710000b6710000347200004e720000d4720000087300005e7500000a7600000a780000187800001a7900005a7a0000b07a0000f27a0000087b00005a7b0000be920000c0920000c2920000c4920000c692000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -610,7 +610,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008ecd000014ce000076ce0000a6ce0000d8cf00001ed0000076d000006ad1000026d3000050d3000052d30000a6d30000e0d300008cd4000014d5000090d50000ccd5000058d6000098d60000bad70000ced8000002da000060da0000a8da0000c8da00000cdb00006edb0000a6dc0000a8dc0000aadc0000e0dc0000f8dc000016dd000066dd0000c6e0000054e1000098e100003ee30000c8e30000cee3000062e4000076e700009ce80000bee90000f4e900007aeb00007ceb000024ed00005eee000058ef0000caef000002f0000008f0000056f000006ef000005af10000c0f1000012f3000018f30000b4f300004cf4000086f40000b2f40000baf40000daf4000066020100680201006a0201006c0201006e020100
+    m_ExpandedIDs: 0000000020320000de3200008a330000cc33000074360000ea3600008c3700003e390000323c0000bc3c0000be3c00003a3d0000c23d0000da3e0000cc3f0000a64000000c410000824200009444000062460000be4800008e490000064a00004a4a0000c44a0000804b00000c4d00000e4d0000104d00008c4d0000cc4d0000204e0000a24e00008e520000ae5300001c540000f0560000ec570000f4570000d2580000f45c00002662000012640000ae6400006e670000866a0000586d0000486f000040710000b6710000347200004e720000d4720000087300005e7500000a7600000a780000187800001a7900005a7a0000b07a0000f27a0000087b00005a7b0000be920000c0920000c2920000c4920000c6920000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -662,7 +662,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 180}
     m_GridSize: 64
   m_DirectoriesAreaWidth: 378
 --- !u!114 &18
