@@ -25951,6 +25951,11 @@ Prefab:
       propertyPath: m_Name
       value: Potion_blue
       objectReference: {fileID: 0}
+    - target: {fileID: 108138662648300194, guid: 5669ded38144a2448bdb47f9def97744,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294966783
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
   m_IsPrefabParent: 0

@@ -10,11 +10,12 @@ public class TownPlayer : NetworkBehaviour {
 	public int prevHoop = 0;
 	public Material passedHoopMat;
 	public Material nextHoopMat;
+	private bool finished = false;
 	private int numHoops = 41;
 	private Vector3 startPos;
 	private Quaternion startRot;
 	private bool isMulti;
-	private float startTime;
+	private float startTime=-1f;
 	void Start () {
 		isMulti = gameObject.name.Contains("Multi");
 		if(isMulti){
@@ -74,7 +75,9 @@ public class TownPlayer : NetworkBehaviour {
 			}
 		}
 	}
-
+	public bool isFinished(){
+		return finished;
+	}
 	public void ResetToHoop(){
 		if(prevHoop>0){
 			string num = "Hoop";
@@ -96,9 +99,38 @@ public class TownPlayer : NetworkBehaviour {
 			GetComponent<Rigidbody>().velocity = Vector3.zero;
 		}
 	}
+	[Command]
+	public void CmdSetFinished(){
+		finished = true;
+	}
+	[ClientRpc]
+	public void RpcSetFinished(){
+		finished = true;
+	}
+	public void SetFinished(){
+		finished = true;
+		if(isServer){
+			RpcSetFinished();
+		}else{
+			CmdSetFinished();
+		}
+	}
 	public void Finish(){
 		if(gameObject.name.Contains("Multi")){
-			GameObject.Find("MultiplayerBroomManager").GetComponent<MultiplayerBroomManager>().Finish();
+			SetFinished();
+			foreach(GameObject p in GameObject.FindGameObjectsWithTag("Player")){
+				if(p.GetComponent<NetworkIdentity>().netId != GetComponent<NetworkIdentity>().netId){
+					if(p.GetComponent<TownPlayer>().isFinished()){
+						print("lose " + (Time.time-startTime));
+						//LOSE
+					}else{
+						print("win " + (Time.time-startTime));
+						//WIN
+					}
+				}
+			}
+			// GameObject.Find("MultiplayerBroomManager").GetComponent<MultiplayerBroomManager>().Finish();
+
 		}else{
 			Invoke("ReturnToTavern", 5);
 		}

@@ -22,6 +22,9 @@ public class ReadySetGoScript : NetworkBehaviour {
 			text.text = "Set!";
 		}else if(stage==2){
 			text.text = "Go!";
+			foreach(GameObject g in GameObject.FindGameObjectsWithTag("Player")){
+				g.GetComponent<TownPlayer>().setStartTime(Time.time);
+			}
 		}else if(stage==3){
 			Destroy(gameObject);
 		}
