@@ -15,7 +15,14 @@ public class HoopScript : MonoBehaviour {
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag=="Broom"){
 			if((transform.position-c.transform.position).magnitude<5){
-				c.transform.root.GetComponent<TownPlayer>().HitHoop(number, gameObject);
+				TownPlayer p = c.transform.root.GetComponent<TownPlayer>();
+				if(p.IsMulti()){
+					if(p.isLocalPlayer){
+						c.transform.root.GetComponent<TownPlayer>().HitHoop(number, gameObject);
+					}
+				}else{
+					c.transform.root.GetComponent<TownPlayer>().HitHoop(number, gameObject);
+				}
 			}
 		}
 	}

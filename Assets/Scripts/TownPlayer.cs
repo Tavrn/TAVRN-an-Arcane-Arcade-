@@ -14,7 +14,7 @@ public class TownPlayer : NetworkBehaviour {
 	private Vector3 startPos;
 	private Quaternion startRot;
 	private bool isMulti;
-
+	private float startTime;
 	void Start () {
 		isMulti = gameObject.name.Contains("Multi");
 		if(isMulti){
@@ -31,7 +31,12 @@ public class TownPlayer : NetworkBehaviour {
 		startPos = transform.position;
 		startRot = transform.rotation;
 	}
-
+	public void setStartTime(float f){
+		startTime = f;
+	}
+	public bool IsMulti(){
+		return isMulti;
+	}
 	public void HitHoop(int number, GameObject h){
 		if(!isMulti){
 			if(number==prevHoop+1){
