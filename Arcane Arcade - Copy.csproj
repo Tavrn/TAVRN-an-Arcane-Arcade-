@@ -1092,6 +1092,7 @@
     <Compile Include="Assets\Scripts\HeadReference.cs" />
     <Compile Include="Assets\Scripts\HoopScript.cs" />
     <Compile Include="Assets\Scripts\HPIndicatorScript.cs" />
+    <Compile Include="Assets\Scripts\LobbyPlayerController.cs" />
     <Compile Include="Assets\Scripts\ManaIndicatorScript.cs" />
     <Compile Include="Assets\Scripts\MinionScript.cs" />
     <Compile Include="Assets\Scripts\MultiplayerBroomManager.cs" />
