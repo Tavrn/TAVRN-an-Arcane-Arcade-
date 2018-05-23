@@ -27,15 +27,15 @@ public class AutoNetMM : NetworkLobbyManager {
 	void Start ()
 	{
 		//Change this to happen when you go through the door instead
-  	MMStart();
-  	MMListMatches();
+  	// MMStart();
+  	// MMListMatches();
 	}
-
-	void MMStart()
+	public void MMStart()
   {
     Debug.Log("MMStart");
 
     this.StartMatchMaker();
+		MMListMatches();
   }
 
   void MMListMatches()
