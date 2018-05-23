@@ -33,6 +33,7 @@ public class SpellManagerScript : NetworkBehaviour {
 	public GameObject meteorPrefab;
 	public GameObject shieldPrefab;
 	public GameObject healEffectPrefab;
+	public GameObject conversionEffectPrefab;
 
 	private int cuedSpellNum = -1;
 	private bool aiming = false;
@@ -702,9 +703,10 @@ public class SpellManagerScript : NetworkBehaviour {
 				Debug.Log("Heal called");
 				int dur = 5;
 				float tick = 0.25f;
-				// GameObject hep = Instantiate(healEffectPrefab) as GameObject;
-				// hep.transform.parent = transform;
-				// hep.transform.localPosition = transform.position;
+				GameObject hep = Instantiate(healEffectPrefab) as GameObject;
+				hep.transform.parent = transform;
+				hep.transform.localPosition = transform.position;
+				NetworkServer.Spawn(hep);
 				if(!effectNames.Contains("HealHelper")){
 					effectEndTimes.Add(Time.time+dur);
 					effectNames.Add("HealHelper");
@@ -723,6 +725,7 @@ public class SpellManagerScript : NetworkBehaviour {
 			GameObject hep = Instantiate(healEffectPrefab) as GameObject;
 			hep.transform.parent = spellsParent.transform;
 			hep.transform.localPosition = new Vector3(0,0,0);
+			NetworkServer.Spawn(hep);
 			if(!effectNames.Contains("HealHelper")){
 				effectEndTimes.Add(Time.time+dur);
 				effectNames.Add("HealHelper");
@@ -738,6 +741,10 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("CmdHeal called");
 		int dur = 5;
 		float tick = 0.25f;
+		GameObject hep = Instantiate(healEffectPrefab) as GameObject;
+		hep.transform.parent = transform;
+		hep.transform.localPosition = transform.position;
+		NetworkServer.Spawn(hep);
 		if(!effectNames.Contains("HealHelper")){
 			effectEndTimes.Add(Time.time+dur);
 			effectNames.Add("HealHelper");
@@ -759,6 +766,10 @@ public class SpellManagerScript : NetworkBehaviour {
 				Debug.Log("Conversion called");
 				int dur = 10;
 				float tick = 1f;
+				GameObject hep = Instantiate(conversionEffectPrefab) as GameObject;
+				hep.transform.parent = spellsParent.transform;
+				hep.transform.localPosition = new Vector3(0,0,0);
+				NetworkServer.Spawn(hep);
 				if(!effectNames.Contains("ConversionHelper")){
 					effectEndTimes.Add(Time.time+dur);
 					effectNames.Add("ConversionHelper");
@@ -774,6 +785,10 @@ public class SpellManagerScript : NetworkBehaviour {
 			Debug.Log("Conversion called");
 			int dur = 10;
 			float tick = 1f;
+			GameObject hep = Instantiate(conversionEffectPrefab) as GameObject;
+			hep.transform.parent = spellsParent.transform;
+			hep.transform.localPosition = new Vector3(0,0,0);
+			NetworkServer.Spawn(hep);
 			if(!effectNames.Contains("ConversionHelper")){
 				effectEndTimes.Add(Time.time+dur);
 				effectNames.Add("ConversionHelper");
@@ -789,6 +804,10 @@ public class SpellManagerScript : NetworkBehaviour {
 		Debug.Log("CmdConversion called");
 		int dur = 10;
 		float tick = 1f;
+		GameObject hep = Instantiate(conversionEffectPrefab) as GameObject;
+		hep.transform.parent = spellsParent.transform;
+		hep.transform.localPosition = new Vector3(0,0,0);
+		NetworkServer.Spawn(hep);
 		if(!effectNames.Contains("ConversionHelper")){
 			effectEndTimes.Add(Time.time+dur);
 			effectNames.Add("ConversionHelper");
