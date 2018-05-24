@@ -776,6 +776,7 @@
      <Compile Include="Assets\Scripts\ManaIndicatorScript.cs" />
      <Compile Include="Assets\Scripts\MinionScript.cs" />
      <Compile Include="Assets\Scripts\MultiplayerBroomManager.cs" />
+     <Compile Include="Assets\Scripts\PotionScript.cs" />
      <Compile Include="Assets\Scripts\ReadySetGoScript.cs" />
      <Compile Include="Assets\Scripts\SelectSpell.cs" />
      <Compile Include="Assets\Scripts\ShieldScript.cs" />

@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4170770306211934}
+  - component: {fileID: 65715448770607652}
+  - component: {fileID: 114139827001356984}
   m_Layer: 0
   m_Name: Potion_white
   m_TagString: Untagged
@@ -216,6 +218,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1618131425442974}
   m_Mesh: {fileID: 4300000, guid: 26ad2a8b1e41f074f8ac13944ae0a65f, type: 3}
+--- !u!65 &65715448770607652
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110210148321702}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.9590106, z: 2}
+  m_Center: {x: 0, y: 1.465289, z: 0}
 --- !u!108 &108002411931964364
 Light:
   m_ObjectHideFlags: 1
@@ -252,3 +266,14 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114139827001356984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110210148321702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29127771714ac74f836ec2c15373ea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

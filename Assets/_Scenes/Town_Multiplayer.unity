@@ -22640,7 +22640,7 @@ GameObject:
   - component: {fileID: 1311840657}
   - component: {fileID: 1311840656}
   m_Layer: 0
-  m_Name: Thank you for playing
+  m_Name: Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22654,7 +22654,7 @@ MeshCollider:
   m_GameObject: {fileID: 1311840655}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -23759,7 +23759,7 @@ GameObject:
   - component: {fileID: 1400358386}
   - component: {fileID: 1400358385}
   m_Layer: 0
-  m_Name: Thx
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23785,9 +23785,11 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1400358383}
-  m_Text: "Thank you for \nplaying\nTAVRN"
+  m_Text: '
+
+'
   m_OffsetZ: 0
-  m_CharacterSize: 0.83
+  m_CharacterSize: 1.15
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
@@ -23795,10 +23797,10 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 443ebd7b056ee7749bc06c77a3017f1d, type: 3}
+  m_Font: {fileID: 12800000, guid: d1c63cee9732cbb4ca4218f0a443b7db, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294958554
+    rgba: 4283223039
 --- !u!23 &1400358386
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23814,7 +23816,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 443ebd7b056ee7749bc06c77a3017f1d, type: 3}
+  - {fileID: 2100000, guid: d1c63cee9732cbb4ca4218f0a443b7db, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -29180,8 +29182,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761999588}
-  m_LocalRotation: {x: 0.068742126, y: 0.72084355, z: 0.072257906, w: -0.68588483}
-  m_LocalPosition: {x: 7.1326747, y: 133.37338, z: -0.44632864}
+  m_LocalRotation: {x: 0.20022166, y: 0.26280063, z: 0.05588548, w: -0.94219106}
+  m_LocalPosition: {x: -296.75824, y: -10.444809, z: 28.017464}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031112222}

@@ -122,9 +122,11 @@ public class TownPlayer : NetworkBehaviour {
 				if(p.GetComponent<NetworkIdentity>().netId != GetComponent<NetworkIdentity>().netId){
 					if(p.GetComponent<TownPlayer>().isFinished()){
 						print("lose " + (Time.time-startTime));
+						GameObject.Find("Text").GetComponent<TextMesh>().text = "Defeat \n in " + (Time.time-startTime) + " seconds!";
 						//LOSE
 					}else{
 						print("win " + (Time.time-startTime));
+						GameObject.Find("Text").GetComponent<TextMesh>().text = "Victory \n in " + (Time.time-startTime) + " seconds!";
 						//WIN
 					}
 				}
