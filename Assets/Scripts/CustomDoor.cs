@@ -37,7 +37,7 @@ public class CustomDoor : MonoBehaviour {
 	}
 	public void Toggle(){
 		sceneCounter = (sceneCounter+1)%2;
-		/*
+
 		if(sceneCounter == 0)
 		{
 			multi_PS.Stop();
@@ -55,6 +55,6 @@ public class CustomDoor : MonoBehaviour {
 			multi_txt.SetActive(true);
 			single_txt.SetActive(false);
 		}
-		*/
+		
 	}
 }
