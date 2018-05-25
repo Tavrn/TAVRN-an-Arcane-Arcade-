@@ -7,7 +7,7 @@ public class SpellBookParentScript : MonoBehaviour {
 	public GameObject openBook;
 	public GameObject closedBook;
 	private bool open = true;
-	private int deckSize = 10;
+	private int deckSize = 3;
 	private int spellPage = 0;
 	private List<string> glyphs = new List<string>();
 	private Transform glyphsParent;
@@ -22,7 +22,7 @@ public class SpellBookParentScript : MonoBehaviour {
 			}
 			count++;
 		}
-		deckSize = count;
+		//deckSize = count;
 		ToggleOpen();
 	}
 
@@ -43,20 +43,20 @@ public class SpellBookParentScript : MonoBehaviour {
 	}
 	public void FlipRight(){
 		if(open){
-			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(false);
+			glyphsParent.Find(glyphs[PlayerPrefs.GetInt("Spell_" + spellPage, 0)]).gameObject.SetActive(false);
 			spellPage++;
 			if(spellPage==deckSize)
 				spellPage = 0;
-			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(true);
+			glyphsParent.Find(glyphs[PlayerPrefs.GetInt("Spell_" + spellPage, 0)]).gameObject.SetActive(true);
 		}
 	}
 	public void FlipLeft(){
 		if(open){
-			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(false);
+			glyphsParent.Find(glyphs[PlayerPrefs.GetInt("Spell_" + spellPage, 0)]).gameObject.SetActive(false);
 			spellPage--;
 			if(spellPage==-1)
 				spellPage = deckSize-1;
-			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(true);
+			glyphsParent.Find(glyphs[PlayerPrefs.GetInt("Spell_" + spellPage, 0)]).gameObject.SetActive(true);
 		}
 	}
 }
