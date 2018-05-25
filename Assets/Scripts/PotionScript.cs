@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PotionScript : MonoBehaviour {
-	private Color alb;
+	public Material wandMat;
+	public MeshRenderer mshr;
 	// Use this for initialization
 	void Start () {
-		alb = transform.Find("Bottle").GetComponent<MeshRenderer>().materials[1].color;
 		// print(alb);
 	}
 
@@ -15,7 +15,8 @@ public class PotionScript : MonoBehaviour {
 
 	}
 	void OnTriggerEnter(Collider c){
-		print(alb);
-		// print(gameObject.name);
+		if(c.transform.root.tag=="Player"){
+				mshr.material = wandMat;
+		}
 	}
 }

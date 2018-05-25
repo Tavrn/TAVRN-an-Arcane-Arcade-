@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HandShrink : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
 	  Debug.Log(gameObject);

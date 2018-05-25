@@ -51,33 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Imports\NewtonVR\CollisionSoundFramework\Editor\NVRCollisionSoundControllerEditor.cs" />
-     <Compile Include="Assets\Imports\NewtonVR\Editor\NVRPlayerEditor.cs" />
-     <Compile Include="Assets\Imports\OVR\Editor\OVRBuild.cs" />
-     <Compile Include="Assets\Imports\OVR\Editor\OVRLayerAttributeEditor.cs" />
-     <Compile Include="Assets\Imports\OVR\Editor\OVRManifestPreprocessor.cs" />
-     <Compile Include="Assets\Imports\OVR\Editor\OVRMoonlightLoader.cs" />
-     <Compile Include="Assets\Imports\OVR\Editor\OVRPluginUpdater.cs" />
-     <Compile Include="Assets\Imports\OVR\Editor\OVRPluginUpdaterStub.cs" />
-     <Compile Include="Assets\Imports\OVR\Editor\OVRScreenshotWizard.cs" />
-     <Compile Include="Assets\Imports\OVR\Scripts\Editor\OVRManagerEditor.cs" />
-     <Compile Include="Assets\Imports\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
-     <Compile Include="Assets\Imports\SteamVR\Editor\SteamVR_Editor.cs" />
-     <Compile Include="Assets\Imports\SteamVR\Editor\SteamVR_Preferences.cs" />
-     <Compile Include="Assets\Imports\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
-     <Compile Include="Assets\Imports\SteamVR\Editor\SteamVR_Settings.cs" />
-     <Compile Include="Assets\Imports\SteamVR\Editor\SteamVR_SkyboxEditor.cs" />
-     <Compile Include="Assets\Imports\SteamVR\Editor\SteamVR_Update.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_AdaptiveQualityEditor.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_EditorUtilities.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_InteractHapticsEditor.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_ObjectSetup.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_PolicyListEditor.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_RadialMenuEditor.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_SDKManagerEditor.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_SDKSetupEditor.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_SupportInfoWindow.cs" />
-     <Compile Include="Assets\Imports\VRTK\Editor\VRTK_UpdatePrompt.cs" />
      <Compile Include="Assets\OculusPlatform\Editor\GUIHelper.cs" />
      <Compile Include="Assets\OculusPlatform\Editor\OculusPlatformSettingsEditor.cs" />
      <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
@@ -130,7 +103,34 @@
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\TonemappingEditor.cs" />
      <Compile Include="Assets\Rocks and Boulders 2\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
      <Compile Include="Assets\Town\Shaders\Editor\TerrainSurfaceGUI.cs" />
-     <None Include="Assets\Imports\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
+     <Compile Include="Assets\UVModels\Materials\Imports\NewtonVR\CollisionSoundFramework\Editor\NVRCollisionSoundControllerEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\NewtonVR\Editor\NVRPlayerEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\OVR\Editor\OVRBuild.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\OVR\Editor\OVRLayerAttributeEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\OVR\Editor\OVRManifestPreprocessor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\OVR\Editor\OVRMoonlightLoader.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\OVR\Editor\OVRPluginUpdater.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\OVR\Editor\OVRPluginUpdaterStub.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\OVR\Editor\OVRScreenshotWizard.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\OVR\Scripts\Editor\OVRManagerEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\Standard Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\SteamVR\Editor\SteamVR_Editor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\SteamVR\Editor\SteamVR_Preferences.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\SteamVR\Editor\SteamVR_Settings.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\SteamVR\Editor\SteamVR_SkyboxEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\SteamVR\Editor\SteamVR_Update.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_AdaptiveQualityEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_EditorUtilities.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_InteractHapticsEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_ObjectSetup.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_PolicyListEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_RadialMenuEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_SDKManagerEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_SDKSetupEditor.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_SupportInfoWindow.cs" />
+     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_UpdatePrompt.cs" />
+     <None Include="Assets\UVModels\Materials\Imports\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/Users/TAVRN/Desktop/Arcane Arcade - Copy/Arcane Arcade - Copy/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
