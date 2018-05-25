@@ -6,6 +6,8 @@ public class PotionScript : MonoBehaviour {
 	public Color emissionColor;
 	public Material wandMat;
 	public MeshRenderer mshr;
+	public int matNum;
+
 	// Use this for initialization
 	void Start () {
 		// print(alb);
@@ -19,6 +21,7 @@ public class PotionScript : MonoBehaviour {
 		if(c.transform.root.tag=="Player"){
 			c.transform.root.GetComponent<HandShrink>().emissionColor = emissionColor;
 			mshr.material = wandMat;
+			PlayerPrefs.SetInt("wandMatNum", matNum);
 		}
 	}
 }

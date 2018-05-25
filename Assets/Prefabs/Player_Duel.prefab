@@ -6269,6 +6269,17 @@ MonoBehaviour:
   posSlot: {fileID: 1073455623708618}
   myTargetCollider: {fileID: 1059644422041354}
   wandtip: {fileID: 1062360692521550}
+  wand: {fileID: 1217073514730664}
+  wandMats:
+  - {fileID: 2100000, guid: e7f1d6775b0b6e14ba24b6a9b6da2fae, type: 2}
+  - {fileID: 2100000, guid: 3b3133416f3bddc48b786dcfd8db4898, type: 2}
+  - {fileID: 2100000, guid: bb5b2a4d9c8f95842a4c0e0e48b53dff, type: 2}
+  - {fileID: 2100000, guid: f4d566be33784a9438245cd42e578b41, type: 2}
+  - {fileID: 2100000, guid: 3d5b411b362e9734c846818498540eb3, type: 2}
+  - {fileID: 2100000, guid: e9f81f23dd10c1742a148f47ec18f4a9, type: 2}
+  - {fileID: 2100000, guid: 1c28eea32299f014d9ddfcc67d23295a, type: 2}
+  - {fileID: 2100000, guid: e52e0021c8470a74997a33719f330738, type: 2}
+  - {fileID: 2100000, guid: 65dd8ce8fb2b9104d8054fc2b3922718, type: 2}
   HP: 100
   mana: 100
 --- !u!114 &114330357692523242

@@ -594,7 +594,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 1a3252a3e481ff64484d7e7a2b060c69, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bb5b2a4d9c8f95842a4c0e0e48b53dff, type: 2}
+      objectReference: {fileID: 2100000, guid: e7f1d6775b0b6e14ba24b6a9b6da2fae, type: 2}
     - target: {fileID: 400000, guid: 1a3252a3e481ff64484d7e7a2b060c69, type: 3}
       propertyPath: m_LocalScale.x
       value: 150
@@ -2310,6 +2310,11 @@ Prefab:
         type: 2}
       propertyPath: emissionColor.b
       value: 0.09803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 114281481794922778, guid: 720687788881c244ea44de5df98165c8,
+        type: 2}
+      propertyPath: matNum
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720687788881c244ea44de5df98165c8, type: 2}
@@ -8535,6 +8540,16 @@ Prefab:
         type: 2}
       propertyPath: emissionColor.b
       value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377004134044972, guid: 5669ded38144a2448bdb47f9def97744,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114377004134044972, guid: 5669ded38144a2448bdb47f9def97744,
+        type: 2}
+      propertyPath: matNum
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
@@ -17236,6 +17251,11 @@ Prefab:
       propertyPath: emissionColor.g
       value: 0.019607844
       objectReference: {fileID: 0}
+    - target: {fileID: 114287251288091862, guid: 1d903abc716a6264287b01d9eb6ef38e,
+        type: 2}
+      propertyPath: matNum
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
   m_IsPrefabParent: 0
@@ -24363,6 +24383,11 @@ Prefab:
       propertyPath: emissionColor.b
       value: 0.7490196
       objectReference: {fileID: 0}
+    - target: {fileID: 114139827001356984, guid: c708e5cdb36d622438fcb857fd591e63,
+        type: 2}
+      propertyPath: matNum
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
   m_IsPrefabParent: 0
@@ -27611,6 +27636,11 @@ Prefab:
       propertyPath: emissionColor.b
       value: 0.7490196
       objectReference: {fileID: 0}
+    - target: {fileID: 114073366905638218, guid: 8f467bb5208096a439d1ce207fc58121,
+        type: 2}
+      propertyPath: matNum
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
   m_IsPrefabParent: 0
@@ -28959,6 +28989,11 @@ Prefab:
         type: 2}
       propertyPath: emissionColor.b
       value: 0.02745098
+      objectReference: {fileID: 0}
+    - target: {fileID: 114372835141713432, guid: c1bf79571310c84488872e224cfc1c5e,
+        type: 2}
+      propertyPath: matNum
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
@@ -49968,6 +50003,11 @@ Prefab:
       propertyPath: emissionColor.g
       value: 0.44705883
       objectReference: {fileID: 0}
+    - target: {fileID: 114755383040069680, guid: 51daf0b1c783a6b498cdf10c782ea14e,
+        type: 2}
+      propertyPath: matNum
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
   m_IsPrefabParent: 0
@@ -59439,6 +59479,11 @@ Prefab:
         type: 2}
       propertyPath: emissionColor.b
       value: 0.7176471
+      objectReference: {fileID: 0}
+    - target: {fileID: 114189930524393162, guid: 981129218f75e2c498c31c4e56a7136a,
+        type: 2}
+      propertyPath: matNum
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}

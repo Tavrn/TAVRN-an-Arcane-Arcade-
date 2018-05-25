@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BroomScript : MonoBehaviour
 {
-
     //for selecting leveling method
     public bool emergencyReverse;
     public bool levelInstantly;
@@ -16,6 +15,7 @@ public class BroomScript : MonoBehaviour
     public GameObject player;
     public GameObject head;
     public bool isMulti = false;
+
     //is there anyone riding
     private bool isMounted = false;
     private Vector3 mountLocation;
@@ -48,17 +48,26 @@ public class BroomScript : MonoBehaviour
     //???
     private float broomD = 0.75f;
 
+    public TownPlayer plrScr;
 
     void Start()
     {
       prb = player.GetComponent<Rigidbody>();
+
     }
 
     void FixedUpdate()
     {
         if (isMounted)
         {
+          if (!isMulti)
+          {
             TestMethod1();
+          }
+          else if (plrScr.getStartTime() != -1f)
+          {
+            TestMethod1();
+          }
         }
         waitLeft = waitLeft - Time.deltaTime;
     }

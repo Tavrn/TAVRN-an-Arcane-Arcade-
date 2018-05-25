@@ -30148,6 +30148,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1354992744718064, guid: 177b7240185ccc540a83dfc7ec38a57d,
     type: 2}
   m_PrefabInternal: {fileID: 645360120}
+--- !u!114 &1225612506 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114863650578188392, guid: 177b7240185ccc540a83dfc7ec38a57d,
+    type: 2}
+  m_PrefabInternal: {fileID: 645360120}
+  m_Script: {fileID: 11500000, guid: 950332ab870fc55409bbe4c675e07e50, type: 3}
 --- !u!4 &1226809942 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400016, guid: 23c9006671cf8f14282d93204ff33258, type: 3}
@@ -36127,6 +36133,7 @@ MonoBehaviour:
   constVel: 0
   tutLvl: 0
   waitLeft: 1
+  plrScr: {fileID: 1225612506}
 --- !u!65 &1512851659
 BoxCollider:
   m_ObjectHideFlags: 0

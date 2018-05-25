@@ -10,6 +10,11 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	public GameObject posSlot;
 	public GameObject myTargetCollider;
 	public GameObject wandtip;
+
+	//for changing wand material
+	public GameObject wand;
+	public Material[] wandMats;
+
 	[SyncVar]
 	public int HP = 100;
 	[SyncVar]
@@ -41,6 +46,9 @@ public class Duel_PlayerScript : NetworkBehaviour {
 				c.WandTip = wandtip;
 				c.wandScript = c.WandTip.GetComponent<WandScript>();
 			}
+
+			//Change color of wand
+			wand.GetComponent<Renderer>().material = wandMats[PlayerPrefs.GetInt("wandMatNum",0)];
 		}
 	}
 	public void tryHit(float zhit, int damage){

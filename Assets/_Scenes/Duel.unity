@@ -38775,6 +38775,8 @@ MonoBehaviour:
   posSlot: {fileID: 899691329}
   myTargetCollider: {fileID: 2114526842}
   wandtip: {fileID: 0}
+  wand: {fileID: 0}
+  wandMats: []
   HP: 100
   mana: 100
 --- !u!4 &1881959286

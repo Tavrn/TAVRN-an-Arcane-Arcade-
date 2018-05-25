@@ -17,6 +17,8 @@ public class TownPlayer : NetworkBehaviour {
 	private bool isMulti;
 	private float startTime=-1f;
 	void Start () {
+		Debug.Log("HELLO");
+		Debug.Log(gameObject);
 		isMulti = gameObject.name.Contains("Multi");
 		if(isMulti){
 			if(isLocalPlayer){
@@ -34,6 +36,9 @@ public class TownPlayer : NetworkBehaviour {
 	}
 	public void setStartTime(float f){
 		startTime = f;
+	}
+	public float getStartTime(){
+		return startTime;
 	}
 	public bool IsMulti(){
 		return isMulti;
