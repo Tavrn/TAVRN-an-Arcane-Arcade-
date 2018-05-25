@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CustomDoor : MonoBehaviour {
+	public Material wandMat;
 	public int sceneCounter = 0;
 	public ParticleSystem single_PS;
 	public ParticleSystem multi_PS;
@@ -14,6 +15,12 @@ public class CustomDoor : MonoBehaviour {
 	public string ToScene1;
 
 	public void Open(){
+		Color c = GameObject.FindWithTag("Player").GetComponent<HandShrink>().emissionColor;
+		// DynamicGI.SetEmissive(renderer,  GameObject.FindWithTag("Player").GetComponent<HandShrink>().emissionColor * 1.6f);
+		if(c!=Color.black){
+			c *= Mathf.LinearToGammaSpace (1.6f);
+			wandMat.SetColor("_EmissionColor", c);
+		}
 		if(sceneCounter==0){
 			// Debug.Log("to scene " + ToScene0);
 			SceneManager.LoadScene(ToScene0);

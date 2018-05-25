@@ -103,7 +103,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 			Invoke("ReturnToTavern", 5);
 		}
 	}
-	
+
 
 	public void startLosing(){
 		if(gameObject.name.Contains("Multi")){
@@ -134,5 +134,4 @@ public class Duel_PlayerScript : NetworkBehaviour {
 			posSlot.transform.position = new Vector3(posSlot.transform.position.x, posSlot.transform.position.y, -2/3f);
 		}
 	}
-
 }

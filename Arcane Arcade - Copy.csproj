@@ -1122,7 +1122,6 @@
     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseDefines.cs" />
     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseHeadset.cs" />
     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\SDK\Ximmerse\SDK_XimmerseSystem.cs" />
-    <Compile Include="Assets\WandRotationScript.cs" />
     <Compile Include="Assets\Water.cs" />
   </ItemGroup>
   <ItemGroup>

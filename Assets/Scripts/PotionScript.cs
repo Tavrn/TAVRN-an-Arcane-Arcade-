@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PotionScript : MonoBehaviour {
+	public Color emissionColor;
 	public Material wandMat;
 	public MeshRenderer mshr;
 	// Use this for initialization
@@ -16,7 +17,8 @@ public class PotionScript : MonoBehaviour {
 	}
 	void OnTriggerEnter(Collider c){
 		if(c.transform.root.tag=="Player"){
-				mshr.material = wandMat;
+			c.transform.root.GetComponent<HandShrink>().emissionColor = emissionColor;
+			mshr.material = wandMat;
 		}
 	}
 }

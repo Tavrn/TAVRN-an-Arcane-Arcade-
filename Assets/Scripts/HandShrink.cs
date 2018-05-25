@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HandShrink : MonoBehaviour {
+	public Color emissionColor;
 	// Use this for initialization
 	void Start () {
 	  Debug.Log(gameObject);
