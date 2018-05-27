@@ -1753,7 +1753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &87551819
 ParticleSystemRenderer:
@@ -14713,7 +14713,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4623354346282288, guid: b28636537213f72489f037dcfb859fa6, type: 2}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1502322787900376, guid: b28636537213f72489f037dcfb859fa6, type: 2}
       propertyPath: m_IsActive
@@ -26191,6 +26191,42 @@ Prefab:
     - target: {fileID: 4256648413403456, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4633847306558352, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586821241848842, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4967552807476086, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068767774209856, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4625015804066180, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961859833668722, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207536429903540, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051291328151970, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747763414659300, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474ff19a6aaffac48be21ed5e939c24f, type: 2}

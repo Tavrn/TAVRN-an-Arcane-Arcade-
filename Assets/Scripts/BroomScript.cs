@@ -44,6 +44,8 @@ public class BroomScript : MonoBehaviour
     //for tutorial stuff
     public int tutLvl = 0;
     public float waitLeft = 1f;
+    public bool completed = false;
+    public bool reorienting = false;
 
     //???
     private float broomD = 0.75f;
@@ -69,7 +71,44 @@ public class BroomScript : MonoBehaviour
             TestMethod1();
           }
         }
+
         waitLeft = waitLeft - Time.deltaTime;
+        if(!isMulti)
+        {
+          if(reorienting)
+          {
+            if(waitLeft <= 0)
+            {
+              if(tutLvl == 4) {
+                waitLeft = 1f;
+              } else {
+                waitLeft = 5f;
+              }
+              reorienting = false;
+              UnfreezePrb();
+            }
+          }
+          else if(completed && waitLeft <= 0)
+          {
+            if(tutLvl == 0 || tutLvl >= 3) //levels with no wait time
+            {
+              ++tutLvl;
+              completed = false;
+              waitLeft = 1f;
+            }
+            else
+            {
+              ++tutLvl;
+              completed = false;
+              waitLeft = 1f;
+            }
+            if (tutLvl < 5)
+            {
+              reorienting = true;
+              FreezePrb();
+            }
+          }
+        }
     }
 
     public void UpdateCurrentPressure(float f)
@@ -83,16 +122,16 @@ public class BroomScript : MonoBehaviour
             mountLocation = head.transform.localPosition;
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             firstPress = false;
-            if(!isMulti){
-              tutLvl = 2;
-            }
-            waitLeft = 5f;
           }
           else if(doesDrag && currentPressure < .5)
           {
             //Probably need to rescale this
             prb.GetComponent<Rigidbody>().drag = 1;
           }
+        }
+        if(!isMulti && tutLvl == 1)
+        {
+          completed = true;
         }
     }
 
@@ -101,10 +140,9 @@ public class BroomScript : MonoBehaviour
       if(isMounted)
       {
         FreezePrb();
-        if(tutLvl == 5 && waitLeft < 0f)
+        if(tutLvl == 5)
         {
-          tutLvl = 6;
-          waitLeft = 5f;
+          completed = true;
         }
       }
     }
@@ -121,10 +159,9 @@ public class BroomScript : MonoBehaviour
           if(levelInstantly)  { InstantLevel(); }
           else                { TimedLevel(); }
 
-          if(tutLvl == 4 && waitLeft < 0f)
+          if(tutLvl == 4)
           {
-            tutLvl = 5;
-            waitLeft = 5f;
+            completed = true;
           }
         }
     }
@@ -146,10 +183,9 @@ public class BroomScript : MonoBehaviour
             transform.parent = player.transform;
             transform.position = new Vector3(head.transform.position.x, head.transform.position.y - broomD, head.transform.position.z);
             startingUp = Vector3.up;
-            if(!isMulti){
-              tutLvl = 1;
+            if(!isMulti && tutLvl == 0){
+              completed = true; //level 0 to 1
             }
-            waitLeft = 5f;
         }
     }
 
@@ -167,10 +203,9 @@ public class BroomScript : MonoBehaviour
           {
             yRot = yRot - 360;
           }
-          if(Mathf.Abs(yRot) >= 20.0f && tutLvl == 2 && waitLeft < 0f)
+          if(Mathf.Abs(yRot) >= 15.0f && tutLvl == 2)
           {
-            tutLvl = 3;
-            waitLeft = 5f;
+            completed = true;
           }
 
           //finds you current speed
@@ -183,10 +218,9 @@ public class BroomScript : MonoBehaviour
             {
               player.transform.RotateAround(player.transform.position, player.transform.up, yrotatespeed * yRot * speed);
             }
-            if(Mathf.Abs(zDif) >= 0.05 && tutLvl == 3 && waitLeft < 0f)
+            if(Mathf.Abs(zDif) >= 0.05 && tutLvl == 3)
             {
-              tutLvl = 4;
-              waitLeft = 5f;
+              completed = true;
             }
           }
 
