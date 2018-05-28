@@ -10,6 +10,7 @@ namespace VRTK.Examples
 				public BoxCollider d1SC;
 				public BoxCollider d2SC;
 
+        private float baseVolumeHeight=0f;
         private Transform plyr;
         private bool hasFlip = false;
 
@@ -145,7 +146,11 @@ namespace VRTK.Examples
 							d1SC.transform.parent.GetComponent<CustomDoor>().Toggle();
 						}else if(d2SC.bounds.Contains(transform.position)){
 							d2SC.transform.parent.GetComponent<CustomDoor>().Toggle();
-						}
+						}else{
+              float v = PlayerPrefs.GetFloat("Volume", 0.5f);
+              baseVolumeHeight = transform.position.y-v;
+              // transform.root.
+            }
         }
 
 
