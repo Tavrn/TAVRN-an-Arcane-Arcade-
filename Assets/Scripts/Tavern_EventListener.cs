@@ -149,13 +149,14 @@ namespace VRTK.Examples
 						}else{
               float v = PlayerPrefs.GetFloat("Volume", 0.5f);
               baseVolumeHeight = transform.position.y-v;
-              // transform.root.
+              transform.root.GetComponent<HandShrink>().StartChangingVolume(baseVolumeHeight, gameObject);
             }
         }
 
 
         private void DoGripReleased(object sender, ControllerInteractionEventArgs e)
         {
+            transform.root.GetComponent<HandShrink>().StopChangingVolume();
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "GRIP", "released", e);
         }
 

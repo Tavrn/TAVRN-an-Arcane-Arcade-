@@ -24,7 +24,6 @@ public class PotionScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider c){
 		if(c.transform.root.tag=="Player"){
-			c.transform.root.GetComponent<HandShrink>().emissionColor = emissionColor;
 			mshr.material = wandMat;
 			PlayerPrefs.SetInt("wandMatNum", matNum);
 		}
