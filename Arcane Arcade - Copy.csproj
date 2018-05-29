@@ -601,6 +601,7 @@
     <Compile Include="Assets\Scripts\MinionScript.cs" />
     <Compile Include="Assets\Scripts\MultiplayerBroomManager.cs" />
     <Compile Include="Assets\Scripts\PotionScript.cs" />
+    <Compile Include="Assets\Scripts\ReadySetGo.cs" />
     <Compile Include="Assets\Scripts\ReadySetGoScript.cs" />
     <Compile Include="Assets\Scripts\SelectSpell.cs" />
     <Compile Include="Assets\Scripts\ShieldScript.cs" />
@@ -1125,6 +1126,7 @@
     <Compile Include="Assets\Water.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Day-Night Skyboxes\readme.txt" />
     <None Include="Assets\LICENSE.txt" />
     <None Include="Assets\MagicArsenal\MagicArsenal - ReadMe.txt" />
     <None Include="Assets\Materials\cloudy\readme.txt" />

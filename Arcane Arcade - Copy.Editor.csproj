@@ -471,6 +471,7 @@
     <Compile Include="Assets\UVModels\Materials\Imports\VRTK\Editor\VRTK_UpdatePrompt.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Day-Night Skyboxes\readme.txt" />
     <None Include="Assets\LICENSE.txt" />
     <None Include="Assets\MagicArsenal\MagicArsenal - ReadMe.txt" />
     <None Include="Assets\Materials\cloudy\readme.txt" />
