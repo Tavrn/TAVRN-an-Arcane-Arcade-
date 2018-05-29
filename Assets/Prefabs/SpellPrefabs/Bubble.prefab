@@ -260,6 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613bfe3524fb0d34798e8d6ea97f446a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  empoweredDamage: 20
+  myType: 2
   damage: 10
   deathPS1: {fileID: 1422466295888432}
   deathPS2: {fileID: 0}

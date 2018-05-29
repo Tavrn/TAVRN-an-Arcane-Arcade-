@@ -20,7 +20,7 @@ public class AudienceMinion : MonoBehaviour {
 			lastCheck = Time.time;
 			float cf = Random.Range(0f, 1f);
 			if(cf<p){
-				aus.Play(); //comment this out to stop cheering
+				// aus.Play(); //comment this out to stop cheering
 				animator.SetTrigger("Cheer");
 			}
 		}

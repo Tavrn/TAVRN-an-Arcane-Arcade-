@@ -87,11 +87,13 @@ public class SpellManagerScript : NetworkBehaviour {
 		CreateSpell("Meteor", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(0, 1, 0), new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0), new Coordinate(-2, 1, 1), new Coordinate(-3, 1, 1) });
 		CreateSpell("I_Conversion", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(0, 1, 1) });
 		CreateSpell("I_Heal", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(-1, 1, 1), new Coordinate(-1,2,1) });
+		CreateSpell("I_WeatherClear", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(0,0,1),new Coordinate(0, 1, 1), new Coordinate(0, 1, 2)});
+		CreateSpell("I_WeatherFire", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(0,1,0),new Coordinate(-1, 1, 0), new Coordinate(-1, 2, 0)});
+		CreateSpell("I_WeatherWater", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(0, -1,0),new Coordinate(-1, -1, 0), new Coordinate(-1, -2, 0)});
+
 
 		CreateSpell("I_Convert", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1, 0, 0), new Coordinate(-1, 1, 0), new Coordinate(0, 1, 0), new Coordinate(0, 2, 0), new Coordinate(-1, 2, 0) });
 		CreateSpell("I_SpawnMinion", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(0,0,1), new Coordinate(0,0,2)});
-		CreateSpell("I_WeatherClear", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(1,0,0),new Coordinate(1, 1, 0), new Coordinate(2, 1, 0)});
-		CreateSpell("I_WeatherFire", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1, 1, 0), new Coordinate(-2, 1, 0)});
 		CreateSpell("I_Confetti", 10, new Coordinate[] {new Coordinate(0,0,0), new Coordinate(0,-1,0), new Coordinate(0,-2,0), new Coordinate(0,-2,-1), new Coordinate(0,-2,-2)});
 
 		CreateSpell("TripleLock", 10, new Coordinate[] { new Coordinate(0,0,0), new Coordinate(-1,0,0),new Coordinate(-1,1,0),new Coordinate(0,1,0), new Coordinate(1,1,0), new Coordinate(2, 1, 0), new Coordinate(2, 2, 0) });
@@ -148,7 +150,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		//checks target int against the deck stored in player prefs
 		//idk if it actually works actually selecting your deck is still wip
 		//default deck is {0,1,2,3,4,5,6,7,8,9}
-	 	for(int i = 0; i < 10; ++i)
+	 	for(int i = 0; i < 13; ++i)
 	 	{
 		 	int temp;
 		 	temp = PlayerPrefs.GetInt("Spell_" + i, -1);
@@ -590,7 +592,7 @@ public class SpellManagerScript : NetworkBehaviour {
 				GameObject fb = Instantiate(meteorPrefab) as GameObject;
 				fb.transform.parent = spellsParent.transform;
 				fb.transform.position = meteorSpawn.position;
-				fb.GetComponent<Rigidbody>().AddForce(new Vector3(dir.normalized.x, -2, dir.normalized.z)*speed);
+				fb.GetComponent<Rigidbody>().AddForce(new Vector3(0, -2, dir.normalized.z)*speed);
 				NetworkServer.Spawn(fb);
 				RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 			}else{
@@ -604,7 +606,7 @@ public class SpellManagerScript : NetworkBehaviour {
 			GameObject fb = Instantiate(meteorPrefab) as GameObject;
 			fb.transform.parent = spellsParent.transform;
 			fb.transform.position = meteorSpawn.position;
-			fb.GetComponent<Rigidbody>().AddForce(new Vector3(dir.normalized.x, -2, dir.normalized.z)*speed);
+			fb.GetComponent<Rigidbody>().AddForce(new Vector3(0, -2, dir.normalized.z)*speed);
 		}
 
 	}
@@ -976,25 +978,25 @@ public class SpellManagerScript : NetworkBehaviour {
 		RenderSettings.skybox = fireSkybox;
 		weather = 1;
 	}
-void I_WeatherRain(){
+void I_WeatherWater(){
 	// playerSkybox.material = clearSkiesSkybox;
 	RenderSettings.skybox = rainSkybox;
 	weather = 2;
 	if(isMulti){
 		if(NetworkServer.active){
-			RpcI_WeatherRain();
+			RpcI_WeatherWater();
 		}else{
-			CmdI_WeatherRain();
+			CmdI_WeatherWater();
 		}
 	}
 }
 [ClientRpc]
-void RpcI_WeatherRain(){
+void RpcI_WeatherWater(){
 	RenderSettings.skybox = rainSkybox;
 	weather = 2;
 }
 [Command]
-void CmdI_WeatherRain(){
+void CmdI_WeatherWater(){
 	RenderSettings.skybox = rainSkybox;
 	weather = 2;
 }

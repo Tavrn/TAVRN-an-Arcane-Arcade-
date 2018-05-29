@@ -6,7 +6,9 @@ public class DeckSelect : MonoBehaviour {
 
   //public GameObject userDeckPrefab = userDeckPrefab;
 
-  private int DECKSIZE = 10;
+  // public List<GameObject> pages;
+
+  private int DECKSIZE = 13;
 
   public static int currProposal = 0;
   private int prevProposal = 0;
@@ -49,22 +51,26 @@ public class DeckSelect : MonoBehaviour {
 
   //turns the currentPage counter to the one corresponding to the page to the right
 	public void FlipRight() {
+    // pages[currPage].SetActive(false);
     currPage = currPage + 1;
     if (currPage > DECKSIZE - 1)
     {
       currPage = 0;
     }
+    // pages[currPage].SetActive(true);
     pgTxt.text = " Page \n number: \n" + currPage;
     spTxt.text = " Current \n spell: \n" +  spellNames[PlayerPrefs.GetInt("Spell_" + currPage, -1)];
 	}
 
   //turns the currentPage counter to the corresponding to the page to the left
 	public void FlipLeft() {
+    // pages[currPage].SetActive(false);
     currPage = currPage - 1;
     if (currPage < 0)
     {
       currPage = DECKSIZE - 1;
     }
+    // pages[currPage].SetActive(true);
     pgTxt.text = " Page \n number: \n" + currPage;
     spTxt.text = " Current \n spell: \n" +  spellNames[PlayerPrefs.GetInt("Spell_" + currPage, -1)];
 	}

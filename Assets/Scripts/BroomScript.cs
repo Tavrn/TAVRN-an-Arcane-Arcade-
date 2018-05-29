@@ -32,8 +32,8 @@ public class BroomScript : MonoBehaviour
     public bool constVel;
     private const float CONST_SPD = 10f;
     private float currentPressure = 0f;
-    private int acceleration = 1;
-    private int maxSpeed = 10;
+    private int acceleration = 2;
+    private int maxSpeed = 12;
 
     //for controls control
     private float maxDeviate = 0.1f;
@@ -55,7 +55,11 @@ public class BroomScript : MonoBehaviour
     void Start()
     {
       prb = player.GetComponent<Rigidbody>();
-
+      if(isMulti){
+        if(!transform.root.GetComponent<TownPlayer>().isLocalPlayer){
+          transform.Find("Character").gameObject.SetActive(true);
+        }
+      }
     }
 
     void FixedUpdate()
@@ -185,6 +189,10 @@ public class BroomScript : MonoBehaviour
             startingUp = Vector3.up;
             if(!isMulti && tutLvl == 0){
               completed = true; //level 0 to 1
+            }
+            if(isMulti){
+              maxSpeed = 50;
+              acceleration = 12;
             }
         }
     }

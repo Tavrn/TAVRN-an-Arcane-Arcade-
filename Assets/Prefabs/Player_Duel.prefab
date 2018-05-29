@@ -1799,7 +1799,7 @@ GameObject:
   - component: {fileID: 114004634626291462}
   m_Layer: 0
   m_Name: Player_Duel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2350,15 +2350,15 @@ Transform:
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 224037942371493312}
-  - {fileID: 4586821241848842}
-  - {fileID: 4967552807476086}
   - {fileID: 4633847306558352}
   - {fileID: 4068767774209856}
   - {fileID: 4625015804066180}
   - {fileID: 4961859833668722}
   - {fileID: 4207536429903540}
-  - {fileID: 4747763414659300}
+  - {fileID: 4586821241848842}
+  - {fileID: 4967552807476086}
   - {fileID: 4051291328151970}
+  - {fileID: 4747763414659300}
   m_Father: {fileID: 4718329386922618}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2390,7 +2390,7 @@ Transform:
   - {fileID: 4932273260638842}
   - {fileID: 4986537509905130}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4055208143128316
 Transform:
@@ -2420,7 +2420,7 @@ Transform:
   - {fileID: 4202992949980486}
   - {fileID: 4727934828015626}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4069485314155046
 Transform:
@@ -2429,7 +2429,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1859384935479290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 30, z: 0}
+  m_LocalPosition: {x: 0, y: 30, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4030831477448402}
@@ -2727,7 +2727,7 @@ Transform:
   - {fileID: 4957732004566226}
   - {fileID: 4815599871342962}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4223792447450886
 Transform:
@@ -3308,7 +3308,7 @@ Transform:
   - {fileID: 4540818874664392}
   - {fileID: 4091169382964754}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4590256692999916
 Transform:
@@ -3446,7 +3446,7 @@ Transform:
   - {fileID: 4598323031223644}
   - {fileID: 4632719150471658}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4628297441805686
 Transform:
@@ -3506,7 +3506,7 @@ Transform:
   - {fileID: 4599791851110846}
   - {fileID: 4628888399833010}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4637920152938840
 Transform:
@@ -3700,7 +3700,7 @@ Transform:
   - {fileID: 4155894550991480}
   - {fileID: 4878179640856958}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4756216169755614
 Transform:
@@ -4144,7 +4144,7 @@ Transform:
   - {fileID: 4282076353291646}
   - {fileID: 4223792447450886}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4967552807476086
 Transform:
@@ -4160,7 +4160,7 @@ Transform:
   - {fileID: 4310617105465422}
   - {fileID: 4668450150975260}
   m_Father: {fileID: 4038225541451892}
-  m_RootOrder: 2
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4981828568296904
 Transform:
@@ -6047,7 +6047,7 @@ MonoBehaviour:
   meteorSpawn: {fileID: 4069485314155046}
   clearSkiesSkybox: {fileID: 2100000, guid: 71f14a2d79f732f4d9893ef1b911f4ff, type: 2}
   fireSkybox: {fileID: 2100000, guid: 4067de1a02072244798361060c5e7325, type: 2}
-  rainSkybox: {fileID: 0}
+  rainSkybox: {fileID: 2100000, guid: d11d338e6a849d84f85a289f91b3fa00, type: 2}
   sandSkybox: {fileID: 0}
   windSkybox: {fileID: 0}
   fireballPrefab: {fileID: 1450673449457036, guid: 1dff682dcbcf69444a7adff7d891861d,

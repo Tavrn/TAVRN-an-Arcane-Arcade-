@@ -69,6 +69,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	public void hit(int damage){
 		// HP = Mathf.Clamp(HP-damage, 0, 100);
 		HP -= damage;
+		print(damage);
 		if(HP<=0){
 			startLosing();
 			//LOSE

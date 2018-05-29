@@ -807,6 +807,7 @@
      <None Include="Assets\UVModels\Materials\Imports\Laterns and candles\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\Day-Night Skyboxes\readme.txt" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Rocks and Boulders 2\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
