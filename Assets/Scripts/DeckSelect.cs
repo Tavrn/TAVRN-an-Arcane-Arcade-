@@ -19,7 +19,7 @@ public class DeckSelect : MonoBehaviour {
   public TextMesh spTxt;
   public TextMesh prTxt;
 
-  private List<string> spellNames = new List<string>{"Magic Missile", "Arcane Sphere", "Scaling Shot", "Lightning Bolt", "Aqua Orb", "Bubble Shot", "Fireball", "Meteor", "Conversion", "Heal"};
+  private List<string> spellNames = new List<string>{"Magic Missile", "Arcane Sphere", "Scaling Shot", "Lightning Bolt", "Aqua Orb", "Bubble Shot", "Fireball", "Meteor", "Conversion", "Heal", "Clear Skies", "Burning Skies", "Rain"};
 
 	// Update is called once per frame
   void Start() {

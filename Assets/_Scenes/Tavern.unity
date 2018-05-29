@@ -9554,7 +9554,7 @@ MonoBehaviour:
   dimMat: {fileID: 0}
   brightMat: {fileID: 0}
   isParent: 0
-  spellNumber: 9
+  spellNumber: 11
 --- !u!65 &256628280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18502,7 +18502,7 @@ MonoBehaviour:
   dimMat: {fileID: 0}
   brightMat: {fileID: 0}
   isParent: 0
-  spellNumber: 9
+  spellNumber: 12
 --- !u!65 &534572487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65964,7 +65964,7 @@ MonoBehaviour:
   dimMat: {fileID: 0}
   brightMat: {fileID: 0}
   isParent: 0
-  spellNumber: 9
+  spellNumber: 10
 --- !u!65 &2109644497
 BoxCollider:
   m_ObjectHideFlags: 0
