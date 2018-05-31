@@ -42,7 +42,14 @@ public class AutoNetMM : NetworkLobbyManager {
 	{
     Debug.Log("MMListMatches");
 
-    this.matchMaker.ListMatches(0, 20, "", true, 0, 0, OnMatchList);
+		if(this.playScene == "Town_Multiplayer")
+		{
+	 		this.matchMaker.ListMatches(0, 20, "", true, 0, 0, OnMatchList);
+		}
+		else
+		{
+    	this.matchMaker.ListMatches(0, 20, "", true, 0, 1, OnMatchList);
+		}
   }
 
   public override void OnMatchList(bool success, string extendedInfo, List<MatchInfoSnapshot> matchList)
@@ -74,7 +81,14 @@ public class AutoNetMM : NetworkLobbyManager {
   {
     Debug.Log("MMJoinMatch");
 
-    this.matchMaker.JoinMatch(firstMatch.networkId, "", "", "", 0, 0, OnMatchJoined);
+		if(this.playScene == "Town_Multiplayer")
+		{
+    	this.matchMaker.JoinMatch(firstMatch.networkId, "", "", "", 0, 0, OnMatchJoined);
+		}
+		else
+		{
+    	this.matchMaker.JoinMatch(firstMatch.networkId, "", "", "", 0, 1, OnMatchJoined);
+		}
   }
 
   public override void OnMatchJoined(bool success, string extendedInfo, MatchInfo matchInfo)
@@ -99,7 +113,14 @@ public class AutoNetMM : NetworkLobbyManager {
   {
     Debug.Log("MMCreateMatch");
 
-    this.matchMaker.CreateMatch("MM", 2, true, "", "", "", 0, 0, OnMatchCreate);
+		if(this.playScene == "Town_Multiplayer")
+		{
+    	this.matchMaker.CreateMatch("MM", 2, true, "", "", "", 0, 0, OnMatchCreate);
+		}
+		else
+		{
+    	this.matchMaker.CreateMatch("MM", 2, true, "", "", "", 0, 1, OnMatchCreate);
+		}
   }
 
   public override void OnMatchCreate(bool success, string extendedInfo, MatchInfo matchInfo)
