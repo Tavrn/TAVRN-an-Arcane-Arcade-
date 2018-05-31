@@ -16,7 +16,6 @@ public class Spell_BasicProjectile : SpellGeneric {
 					damage = empoweredDamage;
 				}
 			}
-			p.tryHit(v.z, damage);
 			if(deathPS1!=null){
 				deathPS1.transform.parent = null;
 				deathPS1.GetComponent<ParticleSystem>().Play();
@@ -33,7 +32,9 @@ public class Spell_BasicProjectile : SpellGeneric {
 				deathPS4.transform.parent = null;
 				deathPS4.GetComponent<ParticleSystem>().Play();
 			}
-			Destroy(gameObject);
+			Debug.Log("triggered");
+			p.tryHit(v.z, damage);
+			gameObject.SetActive(false);
 		}
 
 }

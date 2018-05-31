@@ -4207,8 +4207,8 @@ MonoBehaviour:
     type: 2}
   meteorSpawn: {fileID: 4245180636926444}
   clearSkiesSkybox: {fileID: 2100000, guid: 71f14a2d79f732f4d9893ef1b911f4ff, type: 2}
-  fireSkybox: {fileID: 2100000, guid: 4067de1a02072244798361060c5e7325, type: 2}
-  rainSkybox: {fileID: 0}
+  fireSkybox: {fileID: 2100000, guid: ad94be54db4a6f54ab10301fc7406439, type: 2}
+  rainSkybox: {fileID: 2100000, guid: d11d338e6a849d84f85a289f91b3fa00, type: 2}
   sandSkybox: {fileID: 0}
   windSkybox: {fileID: 0}
   fireballPrefab: {fileID: 1450673449457036, guid: 1dff682dcbcf69444a7adff7d891861d,

@@ -707,7 +707,7 @@ public class SpellManagerScript : NetworkBehaviour {
 				float tick = 0.25f;
 				GameObject hep = Instantiate(healEffectPrefab) as GameObject;
 				hep.transform.parent = transform;
-				hep.transform.localPosition = transform.position;
+				hep.transform.localPosition = new Vector3(0,0,0);
 				NetworkServer.Spawn(hep);
 				if(!effectNames.Contains("HealHelper")){
 					effectEndTimes.Add(Time.time+dur);
