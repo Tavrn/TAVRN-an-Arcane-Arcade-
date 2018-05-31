@@ -640,6 +640,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 149.99994
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1a3252a3e481ff64484d7e7a2b060c69, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a3252a3e481ff64484d7e7a2b060c69, type: 3}
   m_IsPrefabParent: 0
@@ -1050,6 +1054,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_red (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1330958721618298, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640744776506072, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
   m_IsPrefabParent: 0
@@ -1284,71 +1296,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15.651719, y: 1, z: 1}
   m_Center: {x: 4.807351, y: 0, z: 0}
---- !u!1 &80183627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 80183628}
-  - component: {fileID: 80183629}
-  m_Layer: 0
-  m_Name: Spot Light (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &80183628
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 80183627}
-  m_LocalRotation: {x: -0, y: 0.96802413, z: -0.2508574, w: 0}
-  m_LocalPosition: {x: 3.975, y: 2.011, z: -4.687}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 888429879}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 29.057001, y: 180.00002, z: 0}
---- !u!108 &80183629
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 80183627}
-  m_Enabled: 1
-  serializedVersion: 8
-  m_Type: 0
-  m_Color: {r: 1, g: 0.80219626, b: 0.4009434, a: 1}
-  m_Intensity: 1.99
-  m_Range: 1
-  m_SpotAngle: 39.458946
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
 --- !u!1001 &88268067
 Prefab:
   m_ObjectHideFlags: 0
@@ -1706,7 +1653,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4787208632124560, guid: 87b5a459d298dd941871889066ee52ce, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.129
+      value: 1.173
       objectReference: {fileID: 0}
     - target: {fileID: 4787208632124560, guid: 87b5a459d298dd941871889066ee52ce, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2469,6 +2416,14 @@ Prefab:
       propertyPath: matNum
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1994403671506922, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299001598875390, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720687788881c244ea44de5df98165c8, type: 2}
   m_IsPrefabParent: 0
@@ -2682,6 +2637,10 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 4bab59dd5a784f341ae10244d23c19ba, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ea261395ec8ecce4dba97f7d6ae510a0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bab59dd5a784f341ae10244d23c19ba, type: 3}
   m_IsPrefabParent: 0
@@ -2731,6 +2690,14 @@ Prefab:
     - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
       propertyPath: m_Name
       value: Potion_orange (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363247112635414, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
@@ -2978,6 +2945,14 @@ Prefab:
     - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
       propertyPath: m_Name
       value: Potion_orange (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363247112635414, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
@@ -8904,6 +8879,14 @@ Prefab:
       propertyPath: matNum
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797524440256010, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
   m_IsPrefabParent: 0
@@ -9331,6 +9314,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797524440256010, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
   m_IsPrefabParent: 0
@@ -9651,6 +9642,14 @@ Prefab:
     - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
       propertyPath: m_Name
       value: Potion_turquoise (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243284283505958, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
@@ -10533,19 +10532,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 303c9ce672427e84ca80b9deb933840e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.097506195
+      value: 0.0975062
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 303c9ce672427e84ca80b9deb933840e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.022258533
+      value: -0.022258535
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 303c9ce672427e84ca80b9deb933840e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.1326767
+      value: -0.13267672
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 303c9ce672427e84ca80b9deb933840e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9861004
+      value: 0.98610044
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 303c9ce672427e84ca80b9deb933840e, type: 3}
       propertyPath: m_RootOrder
@@ -12417,6 +12416,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_green (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1994403671506922, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299001598875390, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720687788881c244ea44de5df98165c8, type: 2}
   m_IsPrefabParent: 0
@@ -12467,6 +12474,14 @@ Prefab:
     - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
       propertyPath: m_Name
       value: Potion_turquoise (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243284283505958, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
@@ -12811,6 +12826,14 @@ Prefab:
     - target: {fileID: 4727200099082800, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229454725446188, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693199833119676, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
@@ -18227,6 +18250,14 @@ Prefab:
         type: 2}
       propertyPath: matNum
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330958721618298, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640744776506072, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
@@ -24066,6 +24097,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_yellow (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1600897304776132, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605283791308390, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
   m_IsPrefabParent: 0
@@ -24603,6 +24642,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_purple (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1229454725446188, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693199833119676, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
   m_IsPrefabParent: 0
@@ -24653,6 +24700,14 @@ Prefab:
     - target: {fileID: 1600897304776132, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
       propertyPath: m_Name
       value: Potion_yellow (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600897304776132, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605283791308390, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
@@ -25403,6 +25458,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1110210148321702, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710770419863414, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
   m_IsPrefabParent: 0
@@ -25784,6 +25847,14 @@ Prefab:
         type: 2}
       propertyPath: matNum
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110210148321702, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710770419863414, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
@@ -26278,6 +26349,14 @@ Prefab:
     - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
       propertyPath: m_Name
       value: Potion_blue (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797524440256010, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
@@ -28609,6 +28688,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_purple (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1229454725446188, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693199833119676, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
   m_IsPrefabParent: 0
@@ -28819,6 +28906,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_purple (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1229454725446188, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693199833119676, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
   m_IsPrefabParent: 0
@@ -28992,6 +29087,14 @@ Prefab:
     - target: {fileID: 114073366905638218, guid: 8f467bb5208096a439d1ce207fc58121,
         type: 2}
       propertyPath: matNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229454725446188, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693199833119676, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -29803,7 +29906,6 @@ Transform:
   - {fileID: 1824114868}
   - {fileID: 632672462}
   - {fileID: 411977566}
-  - {fileID: 80183628}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29849,6 +29951,14 @@ Prefab:
     - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
       propertyPath: m_Name
       value: Potion_turquoise (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243284283505958, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
@@ -30285,6 +30395,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363247112635414, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
   m_IsPrefabParent: 0
@@ -30364,6 +30482,14 @@ Prefab:
     - target: {fileID: 4443932543847124, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
       propertyPath: m_RootOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330958721618298, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640744776506072, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
@@ -30458,6 +30584,14 @@ Prefab:
         type: 2}
       propertyPath: matNum
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600897304776132, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605283791308390, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
@@ -30660,6 +30794,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1600897304776132, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605283791308390, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
   m_IsPrefabParent: 0
@@ -30785,6 +30927,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_white (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1110210148321702, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710770419863414, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
   m_IsPrefabParent: 0
@@ -30865,6 +31015,14 @@ Prefab:
         type: 2}
       propertyPath: m_Center.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110210148321702, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710770419863414, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
@@ -32654,6 +32812,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1994403671506922, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299001598875390, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720687788881c244ea44de5df98165c8, type: 2}
   m_IsPrefabParent: 0
@@ -33291,6 +33457,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_red (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1330958721618298, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640744776506072, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
   m_IsPrefabParent: 0
@@ -33341,6 +33515,14 @@ Prefab:
     - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
       propertyPath: m_Name
       value: Potion_blue (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797524440256010, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
@@ -33706,6 +33888,14 @@ Prefab:
     - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
       propertyPath: m_Name
       value: Potion_blue (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797524440256010, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
@@ -37673,6 +37863,14 @@ Prefab:
     - target: {fileID: 1994403671506922, guid: 720687788881c244ea44de5df98165c8, type: 2}
       propertyPath: m_Name
       value: Potion_green (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994403671506922, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299001598875390, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720687788881c244ea44de5df98165c8, type: 2}
@@ -44109,6 +44307,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_white (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1110210148321702, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710770419863414, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
   m_IsPrefabParent: 0
@@ -49805,6 +50011,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_turquoise (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243284283505958, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
   m_IsPrefabParent: 0
@@ -51614,6 +51828,14 @@ Prefab:
       propertyPath: matNum
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363247112635414, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
   m_IsPrefabParent: 0
@@ -51659,6 +51881,14 @@ Prefab:
     - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
       propertyPath: m_Name
       value: Potion_blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436024396587174, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797524440256010, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5669ded38144a2448bdb47f9def97744, type: 2}
@@ -57217,6 +57447,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_yellow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1600897304776132, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605283791308390, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
   m_IsPrefabParent: 0
@@ -57787,6 +58025,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_orange (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363247112635414, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
   m_IsPrefabParent: 0
@@ -57940,6 +58186,14 @@ Prefab:
     - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
       propertyPath: m_Name
       value: Potion_orange (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1132359487058594, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1363247112635414, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51daf0b1c783a6b498cdf10c782ea14e, type: 2}
@@ -59198,6 +59452,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_green (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1994403671506922, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299001598875390, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720687788881c244ea44de5df98165c8, type: 2}
   m_IsPrefabParent: 0
@@ -59822,6 +60084,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_red (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1330958721618298, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640744776506072, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
   m_IsPrefabParent: 0
@@ -60257,6 +60527,14 @@ Prefab:
     - target: {fileID: 1330958721618298, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
       propertyPath: m_Name
       value: Potion_red (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330958721618298, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640744776506072, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d903abc716a6264287b01d9eb6ef38e, type: 2}
@@ -61432,6 +61710,14 @@ Prefab:
       propertyPath: matNum
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243284283505958, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
   m_IsPrefabParent: 0
@@ -62592,6 +62878,14 @@ Prefab:
     - target: {fileID: 4727200099082800, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.08185
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229454725446188, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693199833119676, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f467bb5208096a439d1ce207fc58121, type: 2}
@@ -63768,6 +64062,14 @@ Prefab:
       propertyPath: m_Name
       value: Potion_green (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1994403671506922, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299001598875390, guid: 720687788881c244ea44de5df98165c8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 720687788881c244ea44de5df98165c8, type: 2}
   m_IsPrefabParent: 0
@@ -64241,6 +64543,14 @@ Prefab:
     - target: {fileID: 4304530801983852, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
       propertyPath: m_RootOrder
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1184842434841638, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243284283505958, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 981129218f75e2c498c31c4e56a7136a, type: 2}
@@ -65033,6 +65343,14 @@ Prefab:
     - target: {fileID: 1110210148321702, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
       propertyPath: m_Name
       value: Potion_white (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1110210148321702, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710770419863414, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c708e5cdb36d622438fcb857fd591e63, type: 2}
@@ -66205,6 +66523,14 @@ Prefab:
     - target: {fileID: 1600897304776132, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
       propertyPath: m_Name
       value: Potion_yellow (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600897304776132, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1605283791308390, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1bf79571310c84488872e224cfc1c5e, type: 2}

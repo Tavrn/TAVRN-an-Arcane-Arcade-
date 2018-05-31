@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1637121827841484
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1994403671506922
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,3 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d29127771714ac74f836ec2c15373ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emissionColor: {r: 0, g: 0, b: 0, a: 0}
+  wandMat: {fileID: 0}
+  mshr: {fileID: 0}
+  matNum: 0
