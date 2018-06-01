@@ -140,6 +140,22 @@ public class AutoNetMM : NetworkLobbyManager {
   	}
 	}
 
+	public void MMEndMatch()
+	{
+		Debug.Log("MMEndMatch");
+
+		NetworkManager.singleton.StopHost();
+		this.StopMatchMaker();
+	}
+	
+	public override void OnServerDisconnect(UnityEngine.Networking.NetworkConnection con)
+	{
+		Debug.Log("OnServerDisconnect");
+
+		NetworkManager.singleton.StopHost();
+		this.StopMatchMaker();
+	}
+
 /*
 	void MMDestroyMatch()
 	{

@@ -10,12 +10,17 @@ namespace VRTK.Examples
 				public BoxCollider d1SC;
 				public BoxCollider d2SC;
 
+        public static bool idleMulti;
+
         private float baseVolumeHeight=0f;
         private Transform plyr;
         private bool hasFlip = false;
 
         private void Start()
         {
+
+            idleMulti = false;
+
             plyr = transform.parent.parent.Find("NewtonSDK/NVRPlayer");
 //            Debug.Log("ayy " + gameObject + " " + plyr + " " + plyr.Find("LeftHand").childCount);
 //            transform.parent.Find("Render Model for RightHand").GetComponent<SphereCollider>().radius = 0.7f;
@@ -138,18 +143,23 @@ namespace VRTK.Examples
         private void DoGripPressed(object sender, ControllerInteractionEventArgs e)
         {
             DebugLogger(VRTK_ControllerReference.GetRealIndex(e.controllerReference), "GRIP", "pressed", e);
-						if(door1C.bounds.Contains(transform.position)){
-							door1C.transform.parent.GetComponent<CustomDoor>().Open();
-						}else if(door2C.bounds.Contains(transform.position)){
-							door2C.transform.parent.GetComponent<CustomDoor>().Open();
-						}else if(d1SC.bounds.Contains(transform.position)){
-							d1SC.transform.parent.GetComponent<CustomDoor>().Toggle();
-						}else if(d2SC.bounds.Contains(transform.position)){
-							d2SC.transform.parent.GetComponent<CustomDoor>().Toggle();
-						}else{
-              float v = PlayerPrefs.GetFloat("Volume", 0.5f);
-              baseVolumeHeight = transform.position.y-v;
-              transform.root.GetComponent<HandShrink>().StartChangingVolume(baseVolumeHeight, gameObject);
+            if(!idleMulti)
+            {
+						  if(door1C.bounds.Contains(transform.position)){
+							  door1C.transform.parent.GetComponent<CustomDoor>().Open();
+                idleMulti = true;
+						  }else if(door2C.bounds.Contains(transform.position)){
+							  door2C.transform.parent.GetComponent<CustomDoor>().Open();
+                idleMulti = true;
+						  }else if(d1SC.bounds.Contains(transform.position)){
+							  d1SC.transform.parent.GetComponent<CustomDoor>().Toggle();
+						  }else if(d2SC.bounds.Contains(transform.position)){
+							  d2SC.transform.parent.GetComponent<CustomDoor>().Toggle();
+						  }else{
+                float v = PlayerPrefs.GetFloat("Volume", 0.5f);
+                baseVolumeHeight = transform.position.y-v;
+                transform.root.GetComponent<HandShrink>().StartChangingVolume(baseVolumeHeight, gameObject);
+              }
             }
         }
 
