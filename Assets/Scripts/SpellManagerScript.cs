@@ -618,7 +618,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		GameObject fb = Instantiate(meteorPrefab) as GameObject;
 		fb.transform.parent = spellsParent.transform;
 		fb.transform.position = meteorSpawn.position;
-		fb.GetComponent<Rigidbody>().AddForce(new Vector3(dir.normalized.x, -2, dir.normalized.z)*speed);
+		fb.GetComponent<Rigidbody>().AddForce(new Vector3(0, -2, dir.normalized.z)*speed);
 		NetworkServer.Spawn(fb);
 		RpcParentTo(fb.GetComponent<NetworkIdentity>().netId, spellsParent.GetComponent<NetworkIdentity>().netId);
 		// return fb;
@@ -745,7 +745,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		float tick = 0.25f;
 		GameObject hep = Instantiate(healEffectPrefab) as GameObject;
 		hep.transform.parent = transform;
-		hep.transform.localPosition = transform.position;
+		hep.transform.localPosition = new Vector3(0,0,0);
 		NetworkServer.Spawn(hep);
 		if(!effectNames.Contains("HealHelper")){
 			effectEndTimes.Add(Time.time+dur);
