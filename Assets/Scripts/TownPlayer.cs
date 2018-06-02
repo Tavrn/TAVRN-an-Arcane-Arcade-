@@ -129,6 +129,7 @@ public class TownPlayer : NetworkBehaviour {
 						print("lose " + (Time.time-startTime));
 						GameObject.Find("Text").GetComponent<TextMesh>().text = "Defeat \n in " + (Time.time-startTime) + " seconds!";
 						//LOSE
+						Invoke("EndMultiMatch", 5);
 					}else{
 						print("win " + (Time.time-startTime));
 						GameObject.Find("Text").GetComponent<TextMesh>().text = "Victory \n in " + (Time.time-startTime) + " seconds!";
@@ -137,13 +138,15 @@ public class TownPlayer : NetworkBehaviour {
 				}
 			}
 			// GameObject.Find("MultiplayerBroomManager").GetComponent<MultiplayerBroomManager>().Finish();
-
 		}else{
 			Invoke("ReturnToTavern", 5);
 		}
 	}
 	public void ReturnToTavern(){
 		SceneManager.LoadScene("Tavern");
+	}
+	public void EndMultiMatch(){
+		GameObject.Find("AutoNetMM").GetComponent<AutoNetMM>().MMEndMatch(); //destroys match
 	}
 	void OnTriggerEnter(Collider c){
 		if(c.transform.root.tag=="Town"){

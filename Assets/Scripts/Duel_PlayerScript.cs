@@ -78,11 +78,14 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	public void ReturnToTavern(){
 		SceneManager.LoadScene("Tavern");
 	}
+	public void EndMultiMatch(){
+		GameObject.Find("AutoNetMM").GetComponent<AutoNetMM>().MMEndMatch();
+	}
 	public void Lose(){
 		Debug.Log("Lose");
 		Transform t = GameObject.Find("LosePanel").transform;
 		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
-		Invoke("ReturnToTavern", 5);
+		Invoke("EndMultiMatch", 5);
 	}
 
 	[ClientRpc]
@@ -91,7 +94,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 			Debug.Log("RpcLose");
 			Transform t = GameObject.Find("LosePanel").transform;
 			t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
-			Invoke("ReturnToTavern", 5);
+			Invoke("EndMultiMatch", 5);
 		}
 	}
 
@@ -100,7 +103,7 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		Debug.Log("Win");
 		Transform t = GameObject.Find("WinPanel").transform;
 		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
-		Invoke("ReturnToTavern", 5);
+		Invoke("EndMultiMatch", 5);
 	}
 
 	[ClientRpc]
@@ -109,10 +112,9 @@ public class Duel_PlayerScript : NetworkBehaviour {
 			Debug.Log("RpcWin");
 			Transform t = GameObject.Find("WinPanel").transform;
 			t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
-			Invoke("ReturnToTavern", 5);
+			Invoke("EndMultiMatch", 5);
 		}
 	}
-
 
 	public void startLosing(){
 		if(gameObject.name.Contains("Multi")){
