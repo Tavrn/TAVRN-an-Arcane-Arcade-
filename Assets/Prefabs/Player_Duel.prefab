@@ -6280,6 +6280,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 1c28eea32299f014d9ddfcc67d23295a, type: 2}
   - {fileID: 2100000, guid: e52e0021c8470a74997a33719f330738, type: 2}
   - {fileID: 2100000, guid: 65dd8ce8fb2b9104d8054fc2b3922718, type: 2}
+  winClip: {fileID: 8300000, guid: 7f9f7109d0a1ebc439727b9ea4834b07, type: 3}
+  loseClip: {fileID: 8300000, guid: a325ce316becbd040a3626b6eea1ab03, type: 3}
   HP: 100
   mana: 100
 --- !u!114 &114330357692523242

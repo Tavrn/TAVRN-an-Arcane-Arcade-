@@ -32,8 +32,8 @@ public class BroomScript : MonoBehaviour
     public bool constVel;
     private const float CONST_SPD = 10f;
     private float currentPressure = 0f;
-    private int acceleration = 2;
-    private int maxSpeed = 12;
+    private int acceleration = 6;
+    private int maxSpeed = 20;
 
     //for controls control
     private float maxDeviate = 0.1f;

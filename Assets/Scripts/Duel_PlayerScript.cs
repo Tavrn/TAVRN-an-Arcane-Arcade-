@@ -69,8 +69,8 @@ public class Duel_PlayerScript : NetworkBehaviour {
 	public void hit(int damage){
 		// HP = Mathf.Clamp(HP-damage, 0, 100);
 		HP -= damage;
-		print(damage);
 		if(HP<=0){
+			HP = 0;
 			startLosing();
 			//LOSE
 		}
@@ -85,6 +85,9 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		Debug.Log("Lose");
 		Transform t = GameObject.Find("LosePanel").transform;
 		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+		GameObject.Find("Music").GetComponent<AudioSource>().Stop();
+		AudioSource au = GameObject.Find("LoseMusic").GetComponent<AudioSource>();
+		au.Play();
 		Invoke("EndMultiMatch", 5);
 	}
 
@@ -94,6 +97,9 @@ public class Duel_PlayerScript : NetworkBehaviour {
 			Debug.Log("RpcLose");
 			Transform t = GameObject.Find("LosePanel").transform;
 			t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+			GameObject.Find("Music").GetComponent<AudioSource>().Stop();
+			AudioSource au = GameObject.Find("LoseMusic").GetComponent<AudioSource>();
+			au.Play();
 			Invoke("EndMultiMatch", 5);
 		}
 	}
@@ -103,6 +109,9 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		Debug.Log("Win");
 		Transform t = GameObject.Find("WinPanel").transform;
 		t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+		GameObject.Find("Music").GetComponent<AudioSource>().Stop();
+		AudioSource au = GameObject.Find("WinMusic").GetComponent<AudioSource>();
+		au.Play();
 		Invoke("EndMultiMatch", 5);
 	}
 
@@ -112,6 +121,9 @@ public class Duel_PlayerScript : NetworkBehaviour {
 			Debug.Log("RpcWin");
 			Transform t = GameObject.Find("WinPanel").transform;
 			t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+			GameObject.Find("Music").GetComponent<AudioSource>().Stop();
+			AudioSource au = GameObject.Find("WinMusic").GetComponent<AudioSource>();
+			au.Play();
 			Invoke("EndMultiMatch", 5);
 		}
 	}
@@ -131,6 +143,9 @@ public class Duel_PlayerScript : NetworkBehaviour {
 		}else{
 			Transform t = GameObject.Find("WinPanel").transform;
 			t.position = new Vector3(t.position.x, t.position.y+10, t.position.z);
+			GameObject.Find("Music").GetComponent<AudioSource>().Stop();
+			AudioSource au = GameObject.Find("WinMusic").GetComponent<AudioSource>();
+			au.Play();
 			Invoke("ReturnToTavern", 5);
 		}
 	}
