@@ -1160,6 +1160,8 @@ ModelImporter:
     2186277476908879468: ImportLogs
     2186277476908879470: ImportLogs
     2186277476908879472: ImportLogs
+    2186277476908879474: ImportLogs
+    2186277476908879476: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -1199,7 +1201,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

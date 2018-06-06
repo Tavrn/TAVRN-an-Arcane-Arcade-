@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 54551177411817868}
   - component: {fileID: 114840769741705222}
   - component: {fileID: 114563181690321442}
+  - component: {fileID: 82914513722194852}
   m_Layer: 0
   m_Name: ArcaneSphere
   m_TagString: Untagged
@@ -139,7 +140,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1736127512213960}
-  m_LocalRotation: {x: -0.37707016, y: -0.598179, z: -0.598179, w: 0.37707016}
+  m_LocalRotation: {x: 0.6828507, y: 0.1836162, z: 0.1836162, w: -0.6828507}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.2114286, y: 3.2114303, z: 3.2114303}
   m_Children: []
@@ -196,7 +197,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1024362037807602}
-  m_LocalRotation: {x: -0.61912394, y: 0.34159276, z: 0.34159276, w: 0.61912394}
+  m_LocalRotation: {x: 0.09260608, y: 0.7010165, z: 0.7010165, w: -0.09260608}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -260,6 +261,101 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82914513722194852
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1950669074272730}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 17d4f7517efcb934b9025dd5c08f0b78, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.45
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!108 &108520850998119156
 Light:
   m_ObjectHideFlags: 1
@@ -269,7 +365,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.595294, g: 0, b: 0.77155435, a: 2.103837}
+  m_Color: {r: 0.893517, g: 0, b: 1.1580781, a: 3.1577911}
   m_Intensity: 2.58
   m_Range: 10.536303
   m_SpotAngle: 30
@@ -402,6 +498,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613bfe3524fb0d34798e8d6ea97f446a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  empoweredDamage: 20
+  myType: 0
   damage: 10
   deathPS1: {fileID: 0}
   deathPS2: {fileID: 0}
