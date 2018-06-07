@@ -150,7 +150,7 @@ public class SpellManagerScript : NetworkBehaviour {
 		//checks target int against the deck stored in player prefs
 		//idk if it actually works actually selecting your deck is still wip
 		//default deck is {0,1,2,3,4,5,6,7,8,9}
-	 	for(int i = 0; i < 13; ++i)
+	 	for(int i = 0; i < 7; ++i)
 	 	{
 		 	int temp;
 		 	temp = PlayerPrefs.GetInt("Spell_" + i, -1);

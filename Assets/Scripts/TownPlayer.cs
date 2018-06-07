@@ -10,14 +10,15 @@ public class TownPlayer : NetworkBehaviour {
 	public int prevHoop = 0;
 	public Material passedHoopMat;
 	public Material nextHoopMat;
+	public AudioSource hoopMusic;
 	private bool finished = false;
 	private int numHoops = 41;
 	private Vector3 startPos;
 	private Quaternion startRot;
 	private bool isMulti;
 	private float startTime=-1f;
+
 	void Start () {
-		Debug.Log("HELLO");
 		Debug.Log(gameObject);
 		isMulti = gameObject.name.Contains("Multi");
 		if(isMulti){
@@ -46,6 +47,7 @@ public class TownPlayer : NetworkBehaviour {
 	public void HitHoop(int number, GameObject h){
 		if(!isMulti){
 			if(number==prevHoop+1){
+				hoopMusic.Play();
 				prevHoop = number;
 				h.GetComponent<MeshRenderer>().material = passedHoopMat;
 				string num = "Hoop";
@@ -63,6 +65,7 @@ public class TownPlayer : NetworkBehaviour {
 		}else{
 			if(isLocalPlayer){
 				if(number==prevHoop+1){
+					hoopMusic.Play();
 					prevHoop = number;
 					h.GetComponent<MeshRenderer>().material = passedHoopMat;
 					string num = "Hoop";

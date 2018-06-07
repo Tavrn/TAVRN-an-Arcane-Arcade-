@@ -8,7 +8,7 @@ public class DeckSelect : MonoBehaviour {
 
   // public List<GameObject> pages;
 
-  private int DECKSIZE = 13;
+  private int DECKSIZE = 7;
 
   public static int currProposal = 0;
   private int prevProposal = 0;

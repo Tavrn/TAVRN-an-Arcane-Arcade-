@@ -6,17 +6,21 @@ public class SpellBookParentScript : MonoBehaviour {
 	public GameObject hand;
 	public GameObject openBook;
 	public GameObject closedBook;
+	public List<AudioClip> bookCloses = new List<AudioClip>();
+	public List<AudioClip> pageFlips = new List<AudioClip>();
+
 	private bool open = true;
 	private int deckSize = 10;
 	private int spellPage = 0;
 	private List<string> allGlyphs = new List<string>(); //ADDED FOR REWRITE
 	private List<string> glyphs = new List<string>();
+	private AudioSource au;
 	private Transform glyphsParent;
 	// Use this for initialization
 	void Start () {
 		int count = 0;
 		glyphsParent = openBook.transform.Find("GlyphsParent");
-
+		au = GetComponent<AudioSource>();
 		//BEGIN OF REWRITE
 
 		//fills a list with all possible spells
@@ -67,12 +71,16 @@ public class SpellBookParentScript : MonoBehaviour {
 			FlipLeft();
 			FlipRight();
 		}else{
+			au.clip = bookCloses[(int)(Random.Range(0,3))];
+			au.Play();
 			openBook.SetActive(false);
 			closedBook.SetActive(true);
 		}
 	}
 	public void FlipRight(){
 		if(open){
+			au.clip = pageFlips[(int)Random.Range(0, 4)];
+			au.Play();
 			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(false);
 			spellPage++;
 			if(spellPage==deckSize)
@@ -82,6 +90,8 @@ public class SpellBookParentScript : MonoBehaviour {
 	}
 	public void FlipLeft(){
 		if(open){
+			au.clip = pageFlips[(int)Random.Range(0, 4)];
+			au.Play();
 			glyphsParent.Find(glyphs[spellPage]).gameObject.SetActive(false);
 			spellPage--;
 			if(spellPage==-1)
