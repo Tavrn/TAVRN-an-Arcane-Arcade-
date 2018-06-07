@@ -265,6 +265,7 @@
      <Compile Include="Assets\Scripts\CollidersScript.cs" />
      <Compile Include="Assets\Scripts\CustomDoor.cs" />
      <Compile Include="Assets\Scripts\DeckSelect.cs" />
+     <Compile Include="Assets\Scripts\DestroyAfter.cs" />
      <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener.cs" />
      <Compile Include="Assets\Scripts\Duel_ControllerEvents_Listener_LH.cs" />
      <Compile Include="Assets\Scripts\Duel_GameManager.cs" />

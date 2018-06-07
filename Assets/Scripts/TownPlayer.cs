@@ -130,12 +130,12 @@ public class TownPlayer : NetworkBehaviour {
 				if(p.GetComponent<NetworkIdentity>().netId != GetComponent<NetworkIdentity>().netId){
 					if(p.GetComponent<TownPlayer>().isFinished()){
 						print("lose " + (Time.time-startTime));
-						GameObject.Find("Text").GetComponent<TextMesh>().text = "Defeat \n in " + (Time.time-startTime) + " seconds!";
+						GameObject.Find("Text").GetComponent<TextMesh>().text = "Defeat \n in \n" + (Time.time-startTime) + "\n seconds!";
 						//LOSE
 						Invoke("EndMultiMatch", 5);
 					}else{
 						print("win " + (Time.time-startTime));
-						GameObject.Find("Text").GetComponent<TextMesh>().text = "Victory \n in " + (Time.time-startTime) + " seconds!";
+						GameObject.Find("Text").GetComponent<TextMesh>().text = "Victory \n in \n" + (Time.time-startTime) + "\n seconds!";
 						//WIN
 					}
 				}

@@ -8,7 +8,7 @@ public class DeckSelect : MonoBehaviour {
 
   // public List<GameObject> pages;
 
-  private int DECKSIZE = 7;
+  private int DECKSIZE = 10;
 
   public static int currProposal = 0;
   private int prevProposal = 0;
@@ -19,7 +19,7 @@ public class DeckSelect : MonoBehaviour {
   public TextMesh spTxt;
   public TextMesh prTxt;
 
-  private List<string> spellNames = new List<string>{"Magic Missile", "Arcane Sphere", "Scaling Shot", "Lightning Bolt", "Aqua Orb", "Bubble Shot", "Fireball", "Meteor", "Conversion", "Heal", "Clear Skies", "Burning Skies", "Rain"};
+  private List<string> spellNames = new List<string>{"Magic Missile", "Arcane Sphere", "Scaling Shot", "Lightning Bolt", "Aqua Orb", "Bubble Shot", "Fireball", "Meteor", "Conversion", "Heal", "Clear Skies", "Burning Skies", "Rainy Skies"};
 
 	// Update is called once per frame
   void Start() {

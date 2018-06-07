@@ -10,6 +10,7 @@ public class Spell_BasicProjectile : SpellGeneric {
 		public GameObject deathPS2;
 		public GameObject deathPS3;
 		public GameObject deathPS4;
+		public GameObject deathSound;
 		public override void Trigger(Vector3 v, Duel_PlayerScript p, SpellManagerScript s){
 			if(myType!=0){ //arcane spells don't change based on weather
 				if(GameObject.FindWithTag("Player").GetComponent<SpellManagerScript>().weather==myType){
@@ -31,6 +32,10 @@ public class Spell_BasicProjectile : SpellGeneric {
 			if(deathPS4!=null){
 				deathPS4.transform.parent = null;
 				deathPS4.GetComponent<ParticleSystem>().Play();
+			}
+			if(deathSound!=null){
+				deathSound.transform.parent = null;
+				deathSound.GetComponent<AudioSource>().Play();
 			}
 			Debug.Log("triggered");
 			p.tryHit(v.z, damage);
