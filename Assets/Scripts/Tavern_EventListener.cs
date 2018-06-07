@@ -147,9 +147,13 @@ namespace VRTK.Examples
             {
 						  if(door1C.bounds.Contains(transform.position)){
 							  door1C.transform.parent.GetComponent<CustomDoor>().Open();
+                door1C.transform.parent.GetComponent<CustomDoor>().multi_txt.GetComponent<TextMesh>().text = "Waiting \n for \n opponent";
+                // door2C.GetComponent<CustomDoor>().multi_txt.GetComponent<TextMesh>().text = "Waiting \n for \n opponent";
                 idleMulti = true;
 						  }else if(door2C.bounds.Contains(transform.position)){
 							  door2C.transform.parent.GetComponent<CustomDoor>().Open();
+                // door1C.GetComponent<CustomDoor>().multi_txt.GetComponent<TextMesh>().text = "Waiting \n for \n opponent";
+                door2C.transform.parent.GetComponent<CustomDoor>().multi_txt.GetComponent<TextMesh>().text = "Waiting \n for \n opponent";
                 idleMulti = true;
 						  }else if(d1SC.bounds.Contains(transform.position)){
 							  d1SC.transform.parent.GetComponent<CustomDoor>().Toggle();

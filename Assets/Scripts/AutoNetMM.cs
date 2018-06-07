@@ -127,7 +127,6 @@ public class AutoNetMM : NetworkLobbyManager {
   {
     Debug.Log("OnMatchCreate");
     base.OnMatchCreate(success, extendedInfo, matchInfo);
-
     if(!success)
     {
       Debug.Log("failed to create: " + extendedInfo);
@@ -147,7 +146,7 @@ public class AutoNetMM : NetworkLobbyManager {
 		NetworkManager.singleton.StopHost();
 		this.StopMatchMaker();
 	}
-	
+
 	public override void OnServerDisconnect(UnityEngine.Networking.NetworkConnection con)
 	{
 		Debug.Log("OnServerDisconnect");

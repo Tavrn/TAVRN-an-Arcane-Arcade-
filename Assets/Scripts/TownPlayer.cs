@@ -131,17 +131,20 @@ public class TownPlayer : NetworkBehaviour {
 					if(p.GetComponent<TownPlayer>().isFinished()){
 						print("lose " + (Time.time-startTime));
 						GameObject.Find("Text").GetComponent<TextMesh>().text = "Defeat \n in \n" + (Time.time-startTime) + "\n seconds!";
+						GameObject.Find("DefeatSounds").GetComponent<AudioSource>().Play();
 						//LOSE
 						Invoke("EndMultiMatch", 5);
 					}else{
 						print("win " + (Time.time-startTime));
 						GameObject.Find("Text").GetComponent<TextMesh>().text = "Victory \n in \n" + (Time.time-startTime) + "\n seconds!";
+						GameObject.Find("VictorySounds").GetComponent<AudioSource>().Play();
 						//WIN
 					}
 				}
 			}
 			// GameObject.Find("MultiplayerBroomManager").GetComponent<MultiplayerBroomManager>().Finish();
 		}else{
+			GameObject.Find("VictorySounds").GetComponent<AudioSource>().Play();
 			Invoke("ReturnToTavern", 5);
 		}
 	}
