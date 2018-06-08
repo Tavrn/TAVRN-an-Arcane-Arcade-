@@ -1064,6 +1064,7 @@ ModelImporter:
     2186277476908879456: ImportLogs
     2186277476908879458: ImportLogs
     2186277476908879460: ImportLogs
+    2186277476908879462: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
