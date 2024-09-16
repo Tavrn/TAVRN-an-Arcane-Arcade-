@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAVRN", "TAVRN.csproj", "{9E76DA23-7FBD-7952-2F68-87E04636CF6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAVRN.Editor", "TAVRN.Editor.csproj", "{16069327-DFB3-AA13-351D-159E0FB6EF38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E76DA23-7FBD-7952-2F68-87E04636CF6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E76DA23-7FBD-7952-2F68-87E04636CF6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E76DA23-7FBD-7952-2F68-87E04636CF6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E76DA23-7FBD-7952-2F68-87E04636CF6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16069327-DFB3-AA13-351D-159E0FB6EF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16069327-DFB3-AA13-351D-159E0FB6EF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16069327-DFB3-AA13-351D-159E0FB6EF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16069327-DFB3-AA13-351D-159E0FB6EF38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

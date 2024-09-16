@@ -8,10 +8,11 @@ public class CollidersScript : MonoBehaviour {
 	public GameObject colliderPrefab;
 	public GameObject colliderReferenceObject;
 	public WandScript wandScript;
-
-	private int height = 5;
-	private int width = 5;
-	private int depth = 5;
+	[HideInInspector]
+	public GameObject originCollider;
+	private int height = 3;
+	private int width = 3;
+	private int depth = 3;
 	// Use this for initialization
 	void Start () {
 		for(int h=-height; h<=height; h++){
@@ -19,23 +20,26 @@ public class CollidersScript : MonoBehaviour {
 				for(int w=-width; w<=width; w++){
 					GameObject c = Instantiate(colliderPrefab) as GameObject;
 					c.transform.parent = transform;
-					c.transform.position = new Vector3(w*0.1f,h*0.1f,d*0.1f);
+					c.transform.position = new Vector3(w*0.15f,h*0.15f,d*0.15f);
 					ColliderScript s = c.GetComponent<ColliderScript>();
 					s.x = w;
 					s.y = h;
 					s.z = d;
 					c.name = ""+w+""+h+""+d;
 					if(h==0 && d==0 && w==0){
-							wandScript.originCollider = c;
+							originCollider = c;
 					}
+					// if(h==0 && d==0 && w==0){
+					// 		wandScript.originCollider = c;
+					// }
 				}
 			}
 		}
 	}
 	public void JumpToWand(){
 		transform.position = WandTip.transform.position;
-		colliderReferenceObject.transform.position = new Vector3(head.transform.position.x, transform.position.y, head.transform.position.z);
-		transform.LookAt(colliderReferenceObject.transform);
+		colliderReferenceObject.transform.position = new Vector3(-head.transform.position.x, transform.position.y, head.transform.position.z);
+		transform.LookAt(new Vector3(head.transform.position.x, transform.position.y, head.transform.position.z), Vector3.up);
 		transform.Rotate(0,180,0);
 	}
 	// Update is called once per frame
